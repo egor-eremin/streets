@@ -1,0 +1,8 @@
+/.idea
+/.vscode
+/psd
+/node_modules
+.jshintrc
+.eslintrc.js
+eslintrc.yml
+package-lock.json
