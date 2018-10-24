@@ -236,7 +236,7 @@ samp {
  */
 
 figure {
-    margin: 1em 40px;
+    margin: 0;
 }
 
 /**
@@ -438,6 +438,7 @@ a {
     color: inherit;
     text-decoration: none;
     display: inline-block;
+    vertical-align: top;
 }
 button {
     display: inline-block;
@@ -458,6 +459,11 @@ h6 {
     margin: 0;
 }
 
+img {
+    vertical-align: top;
+    max-width: 100%;
+}
+
 ul,
 ol {
     margin: 0;
@@ -465,12 +471,12 @@ ol {
     list-style-type: none;
 }
 body *:focus {
-    outline-color: rgba(46, 198, 247, 0.33);
+    outline-color: rgba(141, 29, 121, 0.33);
 }
-input::-webkit-input-placeholder       {color: #83838d; opacity: 1; transition: opacity 0.3s ease;}
-input::-moz-placeholder                {color: #83838d; opacity: 1; transition: opacity 0.3s ease;}
-input:-moz-placeholder                 {color: #83838d; opacity: 1; transition: opacity 0.3s ease;}
-input:-ms-input-placeholder            {color: #83838d; opacity: 1; transition: opacity 0.3s ease;}
+input::-webkit-input-placeholder       {color: #a6adb1; opacity: 1; transition: opacity 0.3s ease;}
+input::-moz-placeholder                {color: #a6adb1; opacity: 1; transition: opacity 0.3s ease;}
+input:-moz-placeholder                 {color: #a6adb1; opacity: 1; transition: opacity 0.3s ease;}
+input:-ms-input-placeholder            {color: #a6adb1; opacity: 1; transition: opacity 0.3s ease;}
 input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
 input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
 input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
