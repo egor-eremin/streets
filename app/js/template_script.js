@@ -5,7 +5,7 @@ $(document).ready(function () {
 		if ($('.two-side-wrapper').length > 0) {
 			$('.scroll-down').on('click', function () {
                 $('html, body').animate({scrollTop:$('.about-company-section').position().top}, 1000);
-            })
+            });
 		}
     })();
 	
@@ -66,7 +66,7 @@ $(document).ready(function () {
                 });
                 return false;
             },
-        })
+        });
     })();
 
     (function upToTopBottom() {
@@ -88,7 +88,7 @@ $(document).ready(function () {
     (function initMainSlider() {
 
         $('.main-slider__list').on('init', function(e, slick) {
-            $('.slick-arrow').wrapAll('<div class=\'main-slider-arrow\'></div>')
+            $('.slick-arrow').wrapAll('<div class=\'main-slider-arrow\'></div>');
         });
         $('.main-slider__list').slick({
             fade:true,

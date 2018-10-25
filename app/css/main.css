@@ -567,6 +567,29 @@ body, html {
   height: 100%;
   z-index: 2; }
 
+.two-side-wrapper__bright--about {
+  overflow: hidden; }
+
+.two-side-wrapper-bright__wrapper {
+  width: 960px;
+  height: 1000px;
+  position: relative;
+  filter: blur(10px);
+  opacity: 1;
+  background: url("../images/background/about-company-header.png") center center no-repeat; }
+
+.two-side-wrapper-bright__wrapper::after {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(315deg, #cab397, #b2cce9);
+  content: '';
+  z-index: 0;
+  opacity: 0.4; }
+
 .main-header__col1 {
   width: 50%; }
 
