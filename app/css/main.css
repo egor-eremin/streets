@@ -599,6 +599,9 @@ body, html {
   padding-top: 57px;
   padding-bottom: 27px; }
 
+.main-header__wrapper--about {
+  padding-bottom: 0; }
+
 .main-header {
   z-index: 3;
   position: relative; }
