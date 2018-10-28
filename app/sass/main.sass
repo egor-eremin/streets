@@ -563,7 +563,8 @@ body, html
 		z-index: 0
 		opacity: 0.4
 
-.breadcrumbs-navigation
+.breadcrumbs-navigation,
+.header-content-navigation
 	position: relative
 	z-index: 3	
 .breadcrumbs-list
@@ -596,7 +597,63 @@ body, html
 	transition-duration: 200ms
 	transition-timing-function: ease-in
 
+.header-content-navigation
+	width: 100%
+	outline: 1px solid blue
+	padding-top: 30px
+	+initial-flex
+	&.layout-position
+		padding-left: 23px
+.navigation-and-preview
+	width: 50%	
+	outline: 1px solid green
+	+initial-flex
 
+.navigation-site-page-header
+	width: 210px
+	outline: 1px solid magenta
+	h1
+		font-weight: 700
+		font-size: 24px
+		color: $colorForFormTitle
+		letter-spacing: 0.5px
+		margin-bottom: 53px
+		padding-left: 11px
+
+.navigation-site-page__link
+	font-size: 14px
+	color: $labelColor
+	font-weight: 700
+	padding: 4px 14px 4px 10px
+	background-color: transparent
+	border-radius: 70px
+	letter-spacing: 0.6px
+.navigation-site-page__item
+	margin-bottom: 22px
+	&--active
+		margin-bottom: 11px
+		.navigation-site-page__teaser
+			height: auto
+		a
+			background-color: $breadcrumbsBackground
+			color: $pinkColor
+	&:last-child
+		margin-bottom: 0
+	
+.page-slider
+	width: 440px
+	outline: 1px solid magenta
+	height: 500px
+.navigation-site-page__teaser
+	font-size: 12px
+	color: $labelColor
+	padding: 6px 68px 0 10px
+	display: block
+	overflow: hidden
+	height: 0
+.description
+	width: 50%
+	outline: 1px solid green
 
 .main-header__col1
 	width: 50%

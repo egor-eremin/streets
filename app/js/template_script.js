@@ -120,6 +120,8 @@ $(document).ready(function () {
 
 
     })();
+
+    setNavMenuInteractive($('.navigation-site-page__item'), 'navigation-site-page__item--active');
     
     //-------------Раздел функций
 	function toggleMenuItem(menu_item, menu_popup) {
@@ -144,15 +146,6 @@ $(document).ready(function () {
         return false;
     }
 	//------------------------------------------------------------------------------------------------------
-   
-   
-	//Активация медиа-запросов в javascript
-	//@param mediaQueryString (String) - строка медиа-запроса как в CSS
-	//@param action(function) - функция, которая выполняется при соблюдении условий медиа-запроса
-
-
-
-
 
 	//Медиа-запросы в javascript (Если нужно)
 	//-------------------------------------------------------------------------------------------------------
@@ -188,4 +181,28 @@ function media(mediaQueryString, action){
 	var mql = window.matchMedia(mediaQueryString); //стандартный медиазапрос для смены режима просмотра
 	handleMatchMedia(mql);
 	mql.addListener(handleMatchMedia);
+}
+
+//Включает клик на элементах меню, заставляя его переключаться. Добавляет к выбранному меню активный класс
+//@param $selectors (jquery collection) - выборка из элементов меню
+//@param activeClass (string) - имя активного класса
+function setNavMenuInteractive($selectors, activeClass){
+    //Навешиваем клик на все элементы выборки
+
+    $($selectors).on('click', function (event) {
+        var clickedIndex = $($selectors).index($(this));
+        event.preventDefault();
+            //Предварительная очистка
+            $.each($selectors, function (index) { 
+                if(index !== clickedIndex) {
+                    $(this).removeClass(activeClass);
+                    $(this).find('.navigation-site-page__teaser').slideUp();
+                }
+            });
+            if(!$(this).hasClass(activeClass)) {
+                $(this).addClass(activeClass);
+                $(this).find('.navigation-site-page__teaser').slideDown();
+                currentIndex = $($selectors).index($(this));
+            }
+    });
 }
