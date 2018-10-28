@@ -173,6 +173,15 @@ $(document).ready(function () {
     })();
 
     setNavMenuInteractive($('.navigation-site-page__item'), 'navigation-site-page__item--active');
+    if($('.about-description').length > 0) {
+        $('.about-description').mCustomScrollbar({
+            axis: 'y',
+            scrollbarPosition: 'inside',
+            theme: 'light',
+            autoHideScrollbar: true,
+        });
+    }
+    
     
     //-------------Раздел функций
 	function toggleMenuItem(menu_item, menu_popup) {

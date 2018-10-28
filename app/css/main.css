@@ -547,7 +547,8 @@ body, html {
   position: relative;
   height: 100vh;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow: hidden; }
 
 .two-side-wrapper__dark {
   background: radial-gradient(at 50% 30%, #bc2ba2, #8d1d79);
@@ -636,7 +637,7 @@ body, html {
   transition-timing-function: ease-in; }
 
 .header-content-navigation {
-  height: 100vh;
+  flex-grow: 1;
   width: 100%;
   padding-top: 30px;
   display: flex;
@@ -649,7 +650,8 @@ body, html {
   align-content: stretch; }
 
 .header-content-navigation.layout-position {
-  padding-left: 23px; }
+  padding-left: 23px;
+  padding-right: 23px; }
 
 .navigation-and-preview {
   width: 50%;
@@ -769,9 +771,58 @@ body, html {
   overflow: hidden;
   height: 0; }
 
-.description {
+.about-description {
   width: 50%;
-  outline: 1px solid green; }
+  overflow: auto;
+  padding-bottom: 40px;
+  padding-top: 12px;
+  height: 850px; }
+
+.about-description__wrapper {
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%; }
+
+.about-description__wrapper p {
+  width: 100%;
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.74;
+  letter-spacing: 0.45px;
+  margin-bottom: 46px; }
+
+.about-description__wrapper blockquote {
+  background-color: #fff;
+  width: 107%;
+  margin: 0;
+  display: block;
+  padding: 25px 70px 24px 66px;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 20px;
+  letter-spacing: 0.69px;
+  line-height: 1.5;
+  position: relative;
+  margin-bottom: 46px; }
+
+.about-description__wrapper blockquote::before {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -30px;
+  right: 60px;
+  content: '';
+  background: url("../images/object/blockquote.svg") center center no-repeat; }
+
+.about-description__wrapper blockquote::after {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -30px;
+  right: 4px;
+  content: '';
+  background: url("../images/object/blockquote.svg") center center no-repeat; }
 
 .main-header__col1 {
   width: 50%; }
