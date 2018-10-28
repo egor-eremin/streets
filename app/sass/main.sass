@@ -1,5 +1,6 @@
 $bright-side: #e1ebf3
 $dark-side: radial-gradient(at 50% 30%, #bc2ba2, #8d1d79)
+$darkSideAbout: #782376
 $limeHover: #a1b94c
 $colorForFormTitle: #18295b
 $inputBackgroundColor: #f1f5f9
@@ -10,6 +11,7 @@ $errorIcon: #e8954b
 $pinkColor: #8d1e7a
 $breadcrumbsBackground: rgba(255, 255, 255, 0.5)
 $breadcrumbsHoverColor: #1b2c5e
+$pageArrowShift: 87px
 
 =initial-flex
 	display: flex
@@ -562,6 +564,8 @@ body, html
 		content: ''
 		z-index: 0
 		opacity: 0.4
+.two-side-wrapper__dark--about
+	background-color: $darkSideAbout
 
 .breadcrumbs-navigation,
 .header-content-navigation
@@ -598,20 +602,22 @@ body, html
 	transition-timing-function: ease-in
 
 .header-content-navigation
+	height: 100vh
 	width: 100%
-	outline: 1px solid blue
 	padding-top: 30px
 	+initial-flex
+	align-items: stretch
+	align-content: stretch
 	&.layout-position
 		padding-left: 23px
 .navigation-and-preview
 	width: 50%	
-	outline: 1px solid green
 	+initial-flex
+	align-content: stretch
+	align-items: stretch
 
 .navigation-site-page-header
 	width: 210px
-	outline: 1px solid magenta
 	h1
 		font-weight: 700
 		font-size: 24px
@@ -628,12 +634,19 @@ body, html
 	background-color: transparent
 	border-radius: 70px
 	letter-spacing: 0.6px
+	transition-property: background-color
+	transition-timing-function: ease-in
+	transition-duration: 200ms
 .navigation-site-page__item
 	margin-bottom: 22px
+	&:hover
+		a
+			background-color: #fff
 	&--active
 		margin-bottom: 11px
 		.navigation-site-page__teaser
 			height: auto
+			padding: 6px 68px 0 10px
 		a
 			background-color: $breadcrumbsBackground
 			color: $pinkColor
@@ -642,12 +655,63 @@ body, html
 	
 .page-slider
 	width: 440px
-	outline: 1px solid magenta
-	height: 500px
+	padding: 18px 30px 0 20px
+	display: flex
+	flex-direction: column
+	flex-wrap: nowrap
+	justify-content: flex-end
+	height: 91.6%
+
+.page-slider-navigation
+	text-align: center
+	width: 100%
+	flex-grow: 0
+	flex-shrink: 0
+	padding: 33px 0
+	position: relative
+	.slick-arrow
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		cursor: pointer
+		svg
+			.main-arrow-prev,
+			.main-slider-next
+				transition-property: fill
+				transition-duration: 300ms
+				transition-timing-function: ease-in-out
+		&:hover
+			svg
+				.main-arrow-prev,
+				.main-slider-next
+					fill: #fff 
+	.slick-prev
+	 	left: $pageArrowShift
+	.slick-next
+		right: $pageArrowShift
+
+
+.page-slider-image
+	height: 90%
+	padding-top: 0
+	overflow: hidden
+
+.page-slider__item
+	img
+		width: 100%
+
+.page-slider__enumerator
+	display: inline-block
+	font-weight: 700
+	color: $colorForFormTitle
+	font-size: 18px
+	padding: 14px 31px
+	background-color: $breadcrumbsBackground
+	border-radius: 70px
 .navigation-site-page__teaser
 	font-size: 12px
 	color: $labelColor
-	padding: 6px 68px 0 10px
+	padding: 0
 	display: block
 	overflow: hidden
 	height: 0

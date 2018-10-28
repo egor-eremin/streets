@@ -121,6 +121,57 @@ $(document).ready(function () {
 
     })();
 
+    (function initPageSlider(){
+        if($('.page-slider').length > 0) {
+            $('.page-slider').on('init', function(event, slick){
+                var slideCount = slick.slideCount,
+                    currentSlide = slick.currentSlide + 1;
+                    $('.page-slider__current').html(String(currentSlide));
+                    $('.page-slider__total').html(String(slideCount));
+               
+            });
+            $('.page-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                var slideText = nextSlide + 1,
+                    slideCount = slick.slideCount;
+                    $('.page-slider__current').html(String(slideText));
+                    $('.page-slider__total').html(String(slideCount));
+                
+            });
+            $('.page-slider-image').slick({
+                appendArrows: $('.page-slider-navigation'),
+                swipe: true,
+                infinite: true,
+                fade: true,
+                slidesToSHow: 1,
+                slidesToScroll: 1,
+                prevArrow: '<button type="button" class="slick-arrow  slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="12.969" height="23" viewBox="0 0 12.969 23">\n' +
+                '<defs>\n' +
+                '    <style>\n' +
+                '      .main-arrow-prev {\n' +
+                '        fill: rgba(255, 255, 255, 0.5);\n' +
+                '        fill-rule: evenodd;\n' +
+                '      }\n' +
+                '    </style>\n' +
+                '  </defs>\n' +
+                '  <path class="main-arrow-prev" d="M431.449,235.835L423.19,227.5l8.26-8.336A1.854,1.854,0,0,0,430.175,216h0a1.791,1.791,0,0,0-1.274.535l-9.2,9.28a2.4,2.4,0,0,0,0,3.37l9.2,9.28a1.794,1.794,0,0,0,1.274.534h0A1.854,1.854,0,0,0,431.449,235.835Z" transform="translate(-419.031 -216)"/>\n' +
+                '</svg></button>',
+                nextArrow: '<button type="button" class="slick-arrow  slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="23" viewBox="0 0 13 23">\n' +
+                '<defs>\n' +
+                '    <style>\n' +
+                '      .main-slider-next {\n' +
+                '        fill: rgba(255, 255, 255, 0.5);\n' +
+                '        fill-rule: evenodd;\n' +
+                '      }\n' +
+                '    </style>\n' +
+                '  </defs>\n' +
+                '  <path class="main-slider-next" d="M500.551,235.835l8.259-8.335-8.26-8.336A1.854,1.854,0,0,1,501.825,216h0a1.791,1.791,0,0,1,1.275.535l9.2,9.28a2.4,2.4,0,0,1,0,3.37l-9.2,9.28a1.8,1.8,0,0,1-1.275.534h0A1.854,1.854,0,0,1,500.551,235.835Z" transform="translate(-500 -216)"/>\n' +
+                '</svg></button>',
+
+               
+            });
+        }
+    })();
+
     setNavMenuInteractive($('.navigation-site-page__item'), 'navigation-site-page__item--active');
     
     //-------------Раздел функций
@@ -188,7 +239,6 @@ function media(mediaQueryString, action){
 //@param activeClass (string) - имя активного класса
 function setNavMenuInteractive($selectors, activeClass){
     //Навешиваем клик на все элементы выборки
-
     $($selectors).on('click', function (event) {
         var clickedIndex = $($selectors).index($(this));
         event.preventDefault();
