@@ -8,6 +8,8 @@ $labelColor: #485157
 $successfullIcon: #abc64a
 $errorIcon: #e8954b
 $pinkColor: #8d1e7a
+$breadcrumbsBackground: rgba(255, 255, 255, 0.5)
+$breadcrumbsHoverColor: #1b2c5e
 
 =initial-flex
 	display: flex
@@ -561,7 +563,41 @@ body, html
 		z-index: 0
 		opacity: 0.4
 
-	
+.breadcrumbs-navigation
+	position: relative
+	z-index: 3	
+.breadcrumbs-list
+	+initial-flex	
+
+.breadcrumbs__item
+	margin-right: 17px
+	&:not(&--active):hover
+		a
+			background-color: #fff
+			color: $breadcrumbsHoverColor
+	&:last-child
+		margin-right: 0
+	&--active
+		margin-left: -8px
+		a
+			background-color: transparent
+			cursor: auto
+		
+
+.breadcrumbs-item__link
+	background-color: $breadcrumbsBackground
+	border-radius: 70px
+	padding: 4px 13px 6px 13px
+	font-weight: 700
+	color: $labelColor
+	font-size: 11px
+	letter-spacing: 0.3px
+	transition-property: background-color
+	transition-duration: 200ms
+	transition-timing-function: ease-in
+
+
+
 .main-header__col1
 	width: 50%
 .main-header__wrapper
@@ -570,7 +606,7 @@ body, html
 	padding-top: 57px
 	padding-bottom: 27px
 	&--about
-		padding-bottom: 0
+		padding-bottom: 20px
 .main-header
 	z-index: 3
 	position: relative
