@@ -22,7 +22,6 @@ $(document).ready(function () {
 		});
     })();
 
-
     (function animateBurger() {
         var controller = new ScrollMagic.Controller();
         var scene = new ScrollMagic.Scene({
@@ -209,39 +208,24 @@ $(document).ready(function () {
         }
     })();
 
-    setNavMenuInteractive($('.navigation-site-page__item'), 'navigation-site-page__item--active');
-    if($('.about-description').length > 0) {
-        $('.about-description').mCustomScrollbar({
-            axis: 'y',
-            scrollbarPosition: 'inside',
-            theme: 'light',
-            autoHideScrollbar: false,
-        });
-    }
-    
-    
-    //-------------Раздел функций
-	function toggleMenuItem(menu_item, menu_popup) {
-        if (menu_item.length > 0) {
-            menu_item.on('click', function (e) {
-                e.preventDefault();
-                if (!menu_popup.hasClass('active')) {
-                    menu_popup.addClass('active');
-                    $(this).addClass('active');
-                } else {
-                    menu_popup.removeClass('active');
-                    $(this).removeClass('active');
-                }
+    (function activateAccordeonSaidbarMenu() {
+        if ($('.navigation-site-page').length > 0) {
+            $('.navigation-site-page__item.navigation-site-page__item--active .navigation-site-page__teaser').css('display', 'block');
+            setNavMenuInteractive($('.navigation-site-page__link'), 'navigation-site-page__item--active', 'navigation-site-page__teaser', 'navigation-site-page__item');
+        }
+    })();
+
+    (function initCustomScrollbar() {
+        if($('.about-description').length > 0) {
+            $('.about-description').mCustomScrollbar({
+                axis: 'y',
+                scrollbarPosition: 'inside',
+                theme: 'light',
+                autoHideScrollbar: false,
             });
         }
-    }
+    })();
 
-    function animatedScrollToPosition($selector, position, duration){
-        $($selector).animate({
-            scrollTop: position
-        }, duration);
-        return false;
-    }
 
 	//Медиа-запросы в javascript (Если нужно)
 	//-------------------------------------------------------------------------------------------------------
@@ -257,6 +241,28 @@ $(document).ready(function () {
 });
 
 
+function toggleMenuItem(menu_item, menu_popup) {
+    if (menu_item.length > 0) {
+        menu_item.on('click', function (e) {
+            e.preventDefault();
+            if (!menu_popup.hasClass('active')) {
+                menu_popup.addClass('active');
+                $(this).addClass('active');
+            } else {
+                menu_popup.removeClass('active');
+                $(this).removeClass('active');
+            }
+        });
+    }
+}
+
+function animatedScrollToPosition($selector, position, duration){
+    $($selector).animate({
+        scrollTop: position
+    }, duration);
+    return false;
+}
+
 function media(mediaQueryString, action){
 	'use strict';
 	var handleMatchMedia = function (mediaQuery) {
@@ -271,25 +277,23 @@ function media(mediaQueryString, action){
 	mql.addListener(handleMatchMedia);
 }
 
-//Включает клик на элементах меню, заставляя его переключаться. Добавляет к выбранному меню активный класс
-//@param $selectors (jquery collection) - выборка из элементов меню
-//@param activeClass (string) - имя активного класса
-function setNavMenuInteractive($selectors, activeClass){
+function setNavMenuInteractive($selectors, activeClass, childBlockClass, parentBlockClass){
     //Навешиваем клик на все элементы выборки
-    $($selectors).on('click', function (event) {
-        var clickedIndex = $($selectors).index($(this));
+    $selectors.on('click', function (event) {
+        var thisSiblings = $(this).siblings('.' + childBlockClass);
+        var thisParent = $(this).parents('.' + parentBlockClass);
+
         event.preventDefault();
-            //Предварительная очистка
-            $.each($selectors, function (index) { 
-                if(index !== clickedIndex) {
-                    $(this).removeClass(activeClass);
-                    $(this).find('.navigation-site-page__teaser').slideUp();
-                }
-            });
-            if(!$(this).hasClass(activeClass)) {
-                $(this).addClass(activeClass);
-                $(this).find('.navigation-site-page__teaser').slideDown();
-                currentIndex = $($selectors).index($(this));
-            }
+        if(!$(thisParent).hasClass(activeClass)) {
+            $('.' + parentBlockClass).removeClass(activeClass);
+            $(thisParent).addClass(activeClass);
+            $('.' + childBlockClass).slideUp(250);
+            setTimeout(function(){
+                thisSiblings.slideDown(250, function() {thisSiblings.css({display: "block"})});
+            }, 300);
+        } else {
+            $(thisParent).removeClass(activeClass);
+            thisSiblings.slideUp(250);
+        }
     });
 }

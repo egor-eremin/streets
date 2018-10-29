@@ -693,13 +693,6 @@ body, html {
 .navigation-site-page__item:hover a {
   background-color: #fff; }
 
-.navigation-site-page__item--active {
-  margin-bottom: 11px; }
-
-.navigation-site-page__item--active .navigation-site-page__teaser {
-  height: auto;
-  padding: 6px 68px 0 10px; }
-
 .navigation-site-page__item--active a {
   background-color: rgba(255, 255, 255, 0.5);
   color: #8d1e7a; }
@@ -766,10 +759,9 @@ body, html {
 .navigation-site-page__teaser {
   font-size: 12px;
   color: #485157;
-  padding: 0;
-  display: block;
-  overflow: hidden;
-  height: 0; }
+  padding: 6px 68px 0 10px;
+  display: none;
+  overflow: hidden; }
 
 .about-description {
   width: 50%;
