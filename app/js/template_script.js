@@ -30,8 +30,7 @@ $(document).ready(function () {
             duration: "100%"
         })
             .setTween(new TweenMax.to('#main-burger', 0.5, { css: { transform: 'rotate(0deg)'}}))
-            .addTo(controller);
-
+            .addTo(controller)
     })();
     
 	(function activateModalCallbackForm() {
@@ -87,10 +86,16 @@ $(document).ready(function () {
 
     (function initMainSlider() {
 
-        $('.main-slider__list').on('init', function(e, slick) {
+        var time = 2;
+        var $slick = $('.main-slider__list'),
+            isPause,
+            tick,
+            percentTime = 0;
+
+        $slick.on('init', function(e, slick) {
             $('.slick-arrow').wrapAll('<div class=\'main-slider-arrow\'></div>')
         });
-        $('.main-slider__list').slick({
+        $slick.slick({
             fade:true,
             dots: true,
             arrows: true,
@@ -115,44 +120,46 @@ $(document).ready(function () {
             '    </style>\n' +
             '  </defs>\n' +
             '  <path class="main-slider-next" d="M500.551,235.835l8.259-8.335-8.26-8.336A1.854,1.854,0,0,1,501.825,216h0a1.791,1.791,0,0,1,1.275.535l9.2,9.28a2.4,2.4,0,0,1,0,3.37l-9.2,9.28a1.8,1.8,0,0,1-1.275.534h0A1.854,1.854,0,0,1,500.551,235.835Z" transform="translate(-500 -216)"/>\n' +
-            '</svg></button>'
+            '</svg>' +
+             '<svg class="progress-round" width="50" height="50">' +
+                '<circle class="circle-progress" r="24" cx="50%" cy="50%">'+
+                '</circle>'+
+             '</svg>' +
+            '</button>'
         });
+        $slick.on('beforeChange', function(slick, currentSlide, nextSlide){
+            console.log('sdf');
+            percentTime = 0;
+            startProgressbar();
+        });
+
+        function startProgressbar() {
+            clearTimeout(tick);
+            // isPause = false;
+            tick = setInterval(interval, 20);
+            // $rbar.fadeIn('slow');
+        }
+        var $rbar = $('.circle-progress');
+        var rlen = 2 * Math.PI * $rbar.attr('r');
+
+        function interval() {
+            // if (isPause === false) {
+                percentTime += 1 / (time + 0.1);
+                $rbar.css({
+                    strokeDasharray: rlen,
+                    strokeDashoffset: rlen * (1 - percentTime / 100)
+                });
+                if (percentTime >= 100) {
+                    $slick.slick('slickNext');
+                    percentTime = 0;
+                    startProgressbar();
+                }
+            // }
+        }
+        startProgressbar();
 
 
     })();
-    
-    //-------------Раздел функций
-	function toggleMenuItem(menu_item, menu_popup) {
-        if (menu_item.length > 0) {
-            menu_item.on('click', function (e) {
-                e.preventDefault();
-                if (!menu_popup.hasClass('active')) {
-                    menu_popup.addClass('active');
-                    $(this).addClass('active');
-                } else {
-                    menu_popup.removeClass('active');
-                    $(this).removeClass('active');
-                }
-            });
-        }
-    }
-
-    function animatedScrollToPosition($selector, position, duration){
-        $($selector).animate({
-            scrollTop: position
-        }, duration);
-        return false;
-    }
-	//------------------------------------------------------------------------------------------------------
-   
-   
-	//Активация медиа-запросов в javascript
-	//@param mediaQueryString (String) - строка медиа-запроса как в CSS
-	//@param action(function) - функция, которая выполняется при соблюдении условий медиа-запроса
-
-
-
-
 
 	//Медиа-запросы в javascript (Если нужно)
 	//-------------------------------------------------------------------------------------------------------
@@ -165,16 +172,15 @@ $(document).ready(function () {
 	media('all and (min-width: 1270px)', function(){
 		// console.log('1270px');
 	});
-	
-
-
-
-
-	
-    
 });
 
 
+function animatedScrollToPosition($selector, position, duration){
+    $($selector).animate({
+        scrollTop: position
+    }, duration);
+    return false;
+}
 
 function media(mediaQueryString, action){
 	'use strict';
@@ -188,4 +194,19 @@ function media(mediaQueryString, action){
 	var mql = window.matchMedia(mediaQueryString); //стандартный медиазапрос для смены режима просмотра
 	handleMatchMedia(mql);
 	mql.addListener(handleMatchMedia);
+}
+
+function toggleMenuItem(menu_item, menu_popup) {
+    if (menu_item.length > 0) {
+        menu_item.on('click', function (e) {
+            e.preventDefault();
+            if (!menu_popup.hasClass('active')) {
+                menu_popup.addClass('active');
+                $(this).addClass('active');
+            } else {
+                menu_popup.removeClass('active');
+                $(this).removeClass('active');
+            }
+        });
+    }
 }

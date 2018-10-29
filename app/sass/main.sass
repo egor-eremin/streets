@@ -659,7 +659,7 @@ body, html
 .main-menu__list-item a:hover::before
 	transform: translateX(0)
 .btn-callback
-	background-color: transparent
+	background-color: #abc64a
 	font-weight: 700
 	font-size: .875rem
 	align-items: center
@@ -672,9 +672,9 @@ body, html
 	display: flex
 	justify-content: space-between
 	transition: .3s ease-in-out
-
+	.btn-callback img
+		flex-shrink: 0
 .btn-callback:hover
-	background-color: #abc64a
 	width: 169px
 
 .main-menu__list-item
@@ -1140,6 +1140,21 @@ input:-webkit-autofill
 	margin-right: 30px
 	&:hover
 		border-color: rgba(141, 30, 121, 1)
+
+.circle-progress
+    //transition: .3s ease-in-out
+    fill: transparent
+    stroke: rgba(141, 30, 121, 0.6)
+    stroke-width: 2px
+
+.progress-round
+	flex-shrink: 0
+	position: absolute
+.main-slider .slick-next
+	border: none
+.main-slider .slick-next:hover .circle-progress
+    stroke: rgba(141, 30, 121, 1)
+
 
 @media (max-width: 1360px)
 	.main-menu
