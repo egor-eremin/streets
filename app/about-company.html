@@ -14,10 +14,13 @@
 <div class="layout-template-wrapper">
     <div class="layout-template-wrapper__inner layout-template-wrapper__inner_overflow-hidden">
         <div class="two-side-wrapper">
-            <div class="two-side-wrapper__dark"></div>
-            <div class="two-side-wrapper__bright"></div>
+            <div class="two-side-wrapper__dark  two-side-wrapper__dark--about"></div>
+            <div class="two-side-wrapper__bright  two-side-wrapper__bright--about">
+                <div class="two-side-wrapper-bright__wrapper">
+                </div>
+            </div>
             <header class="main-header">
-                <div class="layout-position main-header__wrapper">
+                <div class="layout-position main-header__wrapper  main-header__wrapper--about">
                     <div class="main-header__col main-header__col_bright">
                         <div class="main-logo">
                             <svg width="48" height="49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -416,225 +419,110 @@
                     </div>
                 </div>
             </header>
-            <div class="main-slider">
-                <div class="layout-position">
-                    <div class="main-slider__list">
-                        <div class="main-slider__item">
-                            <div class="main-slider__col main-slider__col-left">
-                                <div class="main-slider__text main-slider__text_left">
-                                    <div class="main-slider__title main-slider__title_dark">
-                                        Выбери свой
-                                    </div>
-                                    <div class="main-slider__prev-text">
-                                        Сидя за компьютером в офисе, когда не
-                                        нельзя отвдикаться от важной работы
-                                        иногда хочется перекусить не
-                                        дождавшись обеда и ужина.
-                                    </div>
-                                    <a href="#" class="btn btn_pulsate">
-                                        <span>Подробнее</span>
-                                        <span class=btn___arrow>
-                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14" height="14"
-                                                 viewBox="-2 0 8.1 14" style="enable-background:new -2 0 8.1 14;" xml:space="preserve">
-                                                <style type="text/css">
-                                                    .st0 {
-                                                        fill: #FFFFFF;
-                                                    }
-                                                </style>
-                                                <path class="st0" d="M0.4,12.1L5.4,7L0.3,1.9c-0.4-0.4-0.4-1.2,0-1.6C0.6,0.1,0.8,0,1.1,0l0,0c0.3,0,0.5,0.1,0.8,0.3L7.5,6
-                                                    C8,6.5,8,7.4,7.5,8l-5.6,5.7C1.7,13.9,1.4,14,1.1,14l0,0C0.5,14,0,13.5,0,12.8C0,12.5,0.1,12.3,0.4,12.1z"/>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="main-slider-stub">
-                                    <img src="images/object/slidу-stub-left.png" alt="slide-stub">
-                                </div>
+            <nav class="breadcrumbs-navigation  layout-position">
+                    <ul class="breadcrumbs-list">
+                        <li class="breadcrumbs__item"><a href="/" class="breadcrumbs-item__link"><span>Главная</span></a></li>
+                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs-item__link"><span>О брэнде</span></a></li>
+                        <li class="breadcrumbs__item  breadcrumbs__item--active"><a href="#" class="breadcrumbs-item__link"><span>О компании</span></a></li>
+                    </ul>
+            </nav>
+            <div class="header-content-navigation  layout-position">
+                <div class="navigation-and-preview">
+                    <nav class="navigation-site-page-header">
+                        <h1>История</h1>
+                        <ul class="navigation-site-page">
+                            <li class="navigation-site-page__item  navigation-site-page__item--active"><a href="#" class="navigation-site-page__link"><span>О компании</span></a>
+                                <span class="navigation-site-page__teaser">
+                                    О компании, небольшой тизер
+                                </span>
+                            </li>
+                            <li class="navigation-site-page__item"><a href="#" class="navigation-site-page__link"><span>История</span></a>
+                                <span class="navigation-site-page__teaser">
+                                        История, небольшой тизер
+                                </span>
+                            </li>
+                            <li class="navigation-site-page__item"><a href="#" class="navigation-site-page__link"><span>Сертификаты</span></a>
+                                <span class="navigation-site-page__teaser">
+                                        Сертификаты, небольшой тизер
+                                </span>
+                            </li>
+                            <li class="navigation-site-page__item"><a href="#" class="navigation-site-page__link"><span>Для партнеров</span></a>
+                                <span class="navigation-site-page__teaser">
+                                        Для партнеров, небольшой тизер
+                                </span>
+                            </li>
+                            <li class="navigation-site-page__item"><a href="#" class="navigation-site-page__link"><span>Вакансии</span></a>
+                                <span class="navigation-site-page__teaser">
+                                        Вакансии, небольшой тизер
+                                </span>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <div class="page-slider">
+                        <div class="page-slider-image">
+                            <div class="page-slider__item">
+                                <img src="userdata/about/slider/slide-1.png" alt="kitchen">
                             </div>
-                            <div class="main-slider__col main-slider__col-right">
-                                <div class="main-slider__text main-slider__text_right">
-                                    <div class="main-slider__title main-slider__title_bright">
-                                        Чикенбургер
-                                    </div>
-                                </div>
-                                <div class="main-slider-stub main-slider-stub_right">
-                                    <img src="images/object/slidу-stub-right.png" alt="slide-stub">
-                                </div>
+                            <div class="page-slider__item">
+                                    <img src="userdata/about/slider/slide-2.jpg" alt="kitchen">
                             </div>
-                        </div>
-                        <div class="main-slider__item">
-                            <div class="main-slider__col main-slider__col-left">
-                                <div class="main-slider__text main-slider__text_left">
-                                    <div class="main-slider__title main-slider__title_dark">
-                                        Выбери свой
-                                    </div>
-                                    <div class="main-slider__prev-text">
-                                        Сидя за компьютером в офисе, когда не
-                                        нельзя отвдикаться от важной работы
-                                        иногда хочется перекусить не
-                                        дождавшись обеда и ужина.
-                                    </div>
-                                    <a href="#" class="btn btn_pulsate">
-                                        <span>Подробнее</span>
-                                        <span class=btn___arrow>
-                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14" height="14"
-                                                 viewBox="-2 0 8.1 14" style="enable-background:new -2 0 8.1 14;" xml:space="preserve">
-                                                <style type="text/css">
-                                                    .st0 {
-                                                        fill: #FFFFFF;
-                                                    }
-                                                </style>
-                                                <path class="st0" d="M0.4,12.1L5.4,7L0.3,1.9c-0.4-0.4-0.4-1.2,0-1.6C0.6,0.1,0.8,0,1.1,0l0,0c0.3,0,0.5,0.1,0.8,0.3L7.5,6
-                                                    C8,6.5,8,7.4,7.5,8l-5.6,5.7C1.7,13.9,1.4,14,1.1,14l0,0C0.5,14,0,13.5,0,12.8C0,12.5,0.1,12.3,0.4,12.1z"/>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="main-slider-stub">
-                                    <img src="images/object/slidу-stub-left-1.png" alt="slide-stub">
-                                </div>
-                            </div>
-                            <div class="main-slider__col main-slider__col-right">
-                                <div class="main-slider__text main-slider__text_right">
-                                    <div class="main-slider__title main-slider__title_bright">
-                                        Чикенбургер
-                                    </div>
-                                </div>
-                                <div class="main-slider-stub main-slider-stub_right">
-                                    <img src="images/object/slidу-stub-right.png" alt="slide-stub">
-                                </div>
+                            <div class="page-slider__item">
+                                    <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
                             </div>
                         </div>
-                        <div class="main-slider__item">
-                            <div class="main-slider__col main-slider__col-left">
-                                <div class="main-slider__text main-slider__text_left">
-                                    <div class="main-slider__title main-slider__title_dark">
-                                        Выбери свой
-                                    </div>
-                                    <div class="main-slider__prev-text">
-                                        Сидя за компьютером в офисе, когда не
-                                        нельзя отвдикаться от важной работы
-                                        иногда хочется перекусить не
-                                        дождавшись обеда и ужина.
-                                    </div>
-                                    <a href="#" class="btn btn_pulsate">
-                                        <span>Подробнее</span>
-                                        <span class=btn___arrow>
-                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14" height="14"
-                                                 viewBox="-2 0 8.1 14" style="enable-background:new -2 0 8.1 14;" xml:space="preserve">
-                                                <style type="text/css">
-                                                    .st0 {
-                                                        fill: #FFFFFF;
-                                                    }
-                                                </style>
-                                                <path class="st0" d="M0.4,12.1L5.4,7L0.3,1.9c-0.4-0.4-0.4-1.2,0-1.6C0.6,0.1,0.8,0,1.1,0l0,0c0.3,0,0.5,0.1,0.8,0.3L7.5,6
-                                                    C8,6.5,8,7.4,7.5,8l-5.6,5.7C1.7,13.9,1.4,14,1.1,14l0,0C0.5,14,0,13.5,0,12.8C0,12.5,0.1,12.3,0.4,12.1z"/>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="main-slider-stub">
-                                    <img src="images/object/slidу-stub-left.png" alt="slide-stub">
-                                </div>
-                            </div>
-                            <div class="main-slider__col main-slider__col-right">
-                                <div class="main-slider__text main-slider__text_right">
-                                    <div class="main-slider__title main-slider__title_bright">
-                                        Чикенбургер
-                                    </div>
-                                </div>
-                                <div class="main-slider-stub main-slider-stub_right">
-                                    <img src="images/object/slidу-stub-right.png" alt="slide-stub">
-                                </div>
-                            </div>
+                        <div class="page-slider-navigation">
+                               <div class="page-slider__enumerator">
+                                   <span class="page-slider__current"></span> /
+                                   <span class="page-slider__total"></span>
+                               </div>
+
                         </div>
+
+
+                    </div>
+                </div>
+                <div class="about-description  mCustomScrollBar">
+                    <div class="about-description__wrapper">
+                        <p>
+                            Наша компания специализируется на производстве продуктов быстрого питания в индивидуальной упаковке готовой к употреблению под торговой маркой «StreetS». Ассортимент включает в себя гамбургеры, сэндвичи, роллы в мексиканской лепешке и шашлык в армянском лаваше. Компания родилась в Иркутске и работает с июля 2011 года. Наша команда торговых представителей доставляет свежую продукцию по городам Иркутск, Ангарск, Усолье-Сибирское, Шелехов,  пос. Хомутово и Усть-Ордынский. На сегодняшний день работаем более чем с 1300 торговыми точками, и за 7 лет нашей работы покупатели сделали выбор в пользу нас более 8 миллионов раз. 
+                        </p>
+                        <blockquote>
+                            Цель нашей компании: Удовлетворять потребности покупателей свежими и качественными продуктами быстрого питания в ближайшем магазине!
+                        </blockquote>
+                        <p>
+                            Вы можете увидеть нас в ближайшем магазине или АЗС, а если нас там нет – то мы прямо сейчас работаем над этим.
+                        </p>
+                        <p>
+                            При изготовлении гамбургеров мы используем булочку с кунжутом, куриную и говяжью котлету собственного производства, что позволяет контролировать качество продукта на всех этапах приготовления. При производстве используется охлажденная курица «Саянский бройлер», соуса и кетчуп Heinz, майонез Янта Провансаль – все это повышает вкусовые характеристики нашей продукции. Мы не используем консерванты – в этом нет необходимости, так как все ингредиенты мы производим сами и только в необходимом количестве.
+                        </p>
+
+                        <p>
+                            Наша компания специализируется на производстве продуктов быстрого питания в индивидуальной упаковке готовой к употреблению под торговой маркой «StreetS». Ассортимент включает в себя гамбургеры, сэндвичи, роллы в мексиканской лепешке и шашлык в армянском лаваше. Компания родилась в Иркутске и работает с июля 2011 года. Наша команда торговых представителей доставляет свежую продукцию по городам Иркутск, Ангарск, Усолье-Сибирское, Шелехов,  пос. Хомутово и Усть-Ордынский. На сегодняшний день работаем более чем с 1300 торговыми точками, и за 7 лет нашей работы покупатели сделали выбор в пользу нас более 8 миллионов раз. 
+                        </p>
+                        <blockquote>
+                            Цель нашей компании: Удовлетворять потребности покупателей свежими и качественными продуктами быстрого питания в ближайшем магазине!
+                        </blockquote>
+                        <p>
+                            Вы можете увидеть нас в ближайшем магазине или АЗС, а если нас там нет – то мы прямо сейчас работаем над этим.
+                        </p>
+                        <p>
+                            При изготовлении гамбургеров мы используем булочку с кунжутом, куриную и говяжью котлету собственного производства, что позволяет контролировать качество продукта на всех этапах приготовления. При производстве используется охлажденная курица «Саянский бройлер», соуса и кетчуп Heinz, майонез Янта Провансаль – все это повышает вкусовые характеристики нашей продукции. Мы не используем консерванты – в этом нет необходимости, так как все ингредиенты мы производим сами и только в необходимом количестве.
+                        </p>
+
+
+
                     </div>
                 </div>
             </div>
             <button class="scroll-down">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="40px" height="40px">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="40px" height="40px">
                         <path d="M256,0C156.595,0,75.726,82.14,75.726,183.099v145.807C75.726,429.865,156.595,512,256,512    c99.399,0,180.274-81.886,180.274-182.534V183.099C436.274,82.14,355.399,0,256,0z M402.366,329.466    c0,81.954-65.656,148.627-146.366,148.627c-80.705,0-146.366-66.927-146.366-149.192V183.099    c0-82.265,65.661-149.192,146.366-149.192c80.711,0,146.366,66.927,146.366,149.192V329.466z" fill="#FFFFFF"/>
                         <path d="M256,140.15c-9.364,0-16.954,7.59-16.954,16.954v59.338c0,9.364,7.59,16.954,16.954,16.954    c9.364,0,16.954-7.59,16.954-16.954v-59.338C272.954,147.74,265.364,140.15,256,140.15z" fill="#FFFFFF"/>
                 </svg>
             </button>
         </div>
         <main class="main-content">
-            <section class="about-company-section">
-                <div class="about-company-section__content-wrapper about-company-section-content-wrapper__wrapped layout-position">
-                    <h3 class="template-section__header">О компании</h3>
-                    <div class="about-company-wrapper">
-                        <div class="about-company__image  media-wrapper media-wrapper--set-size">
-                            <img src="images/background/kitchen.jpg" alt="about-img">
-                        </div>
-                        <div class="about-company__popup">
-                            <blockquote class="about-company__popup-message  about-company__popup-message--wrapped">
-                                <div class="about-company-popup-message__mirror-background">
-                                    <div class="mirror__wrapper"></div>
-                                </div>
-                                <cite>
-                                    Продукты питания под маркой Street’s уже пять лет выпускает
-                                    производственно-торговаякомпания ООО «ФудСервис», где работают более 50 человек.
-                                    Каждый
-                                    день её отдел продаж и производственный цех тесно взаимодействуют друг с другом ради
-                                    одной цели — обеспечить покупателей свежими и качественными продуктами быстрого
-                                    питания
-                                    в ближайшем магазине.
-                                </cite>
-                                <cite>
-                                    Для того, чтобы свежая продукция оказалась в магазинах как можно раньше, рабочий
-                                    день
-                                    отдела продаж начинается в 7:00. Торговым представителям важно выполнить основные
-                                    поставки в первой половине дня. Как говорится, дорога ложка к обеду. Главная их
-                                    задача —
-                                    отгрузка готовой продукции часто и в небольшом количестве.
-                                </cite>
-                                <footer>
-                                    <div class="about-company__subscribe-area">
-                                        <div class="about-company-subscribe__person">Николай Егоров</div>
-                                        <div class="about-company__subscribe"></div>
-                                    </div>
-                                </footer>
-
-                            </blockquote>
-                        </div>
-                    </div>
-
-                    <div class="about-company__brief">
-                        <a href="#" class="btn btn_pulsate btn-about-company__brief"><span>Подробнее</span>
-                            <span class=btn___arrow>
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14" height="14"
-                                        viewBox="-2 0 8.1 14" style="enable-background:new -2 0 8.1 14;" xml:space="preserve">
-                                    <style type="text/css">
-                                        .st0 {
-                                            fill: #FFFFFF;
-                                        }
-                                    </style>
-                                    <path class="st0" d="M0.4,12.1L5.4,7L0.3,1.9c-0.4-0.4-0.4-1.2,0-1.6C0.6,0.1,0.8,0,1.1,0l0,0c0.3,0,0.5,0.1,0.8,0.3L7.5,6
-                                    C8,6.5,8,7.4,7.5,8l-5.6,5.7C1.7,13.9,1.4,14,1.1,14l0,0C0.5,14,0,13.5,0,12.8C0,12.5,0.1,12.3,0.4,12.1z"/>
-                                </svg>
-                            </span>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-            </section>
-
-            <div class="action-banner-section action-banner-section_animate">
-                <div class="action-banner-section__content-wrapper layout-position">
-                    <h3 class="action-banner-section__header">Розыгрыш подарочного сертификата</h3>
-                    <div class="action-banner-section__picture-place">
-                        <img src="images/object/sportmaster.png" alt="sportmaster">
-                    </div>
-                    <div class="action-banner-section__description">
-                        в магазин спортивных товаров &quot;Спортмастер&quot;
-                        <span class="action-banner-section-description__underline">5&nbsp;000 рублей!</span>
-                    </div>
-                </div>
-            </div>
-
             <section class="latest-news-section layout-position">
                 <div class="layout-latest-news-section-image__place">
                     <div class="layout-latest-news-section-image__burger" id="main-burger">

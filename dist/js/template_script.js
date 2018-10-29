@@ -5,7 +5,7 @@ $(document).ready(function () {
 		if ($('.two-side-wrapper').length > 0) {
 			$('.scroll-down').on('click', function () {
                 $('html, body').animate({scrollTop:$('.about-company-section').position().top}, 1000);
-            })
+            });
 		}
     })();
 	
@@ -65,7 +65,7 @@ $(document).ready(function () {
                 });
                 return false;
             },
-        })
+        });
     })();
 
     (function upToTopBottom() {
@@ -144,22 +144,104 @@ $(document).ready(function () {
 
         function interval() {
             // if (isPause === false) {
-                percentTime += 1 / (time + 0.1);
-                $rbar.css({
-                    strokeDasharray: rlen,
-                    strokeDashoffset: rlen * (1 - percentTime / 100)
-                });
-                if (percentTime >= 100) {
-                    $slick.slick('slickNext');
-                    percentTime = 0;
-                    startProgressbar();
-                }
-            // }
+            percentTime += 1 / (time + 0.1);
+            $rbar.css({
+                strokeDasharray: rlen,
+                strokeDashoffset: rlen * (1 - percentTime / 100)
+            });
+            if (percentTime >= 100) {
+                $slick.slick('slickNext');
+                percentTime = 0;
+                startProgressbar();
+            }
+            }
+
+        })();
+
+    (function initPageSlider(){
+        if($('.page-slider').length > 0) {
+            $('.page-slider').on('init', function(event, slick){
+                var slideCount = slick.slideCount,
+                    currentSlide = slick.currentSlide + 1;
+                    $('.page-slider__current').html(String(currentSlide));
+                    $('.page-slider__total').html(String(slideCount));
+               
+            });
+            $('.page-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                var slideText = nextSlide + 1,
+                    slideCount = slick.slideCount;
+                    $('.page-slider__current').html(String(slideText));
+                    $('.page-slider__total').html(String(slideCount));
+                
+            });
+            $('.page-slider-image').slick({
+                appendArrows: $('.page-slider-navigation'),
+                swipe: true,
+                infinite: true,
+                fade: true,
+                slidesToSHow: 1,
+                slidesToScroll: 1,
+                prevArrow: '<button type="button" class="slick-arrow  slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="12.969" height="23" viewBox="0 0 12.969 23">\n' +
+                '<defs>\n' +
+                '    <style>\n' +
+                '      .main-arrow-prev {\n' +
+                '        fill: rgba(255, 255, 255, 0.5);\n' +
+                '        fill-rule: evenodd;\n' +
+                '      }\n' +
+                '    </style>\n' +
+                '  </defs>\n' +
+                '  <path class="main-arrow-prev" d="M431.449,235.835L423.19,227.5l8.26-8.336A1.854,1.854,0,0,0,430.175,216h0a1.791,1.791,0,0,0-1.274.535l-9.2,9.28a2.4,2.4,0,0,0,0,3.37l9.2,9.28a1.794,1.794,0,0,0,1.274.534h0A1.854,1.854,0,0,0,431.449,235.835Z" transform="translate(-419.031 -216)"/>\n' +
+                '</svg></button>',
+                nextArrow: '<button type="button" class="slick-arrow  slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="23" viewBox="0 0 13 23">\n' +
+                '<defs>\n' +
+                '    <style>\n' +
+                '      .main-slider-next {\n' +
+                '        fill: rgba(255, 255, 255, 0.5);\n' +
+                '        fill-rule: evenodd;\n' +
+                '      }\n' +
+                '    </style>\n' +
+                '  </defs>\n' +
+                '  <path class="main-slider-next" d="M500.551,235.835l8.259-8.335-8.26-8.336A1.854,1.854,0,0,1,501.825,216h0a1.791,1.791,0,0,1,1.275.535l9.2,9.28a2.4,2.4,0,0,1,0,3.37l-9.2,9.28a1.8,1.8,0,0,1-1.275.534h0A1.854,1.854,0,0,1,500.551,235.835Z" transform="translate(-500 -216)"/>\n' +
+                '</svg></button>',
+
+               
+            });
         }
-        startProgressbar();
-
-
     })();
+
+    setNavMenuInteractive($('.navigation-site-page__item'), 'navigation-site-page__item--active');
+    if($('.about-description').length > 0) {
+        $('.about-description').mCustomScrollbar({
+            axis: 'y',
+            scrollbarPosition: 'inside',
+            theme: 'light',
+            autoHideScrollbar: false,
+        });
+    }
+    
+    
+    //-------------Раздел функций
+	function toggleMenuItem(menu_item, menu_popup) {
+        if (menu_item.length > 0) {
+            menu_item.on('click', function (e) {
+                e.preventDefault();
+                if (!menu_popup.hasClass('active')) {
+                    menu_popup.addClass('active');
+                    $(this).addClass('active');
+                } else {
+                    menu_popup.removeClass('active');
+                    $(this).removeClass('active');
+                }
+            });
+        }
+    }
+
+    function animatedScrollToPosition($selector, position, duration){
+        $($selector).animate({
+            scrollTop: position
+        }, duration);
+        return false;
+    }
 
 	//Медиа-запросы в javascript (Если нужно)
 	//-------------------------------------------------------------------------------------------------------
@@ -175,13 +257,6 @@ $(document).ready(function () {
 });
 
 
-function animatedScrollToPosition($selector, position, duration){
-    $($selector).animate({
-        scrollTop: position
-    }, duration);
-    return false;
-}
-
 function media(mediaQueryString, action){
 	'use strict';
 	var handleMatchMedia = function (mediaQuery) {
@@ -196,17 +271,25 @@ function media(mediaQueryString, action){
 	mql.addListener(handleMatchMedia);
 }
 
-function toggleMenuItem(menu_item, menu_popup) {
-    if (menu_item.length > 0) {
-        menu_item.on('click', function (e) {
-            e.preventDefault();
-            if (!menu_popup.hasClass('active')) {
-                menu_popup.addClass('active');
-                $(this).addClass('active');
-            } else {
-                menu_popup.removeClass('active');
-                $(this).removeClass('active');
+//Включает клик на элементах меню, заставляя его переключаться. Добавляет к выбранному меню активный класс
+//@param $selectors (jquery collection) - выборка из элементов меню
+//@param activeClass (string) - имя активного класса
+function setNavMenuInteractive($selectors, activeClass){
+    //Навешиваем клик на все элементы выборки
+    $($selectors).on('click', function (event) {
+        var clickedIndex = $($selectors).index($(this));
+        event.preventDefault();
+            //Предварительная очистка
+            $.each($selectors, function (index) { 
+                if(index !== clickedIndex) {
+                    $(this).removeClass(activeClass);
+                    $(this).find('.navigation-site-page__teaser').slideUp();
+                }
+            });
+            if(!$(this).hasClass(activeClass)) {
+                $(this).addClass(activeClass);
+                $(this).find('.navigation-site-page__teaser').slideDown();
+                currentIndex = $($selectors).index($(this));
             }
-        });
-    }
+    });
 }
