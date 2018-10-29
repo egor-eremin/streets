@@ -1,6 +1,6 @@
 $bright-side: #e1ebf3
 $dark-side: radial-gradient(at 50% 30%, #bc2ba2, #8d1d79)
-$darkSideAbout: #782376
+$darkSideAbout: #792376
 $limeHover: #a1b94c
 $colorForFormTitle: #18295b
 $inputBackgroundColor: #f1f5f9
@@ -13,6 +13,7 @@ $breadcrumbsBackground: rgba(255, 255, 255, 0.5)
 $breadcrumbsHoverColor: #1b2c5e
 $pageArrowShift: 87px
 $headerTextDefaultColor: #fff
+$aboutTextMargin: 22px
 
 =initial-flex
 	display: flex
@@ -566,7 +567,7 @@ body, html
 		z-index: 0
 		opacity: 0.4
 .two-side-wrapper__dark--about
-	background-color: $darkSideAbout
+	background: $darkSideAbout
 
 .breadcrumbs-navigation,
 .header-content-navigation
@@ -662,7 +663,7 @@ body, html
 	flex-direction: column
 	flex-wrap: nowrap
 	justify-content: flex-end
-	height: 91.6%
+	height: 80%
 
 .page-slider-navigation
 	text-align: center
@@ -735,7 +736,7 @@ body, html
 		font-size: 14px
 		line-height: 1.74
 		letter-spacing: 0.45px
-		margin-bottom: 46px
+		margin-bottom: $aboutTextMargin
 	blockquote
 		background-color: $headerTextDefaultColor
 		width: 107%
@@ -748,7 +749,7 @@ body, html
 		letter-spacing: 0.69px
 		line-height: 1.5
 		position: relative
-		margin-bottom: 46px
+		margin-bottom: $aboutTextMargin
 		&::before
 			position: absolute
 			width: 50px
@@ -1370,6 +1371,12 @@ input:-webkit-autofill
 	margin-right: 30px
 	&:hover
 		border-color: rgba(141, 30, 121, 1)
+.mCSB_inside 
+	& > .mCSB_container 
+    	padding-bottom: 90px
+.mCSB_scrollTools
+	.mCSB_draggerContainer
+		height: 710px
 
 @media (max-width: 1360px)
 	.main-menu

@@ -178,7 +178,7 @@ $(document).ready(function () {
             axis: 'y',
             scrollbarPosition: 'inside',
             theme: 'light',
-            autoHideScrollbar: true,
+            autoHideScrollbar: false,
         });
     }
     
