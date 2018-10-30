@@ -215,28 +215,37 @@ $(document).ready(function () {
     //     }
     // })();
 
-    (function initCustomScrollbar() {
-        if($('.content-text').length > 0) {
-            $('.content-text').mCustomScrollbar({
-                axis: 'y',
-                scrollbarPosition: 'inside',
-                theme: 'light',
-                autoHideScrollbar: false,
-            });
-        }
-    })();
+    
+
+    // $(window).resize(function () { //Удобно отслеживать разрешение на адаптиве
+    //     console.log($(window).height());
+        
+    // });
 
 
 	//Медиа-запросы в javascript (Если нужно)
 	//-------------------------------------------------------------------------------------------------------
     
     
-	media('all and (min-width: 1170px)', function(){
-		// console.log('1170px');
+	media('all and (min-height: 901px)', function(){
+        (function initCustomScrollbar() {
+            if($('.content-text').length > 0) {
+                $('.content-text').mCustomScrollbar({
+                    axis: 'y',
+                    scrollbarPosition: 'inside',
+                    theme: 'light',
+                    autoHideScrollbar: false,
+                });
+            }
+        })();
 	});
    
-	media('all and (min-width: 1270px)', function(){
-		// console.log('1270px');
+	media('all and (max-height: 900px)', function(){
+        (function destroyCustomScrollbar() {
+            if($('.content-text').length > 0) {
+                $('.content-text').mCustomScrollbar('destroy');
+            }
+        })();
 	});
 });
 

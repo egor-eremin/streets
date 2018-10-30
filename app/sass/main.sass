@@ -1393,13 +1393,25 @@ input:-webkit-autofill
 	.main-menu
 		display: none
 
-@media (max-height: 940px)
-	.social-networks
+@media (max-height: 950px)
+	.content-text
+		height: 720px
+	.mCSB_inside 
+		& > .mCSB_container 
+			padding-bottom: 0
+@media (max-height: 920px)
+	.content-text
+			height: 680px
+@media (max-height: 900px)
+	.scroll-down 
 		display: none
-
-
-// .content-text
-// 	height: 780px
-
-// .navigation-and-preview
-// 	height: 860px
+	.content-text
+		overflow: visible
+		border: 1px solid red
+		height: auto
+		padding-bottom: 0
+	.two-side-wrapper 
+		height: auto
+		overflow: visible
+.navigation-and-preview
+	height: auto
