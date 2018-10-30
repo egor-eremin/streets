@@ -29,7 +29,7 @@ $(document).ready(function () {
             duration: "100%"
         })
             .setTween(new TweenMax.to('#main-burger', 0.5, { css: { transform: 'rotate(0deg)'}}))
-            .addTo(controller)
+            .addTo(controller);
     })();
     
 	(function activateModalCallbackForm() {
@@ -92,7 +92,7 @@ $(document).ready(function () {
             percentTime = 0;
 
         $slick.on('init', function(e, slick) {
-            $('.slick-arrow').wrapAll('<div class=\'main-slider-arrow\'></div>')
+            $('.slick-arrow').wrapAll('<div class=\'main-slider-arrow\'></div>');
         });
         $slick.slick({
             fade:true,
@@ -289,7 +289,9 @@ function setNavMenuInteractive($selectors, activeClass, childBlockClass, parentB
             $(thisParent).addClass(activeClass);
             $('.' + childBlockClass).slideUp(250);
             setTimeout(function(){
-                thisSiblings.slideDown(250, function() {thisSiblings.css({display: "block"})});
+                thisSiblings.slideDown(250, function() {
+                    thisSiblings.css({display: "block"});
+                });
             }, 300);
         } else {
             $(thisParent).removeClass(activeClass);
