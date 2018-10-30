@@ -630,7 +630,7 @@ body, html {
   padding: 4px 13px 6px 13px;
   font-weight: 700;
   color: #485157;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.3px;
   transition-property: background-color;
   transition-duration: 200ms;
@@ -662,7 +662,8 @@ body, html {
   align-content: flex-start;
   align-items: flex-start;
   align-content: stretch;
-  align-items: stretch; }
+  align-items: stretch;
+  height: 860px; }
 
 .navigation-site-page-header {
   width: 210px; }
@@ -692,6 +693,9 @@ body, html {
 
 .navigation-site-page__item:hover a {
   background-color: #fff; }
+
+.navigation-site-page__item--active .navigation-site-page__teaser {
+  display: block; }
 
 .navigation-site-page__item--active a {
   background-color: rgba(255, 255, 255, 0.5);
@@ -763,19 +767,19 @@ body, html {
   display: none;
   overflow: hidden; }
 
-.about-description {
+.content-text {
   width: 50%;
   overflow: auto;
   padding-bottom: 40px;
   padding-top: 12px;
-  height: 850px; }
+  height: 780px; }
 
-.about-description__wrapper {
+.content-text__wrapper {
   padding-left: 40px;
   padding-right: 40px;
   width: 100%; }
 
-.about-description__wrapper p {
+.content-text__wrapper p {
   width: 100%;
   display: block;
   color: #fff;
@@ -784,12 +788,12 @@ body, html {
   letter-spacing: 0.45px;
   margin-bottom: 22px; }
 
-.about-description__wrapper blockquote {
+.content-text__wrapper blockquote {
   background-color: #fff;
-  width: 107%;
+  width: 100%;
   margin: 0;
   display: block;
-  padding: 25px 70px 24px 66px;
+  padding: 25px 60px;
   font-weight: 300;
   font-style: italic;
   font-size: 20px;
@@ -798,7 +802,7 @@ body, html {
   position: relative;
   margin-bottom: 22px; }
 
-.about-description__wrapper blockquote::before {
+.content-text__wrapper blockquote::before {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -807,7 +811,7 @@ body, html {
   content: '';
   background: url("../images/object/blockquote.svg") center center no-repeat; }
 
-.about-description__wrapper blockquote::after {
+.content-text__wrapper blockquote::after {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -829,7 +833,7 @@ body, html {
   padding-bottom: 20px; }
 
 .main-header {
-  z-index: 3;
+  z-index: 10;
   position: relative; }
 
 .main-header__col_bright {
@@ -1558,7 +1562,7 @@ input:-webkit-autofill {
   padding-bottom: 90px; }
 
 .mCSB_scrollTools .mCSB_draggerContainer {
-  height: 710px; }
+  height: 95%; }
 
 .circle-progress {
   fill: transparent;
@@ -1577,6 +1581,10 @@ input:-webkit-autofill {
 
 @media (max-width: 1360px) {
   .main-menu {
+    display: none; } }
+
+@media (max-height: 940px) {
+  .social-networks {
     display: none; } }
 
 /*# sourceMappingURL=main.css.map */

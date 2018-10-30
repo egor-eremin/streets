@@ -597,7 +597,7 @@ body, html
 	padding: 4px 13px 6px 13px
 	font-weight: 700
 	color: $labelColor
-	font-size: 11px
+	font-size: 12px
 	letter-spacing: 0.3px
 	transition-property: background-color
 	transition-duration: 200ms
@@ -618,6 +618,7 @@ body, html
 	+initial-flex
 	align-content: stretch
 	align-items: stretch
+	height: 860px
 
 .navigation-site-page-header
 	width: 210px
@@ -646,10 +647,8 @@ body, html
 		a
 			background-color: #fff
 	&--active
-		//margin-bottom: 11px
-		//.navigation-site-page__teaser
-		//	display: block
-		//	padding: 6px 68px 0 10px
+		.navigation-site-page__teaser
+			display: block
 		a
 			background-color: $breadcrumbsBackground
 			color: $pinkColor
@@ -717,14 +716,14 @@ body, html
 	padding: 6px 68px 0 10px
 	display: none
 	overflow: hidden
-.about-description
+.content-text
 	width: 50%
 	overflow: auto
 	padding-bottom: 40px
 	padding-top: 12px
-	height: 850px
+	height: 780px
 
-.about-description__wrapper 
+.content-text__wrapper 
 	padding-left: 40px
 	padding-right: 40px
 	width: 100%
@@ -738,10 +737,10 @@ body, html
 		margin-bottom: $aboutTextMargin
 	blockquote
 		background-color: $headerTextDefaultColor
-		width: 107%
+		width: 100%
 		margin: 0
 		display: block
-		padding: 25px 70px 24px 66px
+		padding: 25px 60px
 		font-weight: 300
 		font-style: italic
 		font-size: 20px
@@ -765,9 +764,6 @@ body, html
 			right: 4px
 			content: ''
 			background: url('../images/object/blockquote.svg') center center no-repeat
-
-
-
 .main-header__col1
 	width: 50%
 .main-header__wrapper
@@ -778,7 +774,7 @@ body, html
 	&--about
 		padding-bottom: 20px
 .main-header
-	z-index: 3
+	z-index: 10
 	position: relative
 .main-header__col_bright
 	display: flex
@@ -1375,7 +1371,8 @@ input:-webkit-autofill
     	padding-bottom: 90px
 .mCSB_scrollTools
 	.mCSB_draggerContainer
-		height: 710px
+		height: 95%
+
 
 .circle-progress
     //transition: .3s ease-in-out
@@ -1395,3 +1392,14 @@ input:-webkit-autofill
 @media (max-width: 1360px)
 	.main-menu
 		display: none
+
+@media (max-height: 940px)
+	.social-networks
+		display: none
+
+
+// .content-text
+// 	height: 780px
+
+// .navigation-and-preview
+// 	height: 860px

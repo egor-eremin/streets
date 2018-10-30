@@ -208,16 +208,16 @@ $(document).ready(function () {
         }
     })();
 
-    (function activateAccordeonSaidbarMenu() {
-        if ($('.navigation-site-page').length > 0) {
-            $('.navigation-site-page__item.navigation-site-page__item--active .navigation-site-page__teaser').css('display', 'block');
-            setNavMenuInteractive($('.navigation-site-page__link'), 'navigation-site-page__item--active', 'navigation-site-page__teaser', 'navigation-site-page__item');
-        }
-    })();
+    // (function activateAccordeonSaidbarMenu() {
+    //     if ($('.navigation-site-page').length > 0) {
+    //         $('.navigation-site-page__item.navigation-site-page__item--active .navigation-site-page__teaser').css('display', 'block');
+    //         setNavMenuInteractive($('.navigation-site-page__link'), 'navigation-site-page__item--active', 'navigation-site-page__teaser', 'navigation-site-page__item');
+    //     }
+    // })();
 
     (function initCustomScrollbar() {
-        if($('.about-description').length > 0) {
-            $('.about-description').mCustomScrollbar({
+        if($('.content-text').length > 0) {
+            $('.content-text').mCustomScrollbar({
                 axis: 'y',
                 scrollbarPosition: 'inside',
                 theme: 'light',
