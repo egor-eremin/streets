@@ -13,7 +13,7 @@ $breadcrumbsBackground: rgba(255, 255, 255, 0.5)
 $breadcrumbsHoverColor: #1b2c5e
 $pageArrowShift: 87px
 $headerTextDefaultColor: #fff
-$aboutTextMargin: 22px
+$aboutTextMargin: 2.1875rem
 
 =initial-flex
 	display: flex
@@ -456,9 +456,8 @@ body, html
 		font-size: 0.875rem
 	&.list-header
 		margin-bottom: 14px
-		h3
-			font-weight: 500
-			font-size: 1rem
+		font-weight: 500
+		font-size: 1rem
 
 
 .social-list
@@ -606,19 +605,17 @@ body, html
 .header-content-navigation
 	flex-grow: 1
 	width: 100%
-	padding-top: 30px
+	padding: 30px
 	+initial-flex
 	align-items: stretch
 	align-content: stretch
 .navigation-and-preview
 	width: 50%	
 	+initial-flex
-	align-content: stretch
-	align-items: stretch
 	height: 860px
 
 .navigation-site-page-header
-	width: 210px
+	width: 190px
 	flex-shrink: 0
 	h1
 		font-weight: 700
@@ -654,8 +651,8 @@ body, html
 		margin-bottom: 0
 	
 .page-slider
-	width: calc(100% - 210px)
-	padding: 24px 30px 0 30px
+	width: calc(100% - 190px)
+	padding: 24px 35px 0 35px
 	display: flex
 	flex-direction: column
 	flex-wrap: nowrap
@@ -718,19 +715,19 @@ body, html
 	width: 50%
 	overflow: auto
 	padding-bottom: 40px
-	padding-top: 12px
+	padding-top: 20px
 	height: 780px
 
 .content-text__wrapper 
-	padding-left: 40px
-	padding-right: 40px
+	padding-left: 35px
+	padding-right: 35px
 	width: 100%
 	p
 		width: 100%
 		display: block
 		color: $headerTextDefaultColor
-		font-size: 14px
-		line-height: 1.74
+		font-size: 1rem
+		line-height: 1.6
 		letter-spacing: 0.45px
 		margin-bottom: $aboutTextMargin
 	blockquote
@@ -898,7 +895,7 @@ body, html
 	display: flex
 	justify-content: center
 	transition: .3s ease-in-out
-	.btn-callback img
+	img
 		flex-shrink: 0
 .btn-callback:hover
 	width: 169px
@@ -1259,7 +1256,7 @@ input:-webkit-autofill
 	margin-right: 10px
 #callback-form.hide-information
 	display: none
-.thank-you-text.show
+.thank-you-text.show, .wrong-text.show
 	display: block
 .main-form-item__wrapper
 	position: relative
@@ -1390,6 +1387,8 @@ input:-webkit-autofill
 	border: none
 .main-slider .slick-next:hover .circle-progress
     stroke: rgba(141, 30, 121, 1)
+.page-slider__item
+	max-height: 546px
 
 
 @media (max-width: 1360px)
@@ -1406,7 +1405,7 @@ input:-webkit-autofill
 	.content-text
 			height: 680px
 @media (max-height: 900px)
-	.scroll-down 
+	.scroll-down_content-page
 		display: none
 	.content-text
 		overflow: visible

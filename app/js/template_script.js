@@ -4,7 +4,7 @@ $(document).ready(function () {
 	(function scrollBottom() {
 		if ($('.two-side-wrapper').length > 0) {
 			$('.scroll-down').on('click', function () {
-                $('html, body').animate({scrollTop:$('.about-company-section').position().top}, 1000);
+                $('html, body').animate({scrollTop:$('.main-content').position().top}, 1000);
             });
 		}
     })();
@@ -53,9 +53,15 @@ $(document).ready(function () {
                     type: $(form).attr('method'),
                     url: $(form).attr('action'),
                     data: $(form).serialize(),
+                    dataType: 'json',
                     success: function (data) {
-                        $('#callback-form').addClass('hide-information');
-                        $('.thank-you-text').addClass('show');
+                        if(parseInt(data.success) == 1) {
+                            $('#callback-form').addClass('hide-information');
+                            $('.thank-you-text').addClass('show');
+                        } else {
+                            $('#callback-form').addClass('hide-information');
+                            $('.wrong-text').addClass('show');
+                        }
                     },
                     error: function() {
                         $('#callback-form').addClass('hide-information');
