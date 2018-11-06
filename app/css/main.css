@@ -1837,7 +1837,9 @@ input:-webkit-autofill {
   margin-left: 8px; }
 
 .mobile-submenu__list {
-  position: relative; }
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; }
 
 .mobile-submenu__item_head {
   background: #708428;
