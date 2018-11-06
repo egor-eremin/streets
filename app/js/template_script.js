@@ -214,20 +214,25 @@ $(document).ready(function () {
         }
     })();
 
-    // (function activateAccordeonSaidbarMenu() {
-    //     if ($('.navigation-site-page').length > 0) {
-    //         $('.navigation-site-page__item.navigation-site-page__item--active .navigation-site-page__teaser').css('display', 'block');
-    //         setNavMenuInteractive($('.navigation-site-page__link'), 'navigation-site-page__item--active', 'navigation-site-page__teaser', 'navigation-site-page__item');
-    //     }
-    // })();
+    (function openMobileMenu() {
+        if ($('.mobile-burger_open').length > 0) {
+            $('.mobile-burger_open').on('click', function () {
+               if (!$('.mobile-menu').hasClass('active')) {
+                   $('.mobile-menu').addClass('active');
+               }
+            });
+        }
+    })();
 
-    
-
-    // $(window).resize(function () { //Удобно отслеживать разрешение на адаптиве
-    //     console.log($(window).height());
-        
-    // });
-
+    (function closeMobileMenu() {
+        if ($('.mobile-burger_close').length > 0) {
+            $('.mobile-burger_close').on('click', function () {
+               if ($('.mobile-menu').hasClass('active')) {
+                   $('.mobile-menu').removeClass('active')
+               }
+            });
+        }
+    })();
 
 	//Медиа-запросы в javascript (Если нужно)
 	//-------------------------------------------------------------------------------------------------------
