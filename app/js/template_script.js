@@ -33,7 +33,7 @@ $(document).ready(function () {
     })();
     
 	(function activateModalCallbackForm() {
-		$('.btn-callback').magnificPopup({
+		$('.btn-callback, .callback__link ').magnificPopup({
             type: 'inline',
 			mainClass: 'main-modal',
             items: {
@@ -235,8 +235,8 @@ $(document).ready(function () {
     
 	media('all and (min-height: 901px)', function(){
         (function initCustomScrollbar() {
-            if($('.content-text').length > 0) {
-                $('.content-text').mCustomScrollbar({
+            if($('.content-text--about').length > 0) {
+                $('.content-text--about').mCustomScrollbar({
                     axis: 'y',
                     scrollbarPosition: 'inside',
                     theme: 'light',
@@ -248,8 +248,8 @@ $(document).ready(function () {
    
 	media('all and (max-height: 900px)', function(){
         (function destroyCustomScrollbar() {
-            if($('.content-text').length > 0) {
-                $('.content-text').mCustomScrollbar('destroy');
+            if($('.content-text--about').length > 0) {
+                $('.content-text--about').mCustomScrollbar('destroy');
             }
         })();
 	});
