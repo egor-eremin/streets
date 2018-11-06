@@ -822,10 +822,13 @@ body, html {
 .image-dude {
   width: 785px;
   height: 710px;
+  position: relative;
+  right: 0; }
+
+.image-dude img {
   position: absolute;
-  top: -60px;
-  right: 0;
-  background: url("../images/background/dude-for-partners.png") center center no-repeat; }
+  right: 170px;
+  bottom: 80px; }
 
 .image-dude::before {
   content: '';
@@ -834,14 +837,14 @@ body, html {
   background-color: #fff;
   border-radius: 250px;
   position: absolute;
-  bottom: 26px;
-  right: 12px;
+  bottom: 100px;
+  right: 171px;
   z-index: -1; }
 
 .callback-link__area {
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   left: 0;
   right: 0;
   text-align: center;
