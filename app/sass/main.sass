@@ -1505,10 +1505,13 @@ input:-webkit-autofill
 			margin-left: 8px
 .mobile-submenu__list
   position: relative
+  display: flex
+  flex-wrap: wrap
 .mobile-submenu__item_head
   background: $darkLime
   position: relative
   text-align: right
+  width: 100%
   &::before
     content: ""
     background: $darkLime
@@ -1527,6 +1530,7 @@ input:-webkit-autofill
     height: 100%
     width: 35px
     transform: translateX(100%)
+
 .submenu-go-back
   font-weight: 700
   font-size: 1rem

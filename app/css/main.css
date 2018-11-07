@@ -1708,12 +1708,15 @@ input:-webkit-autofill {
   margin-left: 8px; }
 
 .mobile-submenu__list {
-  position: relative; }
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; }
 
 .mobile-submenu__item_head {
   background: #708428;
   position: relative;
-  text-align: right; }
+  text-align: right;
+  width: 100%; }
 
 .mobile-submenu__item_head::before {
   content: "";
