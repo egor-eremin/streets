@@ -4,7 +4,7 @@ $(document).ready(function () {
 	(function scrollBottom() {
 		if ($('.two-side-wrapper').length > 0) {
 			$('.scroll-down').on('click', function () {
-                $('html, body').animate({scrollTop:$('.about-company-section').position().top}, 1000);
+                $('html, body').animate({scrollTop:$('.main-content').position().top}, 1000);
             });
 		}
     })();
@@ -22,7 +22,6 @@ $(document).ready(function () {
 		});
     })();
 
-
     (function animateBurger() {
         var controller = new ScrollMagic.Controller();
         var scene = new ScrollMagic.Scene({
@@ -30,11 +29,11 @@ $(document).ready(function () {
             duration: "100%"
         })
             .setTween(new TweenMax.to('#main-burger', 0.5, { css: { transform: 'rotate(0deg)'}}))
-            .addTo(controller)
+            .addTo(controller);
     })();
     
 	(function activateModalCallbackForm() {
-		$('.btn-callback').magnificPopup({
+		$('.btn-callback, .callback__link ').magnificPopup({
             type: 'inline',
 			mainClass: 'main-modal',
             items: {
@@ -54,9 +53,15 @@ $(document).ready(function () {
                     type: $(form).attr('method'),
                     url: $(form).attr('action'),
                     data: $(form).serialize(),
+                    dataType: 'json',
                     success: function (data) {
-                        $('#callback-form').addClass('hide-information');
-                        $('.thank-you-text').addClass('show');
+                        if(parseInt(data.success) == 1) {
+                            $('#callback-form').addClass('hide-information');
+                            $('.thank-you-text').addClass('show');
+                        } else {
+                            $('#callback-form').addClass('hide-information');
+                            $('.wrong-text').addClass('show');
+                        }
                     },
                     error: function() {
                         $('#callback-form').addClass('hide-information');
@@ -93,7 +98,7 @@ $(document).ready(function () {
             percentTime = 0;
 
         $slick.on('init', function(e, slick) {
-            $('.slick-arrow').wrapAll('<div class=\'main-slider-arrow\'></div>')
+            $('.slick-arrow').wrapAll('<div class=\'main-slider-arrow\'></div>');
         });
         $slick.slick({
             fade:true,
@@ -209,53 +214,74 @@ $(document).ready(function () {
         }
     })();
 
-    setNavMenuInteractive($('.navigation-site-page__item'), 'navigation-site-page__item--active');
-    if($('.about-description').length > 0) {
-        $('.about-description').mCustomScrollbar({
-            axis: 'y',
-            scrollbarPosition: 'inside',
-            theme: 'light',
-            autoHideScrollbar: false,
-        });
-    }
-    
-    
-    //-------------Раздел функций
-	function toggleMenuItem(menu_item, menu_popup) {
-        if (menu_item.length > 0) {
-            menu_item.on('click', function (e) {
-                e.preventDefault();
-                if (!menu_popup.hasClass('active')) {
-                    menu_popup.addClass('active');
-                    $(this).addClass('active');
-                } else {
-                    menu_popup.removeClass('active');
-                    $(this).removeClass('active');
-                }
+    (function openMobileMenu() {
+        if ($('.mobile-burger_open').length > 0) {
+            $('.mobile-burger_open').on('click', function () {
+               if (!$('.mobile-menu').hasClass('active')) {
+                   $('.mobile-menu').addClass('active');
+               }
             });
         }
-    }
+    })();
 
-    function animatedScrollToPosition($selector, position, duration){
-        $($selector).animate({
-            scrollTop: position
-        }, duration);
-        return false;
-    }
+    (function closeMobileMenu() {
+        if ($('.mobile-burger_close').length > 0) {
+            $('.mobile-burger_close').on('click', function () {
+               if ($('.mobile-menu').hasClass('active')) {
+                   $('.mobile-menu').removeClass('active')
+               }
+            });
+        }
+    })();
 
 	//Медиа-запросы в javascript (Если нужно)
 	//-------------------------------------------------------------------------------------------------------
     
     
-	media('all and (min-width: 1170px)', function(){
-		// console.log('1170px');
+	media('all and (min-height: 901px)', function(){
+        (function initCustomScrollbar() {
+            if($('.content-text--with-scroll').length > 0) {
+                $('.content-text--with-scroll').mCustomScrollbar({
+                    axis: 'y',
+                    scrollbarPosition: 'inside',
+                    theme: 'light',
+                    autoHideScrollbar: false,
+                });
+            }
+        })();
 	});
    
-	media('all and (min-width: 1270px)', function(){
-		// console.log('1270px');
+	media('all and (max-height: 900px)', function(){
+        (function destroyCustomScrollbar() {
+            if($('.content-text--with-scroll').length > 0) {
+                $('.content-text--with-scroll').mCustomScrollbar('destroy');
+            }
+        })();
 	});
 });
 
+
+function toggleMenuItem(menu_item, menu_popup) {
+    if (menu_item.length > 0) {
+        menu_item.on('click', function (e) {
+            e.preventDefault();
+            if (!menu_popup.hasClass('active')) {
+                menu_popup.addClass('active');
+                $(this).addClass('active');
+            } else {
+                menu_popup.removeClass('active');
+                $(this).removeClass('active');
+            }
+        });
+    }
+}
+
+function animatedScrollToPosition($selector, position, duration){
+    $($selector).animate({
+        scrollTop: position
+    }, duration);
+    return false;
+}
 
 function media(mediaQueryString, action){
 	'use strict';
@@ -271,25 +297,25 @@ function media(mediaQueryString, action){
 	mql.addListener(handleMatchMedia);
 }
 
-//Включает клик на элементах меню, заставляя его переключаться. Добавляет к выбранному меню активный класс
-//@param $selectors (jquery collection) - выборка из элементов меню
-//@param activeClass (string) - имя активного класса
-function setNavMenuInteractive($selectors, activeClass){
+function setNavMenuInteractive($selectors, activeClass, childBlockClass, parentBlockClass){
     //Навешиваем клик на все элементы выборки
-    $($selectors).on('click', function (event) {
-        var clickedIndex = $($selectors).index($(this));
+    $selectors.on('click', function (event) {
+        var thisSiblings = $(this).siblings('.' + childBlockClass);
+        var thisParent = $(this).parents('.' + parentBlockClass);
+
         event.preventDefault();
-            //Предварительная очистка
-            $.each($selectors, function (index) { 
-                if(index !== clickedIndex) {
-                    $(this).removeClass(activeClass);
-                    $(this).find('.navigation-site-page__teaser').slideUp();
-                }
-            });
-            if(!$(this).hasClass(activeClass)) {
-                $(this).addClass(activeClass);
-                $(this).find('.navigation-site-page__teaser').slideDown();
-                currentIndex = $($selectors).index($(this));
-            }
+        if(!$(thisParent).hasClass(activeClass)) {
+            $('.' + parentBlockClass).removeClass(activeClass);
+            $(thisParent).addClass(activeClass);
+            $('.' + childBlockClass).slideUp(250);
+            setTimeout(function(){
+                thisSiblings.slideDown(250, function() {
+                    thisSiblings.css({display: "block"});
+                });
+            }, 300);
+        } else {
+            $(thisParent).removeClass(activeClass);
+            thisSiblings.slideUp(250);
+        }
     });
 }

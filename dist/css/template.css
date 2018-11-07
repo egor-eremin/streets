@@ -424,7 +424,7 @@ textarea {
     -webkit-appearance: button; /* 1 */
     font: inherit; /* 2 */
 }
-* {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 body {
@@ -445,6 +445,7 @@ button {
     border:none;
     background-color: transparent;
     color: inherit;
+    padding: 0;
 }
 p {
     margin: 0;
