@@ -1649,17 +1649,20 @@ input:-webkit-autofill {
   display: none;
   z-index: 100;
   opacity: 0;
+  overflow: hidden;
   visibility: hidden;
   transition: .3s ease-in-out; }
 
 .mobile-menu_scroll-wrapper {
   overflow: auto;
-  height: 100%;
-  display: none; }
+  height: 100%; }
 
 .mobile-menu.active {
   opacity: 1;
   visibility: visible; }
+
+.mobile-menu_scroll-wrapper.hide {
+  transform: translateX(-100%); }
 
 .mobile-menu__item {
   text-align: right;
@@ -1710,7 +1713,9 @@ input:-webkit-autofill {
 .mobile-submenu__list {
   position: relative;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  height: 100%;
+  align-items: flex-start; }
 
 .mobile-submenu__item_head {
   background: #708428;
@@ -1738,10 +1743,68 @@ input:-webkit-autofill {
   width: 35px;
   transform: translateX(100%); }
 
-.submenu-go-back {
+.mobile-submenu__item {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  margin-bottom: 15px; }
+
+.mobile-submenu__item a {
+  padding: 1.8125rem 0.9375rem;
+  min-width: 140px;
+  transition: .3s ease-in-out;
+  border-radius: 8px; }
+
+.mobile-submenu__item a:hover {
+  background: rgba(255, 255, 255, 0.15); }
+
+.mobile-submenu__go-back {
   font-weight: 700;
   font-size: 1rem;
-  color: #ffffff; }
+  color: #ffffff;
+  width: calc(100% + 60px);
+  transform: translateX(-30px);
+  text-align: right;
+  height: 56px;
+  padding: 0 30px;
+  transition: .3s ease-in-out;
+  background: #708428;
+  flex-shrink: 0; }
+
+.mobile-submenu__go-back:hover {
+  background: #8ca532; }
+
+.mobile-submenu__text {
+  font-size: 1.125rem;
+  color: #ffffff;
+  margin-top: 1.25rem;
+  line-height: 1.3; }
+
+.mobile-submenu__link {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.mobile-submenu {
+  height: 100%;
+  display: none;
+  flex-direction: column; }
+
+.mobile-submenu.active {
+  display: flex; }
+
+.mobile-submenu__img {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.mobile-submenu__scroll-wrapper {
+  margin-top: 3.3125rem;
+  height: 100%;
+  overflow: auto; }
 
 @media (max-width: 1360px) {
   .main-menu {

@@ -99,6 +99,8 @@ $(document).ready(function () {
 
         $slick.on('init', function(e, slick) {
             $('.slick-arrow').wrapAll('<div class=\'main-slider-arrow\'></div>');
+            percentTime = 0;
+            startProgressbar();
         });
         $slick.slick({
             fade:true,
@@ -133,7 +135,6 @@ $(document).ready(function () {
             '</button>'
         });
         $slick.on('beforeChange', function(slick, currentSlide, nextSlide){
-            console.log('sdf');
             percentTime = 0;
             startProgressbar();
         });
@@ -232,6 +233,16 @@ $(document).ready(function () {
                }
             });
         }
+    })();
+
+    (function openMobileSubMenu() {
+        $('.with-submenu').on('click', function (e) {
+            e.preventDefault();
+            var anchorSubMenu = $(this).attr('href').slice(1);
+
+            $('#' + anchorSubMenu).addClass('active');
+            $('.mobile-menu_scroll-wrapper').addClass('hide');
+        });
     })();
 
 	//Медиа-запросы в javascript (Если нужно)
