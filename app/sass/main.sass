@@ -650,14 +650,21 @@ body, html
 		border-radius: 200px
 .call-message__text
 	text-align: center
-	padding-top: 61px
-	& span
-		display: block
+	display: block
+	height: 100%
+	display: flex
+	justify-content: center
+	align-items: center
+	align-content: center
+	flex-wrap: wrap
+
 
 .contact__telephones
 	font-weight: 800
 	font-size: 30px
 	line-height: 1.2
+	display: block
+	width: 100%
 	&--mobile
 		margin-top: 10px	
 
@@ -780,7 +787,7 @@ body, html
 		position: absolute
 		right: 170px
 		bottom: 80px
-	// background: url("../images/background/dude-for-partners.png") center center no-repeat
+	
 	&::before
 		content: ''
 		width: 512px
