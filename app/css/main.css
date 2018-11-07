@@ -849,11 +849,11 @@ body, html {
 .callback-link__area {
   width: 100%;
   position: absolute;
-  bottom: 20px;
+  bottom: 50px;
   left: 0;
   right: 0;
   text-align: center;
-  padding-left: 110px; }
+  margin-left: 58px; }
 
 .callback__link {
   color: #fff;
@@ -1850,13 +1850,9 @@ input:-webkit-autofill {
 .mobile-submenu__list {
   position: relative;
   display: flex;
-<<<<<<< HEAD
   flex-wrap: wrap;
   height: 100%;
   align-items: flex-start; }
-=======
-  flex-wrap: wrap; }
->>>>>>> dev-guzyaev__partners
 
 .mobile-submenu__item_head {
   background: #708428;
