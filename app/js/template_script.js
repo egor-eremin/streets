@@ -8,11 +8,18 @@ $(document).ready(function () {
             });
 		}
     })();
-	
 	(function toggleProductsMenu() {
         toggleMenuItem($('.menu-products'), $('.product-menu'));
     })();
-	
+    (function closeSubMenuWrapper() {
+        if ($('.sub-menu-wrapper-close')) {
+            $('.sub-menu-wrapper-close').on('click', function () {
+               $('.sub-menu-wrapper').removeClass('active');
+               $('.sub-menu-wrapper-close').removeClass('active');
+               $('.main-menu__with-sub').removeClass('active');
+            });
+        }
+    })();
 	(function toggleAboutUsMenu() {
         toggleMenuItem($('.about-us-item'), $('.about-us-menu'));
     })();
@@ -220,6 +227,8 @@ $(document).ready(function () {
             $('.mobile-burger_open').on('click', function () {
                if (!$('.mobile-menu').hasClass('active')) {
                    $('.mobile-menu').addClass('active');
+                   $('.close-mobile-menu').addClass('active');
+                   $('body').addClass('no-scroll');
                }
             });
         }
@@ -227,10 +236,10 @@ $(document).ready(function () {
 
     (function closeMobileMenu() {
         if ($('.mobile-burger_close').length > 0) {
-            $('.mobile-burger_close').on('click', function () {
-               if ($('.mobile-menu').hasClass('active')) {
-                   $('.mobile-menu').removeClass('active')
-               }
+            $('.mobile-burger_close, .close-mobile-menu').on('click', function () {
+                animatedScrollToPosition($('.mobile-menu_scroll-wrapper'), 0, 0);
+                closeMenu();
+                $('body').removeClass('no-scroll');
             });
         }
     })();
@@ -243,6 +252,29 @@ $(document).ready(function () {
             $('#' + anchorSubMenu).addClass('active');
             $('.mobile-menu_scroll-wrapper').addClass('hide');
         });
+    })();
+
+    (function hideMobileSubMenu() {
+        $('.mobile-submenu__go-back').on('click', function () {
+           var thisParent = $(this).parents('.mobile-submenu');
+
+            thisParent.removeClass('active');
+            $('.mobile-menu_scroll-wrapper').removeClass('hide');
+        });
+    })();
+
+    (function hideAdressBarInMobBroser() {
+        if ($('.mobile-menu').length > 0) {
+            function calcVH() {
+                var vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+                var thisElement = document.getElementsByClassName("mobile-menu")[0];
+                thisElement.setAttribute("style", "height:" + vH + "px;");
+            }
+
+            calcVH();
+            window.addEventListener('onorientationchange', calcVH, true);
+            window.addEventListener('resize', calcVH, true);
+        }
     })();
 
 	//Медиа-запросы в javascript (Если нужно)
@@ -271,6 +303,14 @@ $(document).ready(function () {
 	});
 });
 
+function closeMenu() {
+    $('.mobile-menu_scroll-wrapper').removeClass('hide');
+    $('.mobile-submenu').removeClass('active');
+    if ($('.mobile-menu').hasClass('active')) {
+        $('.mobile-menu').removeClass('active');
+        $('.close-mobile-menu').removeClass('active');
+    }
+};
 
 function toggleMenuItem(menu_item, menu_popup) {
     if (menu_item.length > 0) {
@@ -279,9 +319,11 @@ function toggleMenuItem(menu_item, menu_popup) {
             if (!menu_popup.hasClass('active')) {
                 menu_popup.addClass('active');
                 $(this).addClass('active');
+                $('.sub-menu-wrapper-close').addClass('active');
             } else {
                 menu_popup.removeClass('active');
                 $(this).removeClass('active');
+                $('.sub-menu-wrapper-close').removeClass('active');
             }
         });
     }
