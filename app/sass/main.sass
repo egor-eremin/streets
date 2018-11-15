@@ -636,6 +636,7 @@ body, html
 	width: 430px
 	height: 430px
 	padding: 47px 114px 67px 0
+	flex-shrink: 0
 
 .call-message
 	letter-spacing: 1.3px
@@ -917,8 +918,6 @@ body, html
 	align-items: flex-start
 	padding-top: 57px
 	padding-bottom: 27px
-	&--about
-		padding-bottom: 20px
 .main-header
 	z-index: 102
 	position: relative
@@ -1849,74 +1848,101 @@ input:-webkit-autofill
 .navigation-site-page-header__all-wrapper.active
   display: block
 @media (max-width: 1360px)
-  .main-menu
-      display: none
-  .main-header__col.main-header__col_dark
-      display: flex
-      justify-content: flex-end
-      align-items: center
-  .social-networks:not(.social-networks_mobile)
-      display: none
-  .social-networks_mobile
-      display: flex
-  .mobile-burger
-      display: flex
-  .mobile-menu
-      display: block
-  .top-arrow-top
-      right: 30px
-  .footer-content__wrapper
-      padding: 170px 305px 0 305px
-  .copyright-section__rules, .copyright-section__policy
-      margin-left: 15px
-  .about-company-popup-message__mirror-background .mirror__wrapper::before
-      content: none
-  .page-slider__item
-    height: 475px
-
+	.main-menu
+	  display: none
+	.main-header__col.main-header__col_dark
+	  display: flex
+	  justify-content: flex-end
+	  align-items: center
+	.social-networks:not(.social-networks_mobile)
+	  display: none
+	.social-networks_mobile
+	  display: flex
+	.mobile-burger
+	  display: flex
+	.mobile-menu
+	  display: block
+	.top-arrow-top
+	  right: 30px
+	.footer-content__wrapper
+	  padding: 170px 305px 0 305px
+	.copyright-section__rules, .copyright-section__policy
+	  margin-left: 15px
+	.about-company-popup-message__mirror-background .mirror__wrapper::before
+	  content: none
+	.page-slider__item
+		height: 475px
+	.image-dude
+		width: 610px
+		height: 610px
+		img
+			right: 92px
+			bottom:	106px
+		&::before
+			width: 406px
+			height: 406px
+			bottom: 118px
+			right: 93px
+	.callback-link__area
+		bottom: 35px
+		margin-left: 0
 @media (max-width: 1240px)
-  .main-slider__title
-      font-size: 3.75rem
-  .action-banner-section__description
-      font-size: 1.125rem
-      margin-left: 4.0625rem
-  .action-banner-section-description__underline,
-  .action-banner-section__header
-      font-size: 35px
-  .action-banner-section__picture-place
-      flex-shrink: 1
-  .footer-content__wrapper
-      padding: 170px 250px 0 250px
-  .copyright-section__copyright,
-  .copyright-section__rules,
-  .copyright-section__policy
-      flex-shrink: 0
-  .latest-news-section
-      flex-direction: column-reverse
-  .news-and-links__all-news-area
-      text-align: center
-  .layout-latest-news-section-image__place
-      position: absolute
-      bottom: -241px
-      margin-left: -182px
-  .layout-latest-news-section-image__place::before
-      width: 203px
-      height: 203px
-      top: 50%
-      left: 50%
-      transform: translate(-50%, -50%)
-  .layout-latest-news-section-image__burger
-      width: 415px
-      transform: rotate(1deg) !important
-      margin-top: 79px
-  .main-slider__price
-      width: 120px
-      height: 120px
-      font-size: 36px
-  .page-slider
-    padding-left: 0
-  .page-slider__item
-    height: 370px
+	.main-slider__title
+	  font-size: 3.75rem
+	.action-banner-section__description
+	  font-size: 1.125rem
+	  margin-left: 4.0625rem
+	.action-banner-section-description__underline,
+	.action-banner-section__header
+	  font-size: 35px
+	.action-banner-section__picture-place
+	  flex-shrink: 1
+	.footer-content__wrapper
+	  padding: 170px 250px 0 250px
+	.copyright-section__copyright,
+	.copyright-section__rules,
+	.copyright-section__policy
+	  flex-shrink: 0
+	.latest-news-section
+	  flex-direction: column-reverse
+	.news-and-links__all-news-area
+	  text-align: center
+	.layout-latest-news-section-image__place
+	  position: absolute
+	  bottom: -241px
+	  margin-left: -182px
+	.layout-latest-news-section-image__place::before
+	  width: 203px
+	  height: 203px
+	  top: 50%
+	  left: 50%
+	  transform: translate(-50%, -50%)
+	.layout-latest-news-section-image__burger
+	  width: 415px
+	  transform: rotate(1deg) !important
+	  margin-top: 79px
+	.main-slider__price
+	  width: 120px
+	  height: 120px
+	  font-size: 36px
+	.page-slider
+		padding-left: 0
+	.page-slider__item
+		height: 370px
+	.image-dude
+		img
+			right: 57px
+		&::before
+			right: 58px
+	.header-content-contacts
+		width: 250px
+		height: 250px
+		margin: 47px 0 67px
+		padding: 0
+	.call-message__text
+		font-size: 14px
+	.contact__telephones
+		font-size: 24px
 
 @media (max-width: 1024px)
   .main-slider-arrow
@@ -2013,9 +2039,9 @@ input:-webkit-autofill
     width: 260px
     position: absolute
     left: 50%
-    top: 57px
+    top: 64px
     transform: translateX(-50%)
-    z-index: 1
+    z-index: 10
   .navigation-and-preview__aside
     width: 100%
     position: relative
@@ -2099,6 +2125,12 @@ input:-webkit-autofill
         content: none
   .aside-title
     padding-left: 0
+  .two-side-wrapper_not-main .two-side-wrapper__bright_partners
+	  height: 848px
+  .header-content-contacts
+	  margin: 0
+  .image-dude
+	  margin: 113px auto 0 auto
 
 @media (max-width: 960px)
 	.about-company__image

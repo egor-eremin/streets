@@ -674,7 +674,8 @@ body, html {
 .header-content-contacts {
   width: 430px;
   height: 430px;
-  padding: 47px 114px 67px 0; }
+  padding: 47px 114px 67px 0;
+  flex-shrink: 0; }
 
 .call-message {
   letter-spacing: 1.3px;
@@ -974,9 +975,6 @@ body, html {
   align-items: flex-start;
   padding-top: 57px;
   padding-bottom: 27px; }
-
-.main-header__wrapper--about {
-  padding-bottom: 20px; }
 
 .main-header {
   z-index: 102;
@@ -2105,7 +2103,21 @@ input:-webkit-autofill {
   .about-company-popup-message__mirror-background .mirror__wrapper::before {
     content: none; }
   .page-slider__item {
-    height: 475px; } }
+    height: 475px; }
+  .image-dude {
+    width: 610px;
+    height: 610px; }
+  .image-dude img {
+    right: 92px;
+    bottom: 106px; }
+  .image-dude::before {
+    width: 406px;
+    height: 406px;
+    bottom: 118px;
+    right: 93px; }
+  .callback-link__area {
+    bottom: 35px;
+    margin-left: 0; } }
 
 @media (max-width: 1240px) {
   .main-slider__title {
@@ -2149,7 +2161,20 @@ input:-webkit-autofill {
   .page-slider {
     padding-left: 0; }
   .page-slider__item {
-    height: 370px; } }
+    height: 370px; }
+  .image-dude img {
+    right: 57px; }
+  .image-dude::before {
+    right: 58px; }
+  .header-content-contacts {
+    width: 250px;
+    height: 250px;
+    margin: 47px 0 67px;
+    padding: 0; }
+  .call-message__text {
+    font-size: 14px; }
+  .contact__telephones {
+    font-size: 24px; } }
 
 @media (max-width: 1024px) {
   .main-slider-arrow {
@@ -2243,9 +2268,9 @@ input:-webkit-autofill {
     width: 260px;
     position: absolute;
     left: 50%;
-    top: 57px;
+    top: 64px;
     transform: translateX(-50%);
-    z-index: 1; }
+    z-index: 10; }
   .navigation-and-preview__aside {
     width: 100%;
     position: relative;
@@ -2321,7 +2346,13 @@ input:-webkit-autofill {
   .breadcrumbs__item:last-child::after {
     content: none; }
   .aside-title {
-    padding-left: 0; } }
+    padding-left: 0; }
+  .two-side-wrapper_not-main .two-side-wrapper__bright_partners {
+    height: 848px; }
+  .header-content-contacts {
+    margin: 0; }
+  .image-dude {
+    margin: 113px auto 0 auto; } }
 
 @media (max-width: 960px) {
   .about-company__image {
