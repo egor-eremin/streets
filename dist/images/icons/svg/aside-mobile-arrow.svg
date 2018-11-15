@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7.312" viewBox="0 0 12 7.312">
+<defs>
+    <style>
+      .aside-mobile-arrow {
+        fill: #abc64a;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path class="aside-mobile-arrow" d="M310.2,265.7l3.8,3.888,3.8-3.888a1.284,1.284,0,0,1,2.2.923h0a1.327,1.327,0,0,1-.372.923l-4.456,4.564a1.626,1.626,0,0,1-2.345,0l-4.455-4.564a1.327,1.327,0,0,1-.372-0.923h0A1.284,1.284,0,0,1,310.2,265.7Z" transform="translate(-308 -265.313)"/>
+</svg>

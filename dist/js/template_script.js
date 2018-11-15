@@ -1,6 +1,8 @@
 $(document).ready(function () {
 	'use strict';
-
+    $(function () {
+        objectFitImages()
+    });
 	(function scrollBottom() {
 		if ($('.two-side-wrapper').length > 0) {
 			$('.scroll-down').on('click', function () {
@@ -78,6 +80,20 @@ $(document).ready(function () {
                 return false;
             },
         });
+    })();
+
+    (function toggleMobileAsideMenu() {
+        if ($('.navigation-site-page-header_mobile').length > 0) {
+            $('.navigation-site-page-header__open-all').on('click', function () {
+               if (!$(this).hasClass('active')) {
+                   $(this).addClass('active');
+                   $('.navigation-site-page-header__all-wrapper').slideDown(300);
+               } else {
+                   $(this).removeClass('active');
+                   $('.navigation-site-page-header__all-wrapper').slideUp(300);
+               }
+            });
+        }
     })();
 
     (function upToTopBottom() {
@@ -178,14 +194,13 @@ $(document).ready(function () {
                     currentSlide = slick.currentSlide + 1;
                     $('.page-slider__current').html(String(currentSlide));
                     $('.page-slider__total').html(String(slideCount));
-               
+
             });
             $('.page-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
                 var slideText = nextSlide + 1,
                     slideCount = slick.slideCount;
                     $('.page-slider__current').html(String(slideText));
                     $('.page-slider__total').html(String(slideCount));
-                
             });
             $('.page-slider-image').slick({
                 appendArrows: $('.page-slider-navigation'),
@@ -216,6 +231,16 @@ $(document).ready(function () {
                 '  </defs>\n' +
                 '  <path class="main-slider-next" d="M500.551,235.835l8.259-8.335-8.26-8.336A1.854,1.854,0,0,1,501.825,216h0a1.791,1.791,0,0,1,1.275.535l9.2,9.28a2.4,2.4,0,0,1,0,3.37l-9.2,9.28a1.8,1.8,0,0,1-1.275.534h0A1.854,1.854,0,0,1,500.551,235.835Z" transform="translate(-500 -216)"/>\n' +
                 '</svg></button>',
+                responsive: [
+                    {
+                        breakpoint: 1025,
+                        settings: {
+                            slidesToScroll: 1,
+                            centerMode: true,
+                            fade: false,
+                        }
+                    },
+                ]
 
                
             });

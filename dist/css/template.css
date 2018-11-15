@@ -99,10 +99,10 @@ a {
  * in all browsers (opinionated).
  */
 
-a:active,
-a:hover {
-    outline-width: 0;
-}
+/*a:active,*/
+/*a:hover {*/
+    /*outline-width: 0;*/
+/*}*/
 
 /* Text-level semantics
    ========================================================================== */

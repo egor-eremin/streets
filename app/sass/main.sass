@@ -17,6 +17,7 @@ $aboutTextMargin: 2.1875rem
 $darkLime: #708428
 $underlineColor: #944f91
 $underlineColorTransparent: transparent
+$greyMobileIcon: #77707a
 
 =initial-flex
 	display: flex
@@ -553,7 +554,8 @@ body, html
 	height: 100%
 	z-index: 2
 	&--about
-		overflow: hidden
+      overflow: hidden
+      background: linear-gradient(to bottom right, #bfd4ea, #ffffff, #cfc2b3)
 .two-side-wrapper-bright__wrapper
 	width: 100%
 	height: 100%
@@ -584,22 +586,27 @@ body, html
 	position: relative
 	z-index: 3	
 .breadcrumbs-list
-	+initial-flex	
+  +initial-flex
+  flex-wrap: wrap
 
 .breadcrumbs__item
-	margin-right: 17px
-	&:not(&--active):hover
-		a
-			background-color: #fff
-			color: $breadcrumbsHoverColor
-	&:last-child
-		margin-right: 0
-	&--active
-		margin-left: -8px
-		a
-			background-color: transparent
-			cursor: auto
-		
+  margin-right: 17px
+  position: relative
+  &:not(&--active):hover
+      a
+          background-color: #fff
+          color: $breadcrumbsHoverColor
+  &:last-child
+      margin-right: 0
+  &--active
+      margin-left: -8px
+      a
+          background-color: transparent
+          cursor: auto
+
+.breadcrumbs__item--active
+  &::after
+    content: none
 
 .breadcrumbs-item__link
 	background-color: $breadcrumbsBackground
@@ -623,7 +630,7 @@ body, html
 .navigation-and-preview
 	width: 50%	
 	+initial-flex
-	height: 860px
+	height: auto
 
 .header-content-contacts
 	width: 430px
@@ -677,13 +684,13 @@ body, html
 	flex-shrink: 0
 	&.navigation-site-page-header--partners
 		width: 200px
-	h1
-		font-weight: 700
-		font-size: 24px
-		color: $colorForFormTitle
-		letter-spacing: 0.5px
-		margin-bottom: 53px
-		padding-left: 11px
+.aside-title
+    font-weight: 700
+    font-size: 24px
+    color: $colorForFormTitle
+    letter-spacing: 0.5px
+    margin-bottom: 53px
+    padding-left: 11px
 
 .navigation-site-page__link
 	font-size: 14px
@@ -724,12 +731,15 @@ body, html
 	width: 100%
 	flex-grow: 0
 	flex-shrink: 0
+	display: flex
+	align-items: center
+	justify-content: center
 	padding: 33px 0
 	position: relative
 	.slick-arrow
-		position: absolute
+		//position: absolute
 		top: 50%
-		transform: translateY(-50%)
+		//transform: translateY(-50%)
 		cursor: pointer
 		svg
 			.main-arrow-prev,
@@ -737,15 +747,10 @@ body, html
 				transition-property: fill
 				transition-duration: 300ms
 				transition-timing-function: ease-in-out
-		&:hover
-			svg
-				.main-arrow-prev,
-				.main-slider-next
-					fill: #fff 
 	.slick-prev
-	 	left: $pageArrowShift
+		margin-right: 40px
 	.slick-next
-		right: $pageArrowShift
+		margin-left: 40px
 
 
 .page-slider-image
@@ -758,13 +763,26 @@ body, html
 		//width: 100%
 
 .page-slider__enumerator
-	display: inline-block
-	font-weight: 700
-	color: $colorForFormTitle
-	font-size: 18px
-	padding: 14px 31px
-	background-color: $breadcrumbsBackground
-	border-radius: 70px
+  display: inline-block
+  font-weight: 700
+  color: $colorForFormTitle
+  font-size: 18px
+  padding: 14px 31px
+  background-color: $breadcrumbsBackground
+  border-radius: 70px
+  flex-shrink: 0
+.page-slider
+  .slick-arrow
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    background: rgba(255, 255, 255, .5)
+    transition: .3s ease-in-out
+    flex-shrink: 0
+    &:hover
+      opacity: .8
+    path
+      fill: $colorForFormTitle
 .navigation-site-page__teaser
 	font-size: 12px
 	color: $labelColor
@@ -1534,7 +1552,13 @@ input:-webkit-autofill
 .main-slider .slick-next:hover .circle-progress
     stroke: rgba(141, 30, 121, 1)
 .page-slider__item
-	max-height: 546px
+	height: 546px
+.page-slider__item img
+  width: 100%
+  height: 100%
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
 .mobile-burger
 	width: 50px
 	height: 50px
@@ -1583,7 +1607,7 @@ input:-webkit-autofill
 		path
 			opacity: .7
 .mobile-menu
-	position: absolute
+	position: fixed
 	width: 50%
 	height: 100vh
 	background: rgba(171, 198, 74, .9)
@@ -1818,123 +1842,264 @@ input:-webkit-autofill
 			background: none
 			text-decoration: underline
 
+.navigation-site-page-header_mobile
+  display: none
+.navigation-site-page-header__all-wrapper
+  display: none
+.navigation-site-page-header__all-wrapper.active
+  display: block
 @media (max-width: 1360px)
-	.main-menu
-		display: none
-	.main-header__col.main-header__col_dark
-		display: flex
-		justify-content: flex-end
-		align-items: center
-	.social-networks:not(.social-networks_mobile)
-		display: none
-	.social-networks_mobile
-		display: flex
-	.mobile-burger
-		display: flex
-	.mobile-menu
-		display: block
-	.top-arrow-top
-		right: 30px
-	.footer-content__wrapper
-		padding: 170px 305px 0 305px
-	.copyright-section__rules, .copyright-section__policy
-		margin-left: 15px
-	.about-company-popup-message__mirror-background .mirror__wrapper::before
-		content: none
+  .main-menu
+      display: none
+  .main-header__col.main-header__col_dark
+      display: flex
+      justify-content: flex-end
+      align-items: center
+  .social-networks:not(.social-networks_mobile)
+      display: none
+  .social-networks_mobile
+      display: flex
+  .mobile-burger
+      display: flex
+  .mobile-menu
+      display: block
+  .top-arrow-top
+      right: 30px
+  .footer-content__wrapper
+      padding: 170px 305px 0 305px
+  .copyright-section__rules, .copyright-section__policy
+      margin-left: 15px
+  .about-company-popup-message__mirror-background .mirror__wrapper::before
+      content: none
+  .page-slider__item
+    height: 475px
+
 @media (max-width: 1240px)
-	.main-slider__title
-		font-size: 3.75rem
-	.action-banner-section__description
-		font-size: 1.125rem
-		margin-left: 4.0625rem
-	.action-banner-section-description__underline,
-	.action-banner-section__header
-		font-size: 35px
-	.action-banner-section__picture-place
-		flex-shrink: 1
-	.footer-content__wrapper
-		padding: 170px 250px 0 250px
-	.copyright-section__copyright,
-	.copyright-section__rules,
-	.copyright-section__policy
-		flex-shrink: 0
-	.latest-news-section
-		flex-direction: column-reverse
-	.news-and-links__all-news-area
-		text-align: center
-	.layout-latest-news-section-image__place
-		position: absolute
-		bottom: -241px
-		margin-left: -182px
-	.layout-latest-news-section-image__place::before
-		width: 203px
-		height: 203px
-		top: 50%
-		left: 50%
-		transform: translate(-50%, -50%)
-	.layout-latest-news-section-image__burger
-		width: 415px
-		transform: rotate(1deg) !important
-		margin-top: 79px
-	.main-slider__price
-		width: 120px
-		height: 120px
-		font-size: 36px
+  .main-slider__title
+      font-size: 3.75rem
+  .action-banner-section__description
+      font-size: 1.125rem
+      margin-left: 4.0625rem
+  .action-banner-section-description__underline,
+  .action-banner-section__header
+      font-size: 35px
+  .action-banner-section__picture-place
+      flex-shrink: 1
+  .footer-content__wrapper
+      padding: 170px 250px 0 250px
+  .copyright-section__copyright,
+  .copyright-section__rules,
+  .copyright-section__policy
+      flex-shrink: 0
+  .latest-news-section
+      flex-direction: column-reverse
+  .news-and-links__all-news-area
+      text-align: center
+  .layout-latest-news-section-image__place
+      position: absolute
+      bottom: -241px
+      margin-left: -182px
+  .layout-latest-news-section-image__place::before
+      width: 203px
+      height: 203px
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+  .layout-latest-news-section-image__burger
+      width: 415px
+      transform: rotate(1deg) !important
+      margin-top: 79px
+  .main-slider__price
+      width: 120px
+      height: 120px
+      font-size: 36px
+  .page-slider
+    padding-left: 0
+  .page-slider__item
+    height: 370px
 
 @media (max-width: 1024px)
-	.main-slider-arrow
-		bottom: 53px
-		top: auto
-		left: auto
-		right: 0
-	.main-slider .slick-arrow
-		background: #fff
-	.main-slider
-		padding-top: 0
-	.layout-position
-		padding-right: 15px
-		padding-left: 15px
-	.main-slider__col
-		width: calc(50% - 45px)
-	.main-slider .slick-dots
-		top: 16px
-	.footer-content__wrapper
-		padding: 170px 200px 0
-	.action-banner-section__description
-		margin-left: 0
+  .main-slider-arrow
+      bottom: 53px
+      top: auto
+      left: auto
+      right: 0
+  .main-slider .slick-arrow
+      background: #fff
+  .main-slider
+      padding-top: 0
+  .layout-position
+      padding-right: 15px
+      padding-left: 15px
+  .main-slider__col
+      width: calc(50% - 45px)
+  .main-slider .slick-dots
+      top: 16px
+  .footer-content__wrapper
+      padding: 170px 200px 0
+  .action-banner-section__description
+      margin-left: 0
 
-	.action-banner-section__header
-		width: auto
-	.mobile-burger_close
-		right: 15px
-	.btn-callback_mobile
-		width: 169px
-	.btn-callback-text-wrapper_mobile
-		opacity: 1
-	.action-banner-section__picture-place
-		position: absolute
-		right: 0
-		top: 0
-		height: 100%
-	.action-banner-section__content-wrapper
-		position: relative
-		flex-direction: column
-	.action-banner-section__header,
-	.action-banner-section__description
-		width: calc(100% - 400px)
-	.mobile-submenu__go-back
-		padding: 0 15px
-		width: calc(100% + 30px)
-		transform: translateX(-15px)
-	.mobile-menu
-		padding: 160px 15px 90px
-	.mobile-submenu__go-back svg
-		transform: rotate(90deg)
-	.mobile-submenu
-		width: calc(100% - 30px)
-		left: 15px
-	.top-arrow-top
-		right: 15px
+  .action-banner-section__header
+      width: auto
+  .mobile-burger_close
+      right: 15px
+  .btn-callback_mobile
+      width: 169px
+  .btn-callback-text-wrapper_mobile
+      opacity: 1
+  .action-banner-section__picture-place
+      position: absolute
+      right: 0
+      top: 0
+      height: 100%
+  .action-banner-section__content-wrapper
+      position: relative
+      flex-direction: column
+  .action-banner-section__header,
+  .action-banner-section__description
+      width: calc(100% - 400px)
+  .mobile-submenu__go-back
+      padding: 0 15px
+      width: calc(100% + 30px)
+      transform: translateX(-15px)
+  .mobile-menu
+      padding: 160px 15px 90px
+  .mobile-submenu__go-back svg
+      transform: rotate(90deg)
+  .mobile-submenu
+      width: calc(100% - 30px)
+      left: 15px
+  .top-arrow-top
+      right: 15px
+  .header-content-navigation_content-page
+      flex-direction: column
+      align-items: flex-start
+  .content-text
+      width: 100%
+  .content-text__wrapper
+      padding: 0
+  .two-side-wrapper_not-main .two-side-wrapper__bright
+      width: 100%
+      height: 620px
+      &::before
+          content: ''
+          position: absolute
+          width: 100%
+          height: 200px
+          transform: skewY(10deg)
+          background: $darkSideAbout
+          z-index: 1
+          bottom: -100px
+          left: 0
+  .two-side-wrapper_not-main
+      .social-networks_mobile
+          path
+              fill: $greyMobileIcon
+  .navigation-and-preview
+    width: 100%
+    flex-direction: column
+    align-items: center
+  .navigation-site-page-header
+    margin-right: auto
+    margin-left: auto
+    &:not(.navigation-site-page-header_mobile)
+      display: none
+  .navigation-site-page-header_mobile
+    display: block
+    border-radius: 25px
+    background: rgba(255, 255, 255, .9)
+    padding: 14px 20px
+    width: 260px
+    position: absolute
+    left: 50%
+    top: 57px
+    transform: translateX(-50%)
+    z-index: 1
+  .navigation-and-preview__aside
+    width: 100%
+    position: relative
+    padding-bottom: 84px
+  .navigation-site-page__teaser
+    display: none !important
+  .navigation-site-page-header__open-all
+    display: flex
+    align-items: center
+    font-weight: 700
+    font-size: 18px
+    color: $colorForFormTitle
+    margin-left: auto
+    margin-right: auto
+    position: relative
+    &.active
+      span
+        transform: translate(100%, -50%) rotate(-90deg)
+    span
+      display: flex
+      align-items: center
+      justify-content: center
+      position: absolute
+      top: 50%
+      right: -25px
+      transform: translate(100%, -50%)
+      //transition: .3s ease-in-out
+    svg
+      transition: transform .3s ease-in-out
+    &:hover
+      span
+        margin-top: 2px
+
+  .aside-mobile-menu__item
+    text-align: center
+    margin-top: 21px
+    a
+      font-weight: 700
+      font-size: 16px
+      color: $labelColor
+  .aside-mobile-menu__item a:hover
+    text-decoration: underline
+  .page-slider
+    width: 437px
+    padding: 0
+  .page-slider__item
+    position: relative
+    transition: .3s ease-in-out
+    &.slick-center
+      transform: scale(1.2)
+      z-index: 1
+  .page-slider__item::before
+    content: ''
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    background: rgba(255,255,255,.5)
+  .page-slider__item.slick-center::before
+    background: rgba(255,255,255,0)
+  .page-slider .slick-list
+    padding: 30px 68px !important
+  .breadcrumbs__item
+    &::after
+      content: ''
+      width: 7px
+      height: 7px
+      border-radius: 50%
+      background: $successfullIcon
+      display: block
+      position: absolute
+      top: 50%
+      right: 0
+      transform: translate(calc(100% + 5px), -50%)
+    &:nth-last-child(2)
+      &::after
+        transform: translate(calc(100% + 7px), -50%)
+    &:last-child
+      &::after
+        content: none
+  .aside-title
+    padding-left: 0
+
 @media (max-width: 960px)
 	.about-company__image
 		position: absolute
@@ -2043,144 +2208,161 @@ input:-webkit-autofill
 		bottom: 70px
 
 @media (max-width: 640px)
-	.about-company__popup-message--wrapped
-		flex-direction: column
-		flex-wrap: nowrap
-	.about-company__popup-message--wrapped cite
-		width: 100%
-	.about-company-section
-		padding: 67px 0 88px
-	.action-banner-section__header, .action-banner-section-description__underline
-		font-size: 18px
-	.latest-news-section
-		padding: 67px 15px 145px
-	.news-and-links__table-cell
-		width: calc(50% - 30px)
-		margin-right: 30px
-	.news-and-links__area
-		width: calc(100% + 30px)
-		margin-right: -30px
-	.news-and-links-table-cell__content-wrapper
-		min-height: 0
-	.layout-latest-news-section-image__burger
-		height: 415px
-	.news-and-links__all-news-area
-		margin-top: 75px
-	.layout-latest-news-section-image__place
-		bottom: -156px
-	.footer-content__wrapper
-		padding: 99px 20px 53px
-	.footer-links-list__item.list-header
-		font-size: 18px
-	.footer-links-list__item
-		margin-bottom: 15px
-	.footer-links-list__item a
-		font-size: 16px
-	.copyright-section
-		margin-top: 90px
-	.template-section__header
-		font-size: 30px
-	.news-date, .news-header-link__item
-		font-size: 16px
-		line-height: 1.5
-	.about-company__subscribe-area
-		margin-top: 16px
-		width: 100%
-		text-align: right
-		display: flex
-		flex-direction: column
-		align-items: flex-end
-	.about-company__subscribe
-		margin-bottom: 33px
-	.main-header__col_bright
-		padding-right: 15px
-	.main-header__col.main-header__col_dark
-		padding-left: 15px
-	.main-phone
-		margin-right: 0
-	.action-banner-section__picture-place
-		display: none
-	.action-banner-section__header, .action-banner-section__description
-		width: 100%
-	.about-company__popup
-		width: calc(100% - 30px)
-	.main-slider__title
-		font-size: 24px
-	.main-slider__text_left
-		padding-right: 15px
-		.main-slider__title
-			text-align: right
-	.main-slider__text_right
-		padding-left: 15px
-		.main-slider__title
-			text-align: left
-	.main-slider__col
-		width: calc(50% - 27px)
-	.main-slider__price
-		width: 70px
-		height: 70px
-		font-size: 18px
-	.main-modal .mfp-close
-		transform: none
-		background: none
-		&::before
-			background: $successfullIcon
-		&::after
-			background: $successfullIcon
-	.popup-modal
-		padding: 30px
+  .about-company__popup-message--wrapped
+      flex-direction: column
+      flex-wrap: nowrap
+  .about-company__popup-message--wrapped cite
+      width: 100%
+  .about-company-section
+      padding: 67px 0 88px
+  .action-banner-section__header, .action-banner-section-description__underline
+      font-size: 18px
+  .latest-news-section
+      padding: 67px 15px 145px
+  .news-and-links__table-cell
+      width: calc(50% - 30px)
+      margin-right: 30px
+  .news-and-links__area
+      width: calc(100% + 30px)
+      margin-right: -30px
+  .news-and-links-table-cell__content-wrapper
+      min-height: 0
+  .layout-latest-news-section-image__burger
+      height: 415px
+  .news-and-links__all-news-area
+      margin-top: 75px
+  .layout-latest-news-section-image__place
+      bottom: -156px
+  .footer-content__wrapper
+      padding: 99px 20px 53px
+  .footer-links-list__item.list-header
+      font-size: 18px
+  .footer-links-list__item
+      margin-bottom: 15px
+  .footer-links-list__item a
+      font-size: 16px
+  .copyright-section
+      margin-top: 90px
+  .template-section__header
+      font-size: 30px
+  .news-date, .news-header-link__item
+      font-size: 16px
+      line-height: 1.5
+  .about-company__subscribe-area
+      margin-top: 16px
+      width: 100%
+      text-align: right
+      display: flex
+      flex-direction: column
+      align-items: flex-end
+  .about-company__subscribe
+      margin-bottom: 33px
+  .main-header__col_bright
+      padding-right: 15px
+  .main-header__col.main-header__col_dark
+      padding-left: 15px
+  .main-phone
+      margin-right: 0
+  .action-banner-section__picture-place
+      display: none
+  .action-banner-section__header, .action-banner-section__description
+      width: 100%
+  .about-company__popup
+      width: calc(100% - 30px)
+  .main-slider__title
+      font-size: 24px
+  .main-slider__text_left
+      padding-right: 15px
+      .main-slider__title
+          text-align: right
+  .main-slider__text_right
+      padding-left: 15px
+      .main-slider__title
+          text-align: left
+  .main-slider__col
+      width: calc(50% - 27px)
+  .main-slider__price
+      width: 70px
+      height: 70px
+      font-size: 18px
+  .main-modal .mfp-close
+      transform: none
+      background: none
+      &::before
+          background: $successfullIcon
+      &::after
+          background: $successfullIcon
+  .popup-modal
+      padding: 30px
+  .content-text__wrapper
+    p
+      font-size: 14px
+    blockquote
+      padding: 25px 30px
+
 @media (max-width: 470px)
-	.main-header__col
-		display: flex
-	.main-header__col.main-header__col_bright
-		align-items: flex-start
-		flex-direction: column
-	.main-header__col.main-header__col_dark
-		align-items: flex-end
-		flex-direction: column-reverse
-	.main-logo, .mobile-burger_open
-		margin-bottom: 20px
-	.social-networks__item
-		margin-right: 0
-		&:not(:first-child)
-			margin-left: 30px
-	.news-and-links__table-cell
-		width: 100%
-		margin-right: 0
-	.news-and-links__area
-		width: 100%
-		margin-right: 0
-	.news-and-links__all-news-area
-		text-align: right
-	.footer-content-wrapper__footer-lists
-		flex-wrap: wrap
-	.footer-links-list
-		width: 100%
-		margin-right: 0
-	.footer-links-list:first-child
-		margin-bottom: 25px
-	.main-slider
-		.slick-dots
-			display: none !important
-	.main-slider__col
-		width: 50%
-	.main-slider__title
-		font-size: 16px
-	.main-slider-arrow, .main-slider__mobile-more
-		bottom: 25px
-	.popup-modal
-		padding: 20px 15px
-	.main-form-item_footer-form
-		flex-direction: column
-	.personal-date
-		margin-bottom: 18px
-	.button-submit-block
-		margin-right: auto
-		margin-left: auto
-	.layout-latest-news-section-image__place
-		margin-left: -220px
-	.main-textarea
-		height: 150px
+  .main-header__col
+      display: flex
+  .main-header__col.main-header__col_bright
+      align-items: flex-start
+      flex-direction: column
+  .main-header__col.main-header__col_dark
+      align-items: flex-end
+      flex-direction: column-reverse
+  .main-logo, .mobile-burger_open
+      margin-bottom: 20px
+  .social-networks__item
+      margin-right: 0
+      &:not(:first-child)
+          margin-left: 30px
+  .news-and-links__table-cell
+      width: 100%
+      margin-right: 0
+  .news-and-links__area
+      width: 100%
+      margin-right: 0
+  .news-and-links__all-news-area
+      text-align: right
+  .footer-content-wrapper__footer-lists
+      flex-wrap: wrap
+  .footer-links-list
+      width: 100%
+      margin-right: 0
+  .footer-links-list:first-child
+      margin-bottom: 25px
+  .main-slider
+      .slick-dots
+          display: none !important
+  .main-slider__col
+      width: 50%
+  .main-slider__title
+      font-size: 16px
+  .main-slider-arrow, .main-slider__mobile-more
+      bottom: 25px
+  .popup-modal
+      padding: 20px 15px
+  .main-form-item_footer-form
+      flex-direction: column
+  .personal-date
+      margin-bottom: 18px
+  .button-submit-block
+      margin-right: auto
+      margin-left: auto
+  .layout-latest-news-section-image__place
+      margin-left: -220px
+  .main-textarea
+      height: 150px
+  .page-slider
+    width: 100%
+  .page-slider .slick-list
+    padding: 30px 0 !important
+  .page-slider__item
+    &.slick-slide
+      transform: none
+  .navigation-site-page-header_mobile
+    top: 75px
+  .page-slider-navigation
+    padding: 15px 0
 
 @media (max-width: 360px)
 	.main-phone__number

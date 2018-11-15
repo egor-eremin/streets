@@ -45,6 +45,7 @@ gulp.task('scripts', function() {
         'app/lib/scroll-magic/TweenMax.min.js',
 		'app/lib/scroll-magic/ScrollMagic.min.js',
 		'app/lib/scroll-magic/animation.gsap.min.js',
+		'app/lib/object-fit__polifill/ofi.min.js',
 		'app/lib/scroll-magic/debug.addIndicators.min.js',
 	])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
