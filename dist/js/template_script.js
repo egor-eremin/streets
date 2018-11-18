@@ -189,61 +189,7 @@ $(document).ready(function () {
 
     (function initPageSlider(){
         if($('.page-slider').length > 0) {
-            $('.page-slider').on('init', function(event, slick){
-                var slideCount = slick.slideCount,
-                    currentSlide = slick.currentSlide + 1;
-                    $('.page-slider__current').html(String(currentSlide));
-                    $('.page-slider__total').html(String(slideCount));
-
-            });
-            $('.page-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-                var slideText = nextSlide + 1,
-                    slideCount = slick.slideCount;
-                    $('.page-slider__current').html(String(slideText));
-                    $('.page-slider__total').html(String(slideCount));
-            });
-            $('.page-slider-image').slick({
-                appendArrows: $('.page-slider-navigation'),
-                swipe: true,
-                infinite: true,
-                fade: true,
-                slidesToSHow: 1,
-                slidesToScroll: 1,
-                prevArrow: '<button type="button" class="slick-arrow  slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="12.969" height="23" viewBox="0 0 12.969 23">\n' +
-                '<defs>\n' +
-                '    <style>\n' +
-                '      .main-arrow-prev {\n' +
-                '        fill: rgba(255, 255, 255, 0.5);\n' +
-                '        fill-rule: evenodd;\n' +
-                '      }\n' +
-                '    </style>\n' +
-                '  </defs>\n' +
-                '  <path class="main-arrow-prev" d="M431.449,235.835L423.19,227.5l8.26-8.336A1.854,1.854,0,0,0,430.175,216h0a1.791,1.791,0,0,0-1.274.535l-9.2,9.28a2.4,2.4,0,0,0,0,3.37l9.2,9.28a1.794,1.794,0,0,0,1.274.534h0A1.854,1.854,0,0,0,431.449,235.835Z" transform="translate(-419.031 -216)"/>\n' +
-                '</svg></button>',
-                nextArrow: '<button type="button" class="slick-arrow  slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="23" viewBox="0 0 13 23">\n' +
-                '<defs>\n' +
-                '    <style>\n' +
-                '      .main-slider-next {\n' +
-                '        fill: rgba(255, 255, 255, 0.5);\n' +
-                '        fill-rule: evenodd;\n' +
-                '      }\n' +
-                '    </style>\n' +
-                '  </defs>\n' +
-                '  <path class="main-slider-next" d="M500.551,235.835l8.259-8.335-8.26-8.336A1.854,1.854,0,0,1,501.825,216h0a1.791,1.791,0,0,1,1.275.535l9.2,9.28a2.4,2.4,0,0,1,0,3.37l-9.2,9.28a1.8,1.8,0,0,1-1.275.534h0A1.854,1.854,0,0,1,500.551,235.835Z" transform="translate(-500 -216)"/>\n' +
-                '</svg></button>',
-                responsive: [
-                    {
-                        breakpoint: 1025,
-                        settings: {
-                            slidesToScroll: 1,
-                            centerMode: true,
-                            fade: false,
-                        }
-                    },
-                ]
-
-               
-            });
+            initSlider('.page-slider-image', '.page-slider__current', '.page-slider__total', '.page-slider-navigation');
         }
     })();
 
@@ -302,6 +248,27 @@ $(document).ready(function () {
         }
     })();
 
+    (function initHistoryTabList() {
+       if ($('.tab-section').length > 0) {
+           tabSwitched('.tab-switch','.tab-area', true);
+       }
+    })();
+
+    (function initHistoryScion() {
+        if ($('.tab-scion').length > 0) {
+            var activeIndex = $('.tab-switch.active').attr('href').slice(1);
+
+            $('.tab-scion__item[data-tab-index="' + activeIndex + '"]').show();
+
+            $('.tab-switch').on('click', function () {
+               var thisIndex = $(this).attr('href').slice(1);
+
+                $('.tab-scion__item').hide();
+                $('.tab-scion__item[data-tab-index="' + thisIndex + '"]').show();
+            });
+        }
+    })();
+
 	//Медиа-запросы в javascript (Если нужно)
 	//-------------------------------------------------------------------------------------------------------
     
@@ -327,6 +294,78 @@ $(document).ready(function () {
         })();
 	});
 });
+
+function initSlider(sliderSelector, slideCurrent, slideTotal, navigationBlock) {
+    $('' + sliderSelector + '').on('init', function(event, slick){
+        var slideCount = slick.slideCount,
+            currentSlide = slick.currentSlide + 1;
+        var thisSiblings = $(this).siblings('' + navigationBlock + '');
+        var thisNavigationButton = $(this).find('.slick-arrow');
+        $('' + slideCurrent + '').html(String(currentSlide));
+        $('' + slideTotal + '').html(String(slideCount));
+        thisNavigationButton.appendTo(thisSiblings);
+
+    });
+    $('' + sliderSelector + '').on('breakpoint', function(event, slick, breakpoint){
+        var thisSiblings = $(this).siblings('' + navigationBlock + '');
+        var thisNavigationButton = $(this).find('.slick-arrow');
+
+        console.log('sdf');
+        thisNavigationButton.appendTo(thisSiblings);
+    });
+    $('' + sliderSelector + '').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var slideText = nextSlide + 1,
+            slideCount = slick.slideCount;
+        $('' + slideCurrent + '').html(String(slideText));
+        $('' + slideTotal + '').html(String(slideCount));
+    });
+    $('' + sliderSelector + '').slick({
+        // appendArrows: $('' + navigationBlock + ''),
+        swipe: true,
+        infinite: true,
+        fade: true,
+        slidesToSHow: 1,
+        slidesToScroll: 1,
+        prevArrow: '<button type="button" class="slick-arrow  slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="12.969" height="23" viewBox="0 0 12.969 23">\n' +
+        '<defs>\n' +
+        '    <style>\n' +
+        '      .main-arrow-prev {\n' +
+        '        fill: rgba(255, 255, 255, 0.5);\n' +
+        '        fill-rule: evenodd;\n' +
+        '      }\n' +
+        '    </style>\n' +
+        '  </defs>\n' +
+        '  <path class="main-arrow-prev" d="M431.449,235.835L423.19,227.5l8.26-8.336A1.854,1.854,0,0,0,430.175,216h0a1.791,1.791,0,0,0-1.274.535l-9.2,9.28a2.4,2.4,0,0,0,0,3.37l9.2,9.28a1.794,1.794,0,0,0,1.274.534h0A1.854,1.854,0,0,0,431.449,235.835Z" transform="translate(-419.031 -216)"/>\n' +
+        '</svg></button>',
+        nextArrow: '<button type="button" class="slick-arrow  slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="23" viewBox="0 0 13 23">\n' +
+        '<defs>\n' +
+        '    <style>\n' +
+        '      .main-slider-next {\n' +
+        '        fill: rgba(255, 255, 255, 0.5);\n' +
+        '        fill-rule: evenodd;\n' +
+        '      }\n' +
+        '    </style>\n' +
+        '  </defs>\n' +
+        '  <path class="main-slider-next" d="M500.551,235.835l8.259-8.335-8.26-8.336A1.854,1.854,0,0,1,501.825,216h0a1.791,1.791,0,0,1,1.275.535l9.2,9.28a2.4,2.4,0,0,1,0,3.37l-9.2,9.28a1.8,1.8,0,0,1-1.275.534h0A1.854,1.854,0,0,1,500.551,235.835Z" transform="translate(-500 -216)"/>\n' +
+        '</svg></button>',
+        responsive: [
+            {
+                breakpoint: 1025,
+                settings: {
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    fade: false,
+                }
+            },
+        ]
+
+
+    });
+}
+
+function unslickSlider(sliderSelector) {
+    $('' + sliderSelector + '').slick('unslick');
+}
 
 function closeMenu() {
     $('.mobile-menu_scroll-wrapper').removeClass('hide');
@@ -373,6 +412,27 @@ function media(mediaQueryString, action){
 	var mql = window.matchMedia(mediaQueryString); //стандартный медиазапрос для смены режима просмотра
 	handleMatchMedia(mql);
 	mql.addListener(handleMatchMedia);
+}
+
+function tabSwitched(selectorSwitch, sectionSwitched, sliderTrue) {
+    var sectionDefault = $('' + selectorSwitch + '.active').attr('href').slice(1);
+    $('#' + sectionDefault).show(300);
+
+    $('' + selectorSwitch + '').on('click', function (e) {
+        e.preventDefault();
+        var thisSection = $(this).attr('href').slice(1);
+
+        if (!$(this).hasClass('active')) {
+            if (sliderTrue) {
+                unslickSlider('.page-slider-image');
+                initSlider('.page-slider-image', '.page-slider__current', '.page-slider__total', '.page-slider-navigation');
+            }
+            $('' + selectorSwitch + '').removeClass('active');
+            $('' + sectionSwitched + '').hide();
+            $(this).addClass('active');
+            $('#' + thisSection).show();
+        }
+    });
 }
 
 function setNavMenuInteractive($selectors, activeClass, childBlockClass, parentBlockClass){
