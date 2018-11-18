@@ -9,7 +9,7 @@ $labelColor: #485157
 $successfullIcon: #abc64a
 $errorIcon: #e8954b
 $pinkColor: #8d1e7a
-$breadcrumbsBackground: rgba(255, 255, 255, 0.5)
+$breadcrumbsBackground: rgba(255, 255, 255, 0.7)
 $breadcrumbsHoverColor: #1b2c5e
 $pageArrowShift: 87px
 $headerTextDefaultColor: #fff
@@ -18,6 +18,8 @@ $darkLime: #708428
 $underlineColor: #944f91
 $underlineColorTransparent: transparent
 $greyMobileIcon: #77707a
+$historyPageColor: #f1f5f9
+$darkBlue: #485157
 
 =initial-flex
 	display: flex
@@ -777,7 +779,7 @@ body, html
     width: 50px
     height: 50px
     border-radius: 50%
-    background: rgba(255, 255, 255, .5)
+    background: rgba(255, 255, 255, .7)
     transition: .3s ease-in-out
     flex-shrink: 0
     &:hover
@@ -790,7 +792,7 @@ body, html
 	padding: 6px 68px 0 10px
 	display: none
 	overflow: hidden
-.content-text
+.content-text, .right-content
 	width: 50%
 	overflow: auto
 	padding-bottom: 40px
@@ -1008,9 +1010,11 @@ body, html
 	top: 50%
 	transform: translateY(-50%) rotate(45deg)
 .main-menu__text
-	position: relative
-	overflow: hidden
-	line-height: 2.3125
+  position: relative
+  overflow: hidden
+  line-height: 2.3125
+  transition: .3s ease-in-out
+
 .main-menu__text::before,
 .main-menu__list-item a:not(.menu-products)::before
 	content: ''
@@ -1208,8 +1212,9 @@ svg
 	align-items: center
 	margin-bottom: 27px
 .about-us-item
-	display: flex
-	align-items: center
+  display: flex
+  align-items: center
+  transition: .3s ease-in-out
 .chevron
 	display: flex
 	align-items: center
@@ -1453,7 +1458,7 @@ input:-webkit-autofill
 	left: 50%
 	bottom: 150px
 	transform: translateX(-50%)
-	z-index: 1
+	z-index: 100
 	visibility: hidden
 	opacity: 0
 	transition: .3s ease-in-out
@@ -1847,6 +1852,137 @@ input:-webkit-autofill
   display: none
 .navigation-site-page-header__all-wrapper.active
   display: block
+.two-side-wrapper__bright_history
+  background: linear-gradient(to bottom right, rgba(191, 212, 234, .8), rgba(255, 255, 255, .8), rgba(207, 194, 179, .8)), url("../images/background/history-background.jpg") no-repeat
+  background-size: cover
+.two-side-wrapper__dark_history, .history-page
+  background: $historyPageColor
+.history-page
+  .burger-products
+    span
+      background: $darkBlue
+  .main-menu__list-item
+    a
+      color: $darkBlue
+      path
+        fill: $darkBlue
+      &::before
+        background: $darkBlue
+  .main-menu__text
+    &::before
+      background: $darkBlue
+  .menu-products
+    &.active
+      color: #ffffff
+      .main-menu__text
+        &::before
+          background: #ffffff
+      .burger-products
+        span
+          background: #ffffff
+  .about-us-item
+    &.active
+      color: #ffffff
+      &::before
+        background: #ffffff
+      path
+        fill: #ffffff
+  .content-text__wrapper
+    p
+      color: $darkBlue
+  .scroll-down
+    path
+      fill: $darkBlue
+  .social-networks_mobile
+    path
+      fill: $darkBlue
+.tab-section__switched
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	margin-bottom: 38px
+	flex-shrink: 0
+.right-content__wrapper
+	padding: 0 35px
+.tab-section__switched-li
+	margin-right: 27px
+	position: relative
+	overflow: hidden
+	a
+		font-size: 18px
+		color: $successfullIcon
+		font-weight: 500
+		transition: .3s ease
+		padding: 15px 0
+		border-radius: 25px
+		overflow: hidden
+		&.active
+			color: #ffffff
+			font-weight: 700
+			font-size: 24px
+			padding: 10px 35px
+			background: $successfullIcon
+			border-radius: 25px
+.tab-section__switched-li a:not(.active)
+	&::before
+		content: ""
+		width: 100%
+		bottom: 14px
+		height: 1px
+		left: 0
+		transition: .3s ease-in-out
+		position: absolute
+		background: $successfullIcon
+		transform: translateX(-100%)
+.tab-section__switched-li a:not(.active):hover::before
+	transform: translateX(0)
+.tab-area
+	display: none
+	height: 100%
+	overflow: auto
+	padding: 20px 0
+.content-text__wrapper_history
+	padding: 0
+.page-slider_history
+	width: 100%
+	padding: 0
+	position: relative
+	margin-bottom: 2.1875rem
+	.page-slider-navigation
+		position: absolute
+		bottom: 20px
+		left: 0
+		padding: 0
+.page-slider__item_history
+	width: 100%
+	height: 302px
+.page-slider-navigation
+	.slick-prev
+		order: 1
+	.page-slider__enumerator
+		order: 2
+	.slick-next
+		order: 3
+.right-content__wrapper_history
+	height: 100%
+.right-content_history
+	overflow: hidden
+.tab-section
+	height: 100%
+	display: flex
+	flex-direction: column
+.tab-scion__text
+	font-size: 24px
+	color: $darkBlue
+.tab-scion__title
+	font-weight: 700
+	font-size: 80px
+	color: $darkBlue
+.tab-scion__item
+	padding: 0 35px
+	margin-top: 82px
+	display: none
+
 @media (max-width: 1360px)
 	.main-menu
 	  display: none
@@ -2131,7 +2267,34 @@ input:-webkit-autofill
 	  margin: 0
   .image-dude
 	  margin: 113px auto 0 auto
-
+  .tab-scion__item
+    margin-top: 0
+    max-width: 500px
+  .two-side-wrapper__bright_history::before
+    background: $historyPageColor !important
+  .tab-scion__text, .tab-scion__title
+    text-align: center
+  .right-content_history
+    width: 100%
+    margin-top: 20px
+  .two-side-wrapper__bright_history
+    height: 550px !important
+  .right-content__wrapper_history
+    padding: 0
+  .page-slider_history
+    margin-right: auto
+    margin-left: auto
+    margin-bottom: 0
+    max-width: 600px
+    width: 100%
+  .page-slider_history .page-slider-navigation
+    padding: 30px 0 35px
+    position: static
+  .page-slider__item_history
+    height: 300px
+  .history-page
+		.latest-news-section
+      padding: 70px 0 130px
 @media (max-width: 960px)
 	.about-company__image
 		position: absolute
@@ -2183,6 +2346,12 @@ input:-webkit-autofill
 		font-size: 18px
 	.action-banner-section__picture-place
 		width: 300px
+	.latest-news-section
+		padding-left: 15px
+		padding-right: 15px
+	.history-page
+		.latest-news-section
+			padding-top: 40px
 
 @media (max-width: 860px)
 	.main-slider__title
@@ -2331,6 +2500,10 @@ input:-webkit-autofill
       font-size: 14px
     blockquote
       padding: 25px 30px
+  .two-side-wrapper__bright_history
+    height: 596px !important
+  .right-content_history
+    margin-top: 35px
 
 @media (max-width: 470px)
   .main-header__col
@@ -2395,6 +2568,10 @@ input:-webkit-autofill
     top: 75px
   .page-slider-navigation
     padding: 15px 0
+  .two-side-wrapper__bright_history
+    height: 679px !important
+  .page-slider_history .slick-list
+    padding: 0 !important
 
 @media (max-width: 360px)
 	.main-phone__number
@@ -2421,6 +2598,10 @@ input:-webkit-autofill
 		overflow: visible
 		&--partners
 			height: 950px
+	.adaptive-height
+		height: auto
+	.right-content_history
+		padding-bottom: 0
 @media (max-height: 660px)
 	.mobile-submenu__list
 		flex-direction: column
