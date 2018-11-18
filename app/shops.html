@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Streets</title>
 </head>
-<body class="history-page">
+<body class="shops-page">
 <div class="layout-template-wrapper">
     <div class="layout-template-wrapper__inner layout-template-wrapper__inner_overflow-hidden">
         <div class="two-side-wrapper two-side-wrapper_not-main">
-            <div class="two-side-wrapper__dark two-side-wrapper__dark_history"></div>
-            <div class="two-side-wrapper__bright two-side-wrapper__bright_history two-side-wrapper__bright--about"></div>
-            <header class="main-header">
+            <div class="two-side-wrapper__dark">
+            </div>
+            <div class="two-side-wrapper__bright two-side-wrapper__bright--about"></div>
+            <header class="main-header main-header_with-map">
                 <div class="layout-position main-header__wrapper  main-header__wrapper--about">
                     <div class="main-header__col main-header__col_bright">
                         <div class="main-logo">
@@ -418,453 +419,33 @@
                 <ul class="breadcrumbs-list">
                     <li class="breadcrumbs__item"><a href="/" class="breadcrumbs-item__link"><span>Главная</span></a>
                     </li>
-                    <li class="breadcrumbs__item"><a href="#" class="breadcrumbs-item__link"><span>О брэнде</span></a>
-                    </li>
-                    <li class="breadcrumbs__item  breadcrumbs__item--active"><a href="#" class="breadcrumbs-item__link"><span>История</span></a>
+                    <li class="breadcrumbs__item  breadcrumbs__item--active"><a href="#" class="breadcrumbs-item__link"><span>Где купить</span></a>
                     </li>
                 </ul>
             </nav>
-            <div class="header-content-navigation header-content-navigation_content-page layout-position">
-                <div class="navigation-and-preview">
-                    <div class="navigation-and-preview__aside">
-                        <h1 class="aside-title">История</h1>
-                        <nav class="navigation-site-page-header">
-                            <ul class="navigation-site-page">
-                                <li class="navigation-site-page__item"><a href="#"
-                                                                          class="navigation-site-page__link"><span>О компании</span></a>
-                                    <span class="navigation-site-page__teaser">
-                                    О компании, небольшой тизер
-                                </span>
-                                </li>
-                                <li class="navigation-site-page__item navigation-site-page__item--active"><a href="#"
-                                                                                                             class="navigation-site-page__link"><span>История</span></a>
-                                    <span class="navigation-site-page__teaser">
-                                        История, небольшой тизер
-                                </span>
-                                </li>
-                                <li class="navigation-site-page__item"><a href="#"
-                                                                          class="navigation-site-page__link"><span>Сертификаты</span></a>
-                                    <span class="navigation-site-page__teaser">
-                                        Сертификаты, небольшой тизер
-                                </span>
-                                </li>
-                                <li class="navigation-site-page__item"><a href="#"
-                                                                          class="navigation-site-page__link"><span>Для партнеров</span></a>
-                                    <span class="navigation-site-page__teaser">
-                                        Для партнеров, небольшой тизер
-                                </span>
-                                </li>
-                                <li class="navigation-site-page__item"><a href="#"
-                                                                          class="navigation-site-page__link"><span>Вакансии</span></a>
-                                    <span class="navigation-site-page__teaser">
-                                        Вакансии, небольшой тизер
-                                </span>
-                                </li>
-
-                            </ul>
-                        </nav>
-                        <div class="navigation-site-page-header navigation-site-page-header_mobile">
-                            <button class="navigation-site-page-header__open-all">
-                                О компании
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7.312"
-                                         viewBox="0 0 12 7.312">
-                                        <defs>
-                                            <style>
-                                              .aside-mobile-arrow {
-                                                  fill: #abc64a;
-                                                  fill-rule: evenodd;
-                                              }
-                                            </style>
-                                          </defs>
-                                          <path class="aside-mobile-arrow"
-                                                d="M310.2,265.7l3.8,3.888,3.8-3.888a1.284,1.284,0,0,1,2.2.923h0a1.327,1.327,0,0,1-.372.923l-4.456,4.564a1.626,1.626,0,0,1-2.345,0l-4.455-4.564a1.327,1.327,0,0,1-.372-0.923h0A1.284,1.284,0,0,1,310.2,265.7Z"
-                                                transform="translate(-308 -265.313)"/>
-                                        </svg>
-                                </span>
-                            </button>
-                            <nav class="navigation-site-page-header__all-wrapper">
-                                <ul class="aside-mobile-menu">
-                                    <li class="aside-mobile-menu__item">
-                                        <a href="#">
-                                            История
-                                        </a>
-                                    </li>
-                                    <li class="aside-mobile-menu__item">
-                                        <a href="#">
-                                            Сертификаты
-                                        </a>
-                                    </li>
-                                    <li class="aside-mobile-menu__item">
-                                        <a href="#">
-                                            Для партнеров
-                                        </a>
-                                    </li>
-                                    <li class="aside-mobile-menu__item">
-                                        <a href="#">
-                                            Вакансии
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="tab-scion">
-                        <div class="tab-scion__item active" data-tab-index="history-section1">
-                            <div class="tab-scion__text">
-                                Я для себя обнаружил
-                                огромный рынок с одним
-                                игроком – «Смайком».
+            <div class="header-content-navigation header-content-navigation_position-static header-content-navigation_content-page layout-position">
+                <div class="navigation-and-preview navigation-and-preview_with-before">
+                    <div class="navigation-and-preview__aside navigation-and-preview__aside_shops navigation-and-preview__aside_full-width">
+                        <h1 class="aside-title">Где купить</h1>
+                        <div class="preview-block">
+                            <div class="preview-block__title">
+                                Более 1 300
+                                магазинов
                             </div>
-                            <div class="tab-scion__title">
-                                2009.
-                            </div>
-                        </div>
-                        <div class="tab-scion__item" data-tab-index="history-section2">
-                            <div class="tab-scion__text">
-                                Я для себя обнаружил
-                                огромный рынок с одним
-                                игроком – «Смайком».
-                            </div>
-                            <div class="tab-scion__title">
-                                2011.
-                            </div>
-                        </div>
-                        <div class="tab-scion__item" data-tab-index="history-section3">
-                            <div class="tab-scion__text">
-                                Я для себя обнаружил
-                                огромный рынок с одним
-                                игроком – «Смайком».
-                            </div>
-                            <div class="tab-scion__title">
-                                2012.
-                            </div>
-                        </div>
-                        <div class="tab-scion__item" data-tab-index="history-section4">
-                            <div class="tab-scion__text">
-                                Я для себя обнаружил
-                                огромный рынок с одним
-                                игроком – «Смайком».
-                            </div>
-                            <div class="tab-scion__title">
-                                2014.
-                            </div>
-                        </div>
-                        <div class="tab-scion__item" data-tab-index="history-section5">
-                            <div class="tab-scion__text">
-                                Я для себя обнаружил
-                                огромный рынок с одним
-                                игроком – «Смайком».
-                            </div>
-                            <div class="tab-scion__title">
-                                2016.
-                            </div>
-                        </div>
-                        <div class="tab-scion__item" data-tab-index="history-section6">
-                            <div class="tab-scion__text">
-                                Я для себя обнаружил
-                                огромный рынок с одним
-                                игроком – «Смайком».
-                            </div>
-                            <div class="tab-scion__title">
-                                2018.
+                            <div class="preview-block__text">
+                                Занимаются реализацией продукции
+                                нашей компании. Занимаются реализацией
+                                продукции нашей компании. Занимаются
+                                реализацией продукции нашей компании.
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="right-content adaptive-height">
-                    <div class="right-content__wrapper right-content__wrapper_history">
-                        <div class="tab-section">
-                            <ul class="tab-section__switched">
-                                <li class="tab-section__switched-li">
-                                    <a href="#history-section1" class="tab-switch active">
-                                        2009
-                                    </a>
-                                </li>
-                                <li class="tab-section__switched-li">
-                                    <a href="#history-section2" class="tab-switch">
-                                        2011
-                                    </a>
-                                </li>
-                                <li class="tab-section__switched-li">
-                                    <a href="#history-section3" class="tab-switch">
-                                        2012
-                                    </a>
-                                </li>
-                                <li class="tab-section__switched-li">
-                                    <a href="#history-section4" class="tab-switch">
-                                        2014
-                                    </a>
-                                </li>
-                                <li class="tab-section__switched-li">
-                                    <a href="#history-section5" class="tab-switch">
-                                        2016
-                                    </a>
-                                </li>
-                                <li class="tab-section__switched-li">
-                                    <a href="#history-section6" class="tab-switch">
-                                        2018
-                                    </a>
-                                </li>
-                            </ul>
-                            <section id="history-section1" class="tab-area mCustomScrollBar  content-text--auto-height content-text--with-scroll">
-                                <div class="content-text__wrapper content-text__wrapper_history">
-                                    <p>При прочтении очередной книги по личностному росту, я поставил перед собой цель
-                                        создать бизнес по производству бутербродов по аналогии «Смайк». К тому времени я
-                                        проработал в «Смайке» три месяца в должности коммерческого директора. Двумя
-                                        неделями ранее я вернулся из Красноярска, где презентовал свое видение развития
-                                        «Смайков» в
-                                    </p>
-                                    <div class="page-slider page-slider_history">
-                                        <div class="page-slider-image">
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-1.png" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-2.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                        </div>
-                                        <div class="page-slider-navigation">
-                                            <div class="page-slider__enumerator">
-                                                <span class="page-slider__current"></span> /
-                                                <span class="page-slider__total"></span>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-                                    <blockquote>
-                                        Вся техника и продукты проходят обязательную
-                                        сертификацию. Вся техника и продукты проходят
-                                        обязательную сертификацию.
-                                    </blockquote>
-                                </div>
-                            </section>
-                            <section id="history-section2" class="tab-area mCustomScrollBar  content-text--auto-height content-text--with-scroll">
-                                <div class="content-text__wrapper content-text__wrapper_history">
-                                    <p>При прочтении очередной книги по личностному росту, я поставил перед собой цель
-                                        создать бизнес по производству бутербродов по аналогии «Смайк». К тому времени я
-                                        проработал в «Смайке» три месяца в должности коммерческого директора. Двумя
-                                        неделями ранее я вернулся из Красноярска, где презентовал свое видение развития
-                                        «Смайков» в
-                                    </p>
-                                    <div class="page-slider page-slider_history">
-                                        <div class="page-slider-image">
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-1.png" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-2.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                        </div>
-                                        <div class="page-slider-navigation">
-                                            <div class="page-slider__enumerator">
-                                                <span class="page-slider__current"></span> /
-                                                <span class="page-slider__total"></span>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-                                    <blockquote>
-                                        Вся техника и продукты проходят обязательную
-                                        сертификацию. Вся техника и продукты проходят
-                                        обязательную сертификацию.
-                                    </blockquote>
-                                </div>
-                            </section>
-                            <section id="history-section3" class="tab-area mCustomScrollBar  content-text--auto-height content-text--with-scroll">
-                                <div class="content-text__wrapper content-text__wrapper_history">
-                                    <p>При прочтении очередной книги по личностному росту, я поставил перед собой цель
-                                        создать бизнес по производству бутербродов по аналогии «Смайк». К тому времени я
-                                        проработал в «Смайке» три месяца в должности коммерческого директора. Двумя
-                                        неделями ранее я вернулся из Красноярска, где презентовал свое видение развития
-                                        «Смайков» в
-                                    </p>
-                                    <div class="page-slider page-slider_history">
-                                        <div class="page-slider-image">
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-1.png" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-2.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                        </div>
-                                        <div class="page-slider-navigation">
-                                            <div class="page-slider__enumerator">
-                                                <span class="page-slider__current"></span> /
-                                                <span class="page-slider__total"></span>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-                                    <blockquote>
-                                        Вся техника и продукты проходят обязательную
-                                        сертификацию. Вся техника и продукты проходят
-                                        обязательную сертификацию.
-                                    </blockquote>
-                                </div>
-                            </section>
-                            <section id="history-section4" class="tab-area mCustomScrollBar  content-text--auto-height content-text--with-scroll">
-                                <div class="content-text__wrapper content-text__wrapper_history">
-                                    <p>При прочтении очередной книги по личностному росту, я поставил перед собой цель
-                                        создать бизнес по производству бутербродов по аналогии «Смайк». К тому времени я
-                                        проработал в «Смайке» три месяца в должности коммерческого директора. Двумя
-                                        неделями ранее я вернулся из Красноярска, где презентовал свое видение развития
-                                        «Смайков» в
-                                    </p>
-                                    <div class="page-slider page-slider_history">
-                                        <div class="page-slider-image">
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-1.png" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-2.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                        </div>
-                                        <div class="page-slider-navigation">
-                                            <div class="page-slider__enumerator">
-                                                <span class="page-slider__current"></span> /
-                                                <span class="page-slider__total"></span>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-                                    <blockquote>
-                                        Вся техника и продукты проходят обязательную
-                                        сертификацию. Вся техника и продукты проходят
-                                        обязательную сертификацию.
-                                    </blockquote>
-                                </div>
-                            </section>
-                            <section id="history-section5" class="tab-area mCustomScrollBar  content-text--auto-height content-text--with-scroll">
-                                <div class="content-text__wrapper content-text__wrapper_history">
-                                    <p>При прочтении очередной книги по личностному росту, я поставил перед собой цель
-                                        создать бизнес по производству бутербродов по аналогии «Смайк». К тому времени я
-                                        проработал в «Смайке» три месяца в должности коммерческого директора. Двумя
-                                        неделями ранее я вернулся из Красноярска, где презентовал свое видение развития
-                                        «Смайков» в
-                                    </p>
-                                    <div class="page-slider page-slider_history">
-                                        <div class="page-slider-image">
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-1.png" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-2.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                        </div>
-                                        <div class="page-slider-navigation">
-                                            <div class="page-slider__enumerator">
-                                                <span class="page-slider__current"></span> /
-                                                <span class="page-slider__total"></span>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-                                    <blockquote>
-                                        Вся техника и продукты проходят обязательную
-                                        сертификацию. Вся техника и продукты проходят
-                                        обязательную сертификацию.
-                                    </blockquote>
-                                </div>
-                            </section>
-                            <section id="history-section6" class="tab-area mCustomScrollBar  content-text--auto-height content-text--with-scroll">
-                                <div class="content-text__wrapper content-text__wrapper_history">
-                                    <p>При прочтении очередной книги по личностному росту, я поставил перед собой цель
-                                        создать бизнес по производству бутербродов по аналогии «Смайк». К тому времени я
-                                        проработал в «Смайке» три месяца в должности коммерческого директора. Двумя
-                                        неделями ранее я вернулся из Красноярска, где презентовал свое видение развития
-                                        «Смайков» в
-                                    </p>
-                                    <div class="page-slider page-slider_history">
-                                        <div class="page-slider-image">
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-1.png" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-2.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                            <div class="page-slider__item page-slider__item_history">
-                                                <img src="userdata/about/slider/slide-3.jpg" alt="kitchen">
-                                            </div>
-                                        </div>
-                                        <div class="page-slider-navigation">
-                                            <div class="page-slider__enumerator">
-                                                <span class="page-slider__current"></span> /
-                                                <span class="page-slider__total"></span>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-                                    <blockquote>
-                                        Вся техника и продукты проходят обязательную
-                                        сертификацию. Вся техника и продукты проходят
-                                        обязательную сертификацию.
-                                    </blockquote>
-                                </div>
-                            </section>
+                <div class="right-content right-content_shops-page adaptive-height">
+                    <div id="map-all-shops" class="right-map">
+                        <div class="control-map">
+                            <button class="control-map__button plus"></button>
+                            <button class="control-map__button minus"></button>
                         </div>
                     </div>
                 </div>
@@ -1446,8 +1027,11 @@
         </svg>
     </div>
 </div>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU">
+</script
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/libs.min.js"></script>
+<script src="js/map.js"></script>
 <script src="js/template_script.js"></script>
 </body>
 </html>
