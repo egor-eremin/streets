@@ -796,7 +796,7 @@ body, html
 	overflow: auto
 	padding-bottom: 40px
 	padding-top: 20px
-	height: 780px
+	height: auto
 	&--partners
 		padding: 0
 		height: auto
@@ -2066,6 +2066,38 @@ input:-webkit-autofill
 	top: 0
 .header-content-navigation_position-static
 	position: static
+.page-slider-certificates
+	.page-slider__item
+		transition: .3s ease-in-out
+		position: relative
+		opacity: .4
+		height: 390px
+		&:focus
+			outline: none
+		img
+			object-fit: contain
+			font-family: 'object-fit: cover; object-position: center;'
+		&.slick-center
+			transform: scale(1.2)
+			z-index: 1
+			opacity: 1
+.page-slider-certificates
+	&::before
+		content: ''
+		width: 100%
+		height: 32px
+		position: absolute
+		left: 0
+		bottom: 5px
+		transform: translateY(100%)
+		background: url("../images/object/shadow-slider.png") no-repeat
+		background-size: contain
+.page-slider-certificates
+	.slick-list
+		padding: 60px 50px !important
+.page-slider-certificates + .page-slider-navigation
+	padding-top: 37px
+
 @media (max-width: 1360px)
 	.main-menu
 	  display: none
@@ -2166,6 +2198,10 @@ input:-webkit-autofill
 		width: 100%
 		left: 0
 		height: 712px
+	.page-slider-certificates .slick-list
+		padding: 30px !important
+	.page-slider-certificates::before
+		content: none
 
 @media (max-width: 1024px)
   .main-slider-arrow
@@ -2716,13 +2752,14 @@ input:-webkit-autofill
 
 @media (max-height: 950px)
 	.content-text--auto-height
-		height: 720px
+		//height: 720px
+		//height: auto
 	.mCSB_inside 
 		& > .mCSB_container 
 			padding-bottom: 0
 @media (max-height: 920px)
 	.content-text--auto-height
-			height: 680px
+			//height: 680px
 @media (max-height: 900px)
 	.scroll-down_content-page
 		display: none
