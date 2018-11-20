@@ -44,14 +44,14 @@ $(document).ready(function () {
             zoomControl = new ymaps.control.ZoomControl({options: {layout: ZoomLayout}});
             myMap.behaviors.disable('scrollZoom');
             myMap.controls.add(zoomControl);
+            myMap.events.add('click', function() {
+                myMap.balloon.close();
+            });
 
-            // var html = '<div class="projects__item-in">';
-            // html += '<span>Газпром</span>';
-            // html += '<span>Инженерный проект 1</span>';
-            // html += '<span>Иркутск</span>';
-            // html += '<button type="button" data-project="project-1" class="projects__item-in-link">Подробнее</button>';
-            // html += '</div>';
-            var html = '';
+            var html = '<div class="custom-baloon">';
+            html += '<span>Г. Иркутск, ' +
+                'ул. Пушкина 23б</span>';
+            html += '</div>';
 
             var myPlacemark1 = new ymaps.Placemark([52.29778, 104.3],
                 {balloonContent: html},
@@ -61,9 +61,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -80,9 +82,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -101,9 +105,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -121,9 +127,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -140,9 +148,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -160,9 +170,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -180,9 +192,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -200,9 +214,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -220,9 +236,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -240,9 +258,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -260,9 +280,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -280,9 +302,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -300,9 +324,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -320,9 +346,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -340,9 +368,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -360,9 +390,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -380,9 +412,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -400,9 +434,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -420,9 +456,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -440,9 +478,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -461,9 +501,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -482,9 +524,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );
@@ -503,9 +547,11 @@ $(document).ready(function () {
                     iconImageSize: [90, 100],
                     iconImageOffset: [-45, -72],
 
-                    balloonContentSize: [90, 100],
+                    balloonContentSize: [180, 90],
                     balloonLayout: "default#imageWithContent",
-                    balloonImageSize: [0, 0], balloonShadow: false,
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
                     hideIconOnBalloonOpen: false
                 }
             );

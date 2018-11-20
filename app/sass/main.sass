@@ -2097,6 +2097,32 @@ input:-webkit-autofill
 		padding: 60px 50px !important
 .page-slider-certificates + .page-slider-navigation
 	padding-top: 37px
+.custom-baloon
+	background: #ffffff
+	border-radius: 10px
+	width: 180px
+	color: $breadcrumbsHoverColor
+	font-size: 14px
+	position: relative
+	padding: 20px 14px
+	font-family: $neoSansPro
+	font-weight: 400
+	box-shadow: 0px 5px 27px 0px rgba(27, 44, 94, 0.5)
+	&::before
+		content: ''
+		border: 12px solid transparent
+		border-top: 13px solid $breadcrumbsHoverColor
+		position: absolute
+		bottom: 0
+		left: 50%
+		transform: translate(-50%, 100%)
+.two-side-wrapper__dark_light-them
+	background: $historyPageColor
+.close-baloon
+	width: 50px
+	height: 50px
+	background: red
+	display: block
 
 @media (max-width: 1360px)
 	.main-menu
@@ -2178,8 +2204,6 @@ input:-webkit-autofill
 	  font-size: 36px
 	.page-slider
 		padding-left: 0
-	.page-slider__item
-		height: 370px
 	.image-dude
 		img
 			right: 57px
@@ -2202,6 +2226,16 @@ input:-webkit-autofill
 		padding: 30px !important
 	.page-slider-certificates::before
 		content: none
+	.page-slider-certificates
+		.page-slider__item
+			height: auto
+			img
+				object-fit: none
+				font-family: 'object-fit: none; object-position: center;'
+				height: auto
+			&.slick-center
+				transform: scale(1.1)
+
 
 @media (max-width: 1024px)
   .main-slider-arrow
