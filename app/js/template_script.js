@@ -82,6 +82,33 @@ $(document).ready(function () {
         });
     })();
 
+    (function validationResponse() {
+        $('#form-response').validate({
+            submitHandler: function(form) {
+                $.ajax({
+                    type: $(form).attr('method'),
+                    url: $(form).attr('action'),
+                    data: $(form).serialize(),
+                    dataType: 'json',
+                    success: function (data) {
+                        if(parseInt(data.success) == 1) {
+                            $('#form-response').addClass('hide-information');
+                            $('.response-thank-you').addClass('show');
+                        } else {
+                            $('#form-response').addClass('hide-information');
+                            $('.response-wrong-text').addClass('show');
+                        }
+                    },
+                    error: function() {
+                        $('#form-response').addClass('hide-information');
+                        $('.response-wrong-text').addClass('show');
+                    }
+                });
+                return false;
+            },
+        });
+    })();
+
     (function toggleMobileAsideMenu() {
         if ($('.navigation-site-page-header_mobile').length > 0) {
             $('.navigation-site-page-header__open-all').on('click', function () {
@@ -306,6 +333,45 @@ $(document).ready(function () {
         }
     })();
 
+    (function accorrdionVacancy() {
+        if ('.accordion-vacancy') {
+            initAccordion('.accordion-title', '.accordion__content');
+        }
+    })();
+
+    (function scrollTopVacancy() {
+        if ($('.accordion-vacancy').length > 0) {
+            $('.accordion-title').on('click', function () {
+                var thisCoordinate = $(this).position().top;
+
+                setTimeout(function () {
+                    $('.content-text--with-scroll').mCustomScrollbar("scrollTo",thisCoordinate);
+                }, 300);
+            });
+        }
+    })();
+
+    (function initCustomInputFile() {
+        if ($('.custom-input-file').length > 0) {
+            var fileInput  = document.querySelector( ".custom-input-file" ),
+                button     = document.querySelector( ".input-file-trigger" ),
+                the_return = document.querySelector(".file-return");
+
+            button.addEventListener( "keydown", function( event ) {
+                if ( event.keyCode == 13 || event.keyCode == 32 ) {
+                    fileInput.focus();
+                }
+            });
+            button.addEventListener( "click", function( event ) {
+                fileInput.focus();
+                return false;
+            });
+            fileInput.addEventListener( "change", function( event ) {
+                the_return.innerHTML = this.value;
+            });
+        }
+    })();
+
 	//Медиа-запросы в javascript (Если нужно)
 	//-------------------------------------------------------------------------------------------------------
     
@@ -330,7 +396,34 @@ $(document).ready(function () {
             }
         })();
 	});
+
+	media('all and (max-width: 1024px)', function () {
+        (function scrollTopAccordeon() {
+            if ($('.accordion').length > 0) {
+                $('.accordion-title').on('click', function () {
+                    var thisCoordinate = $(this).offset().top;
+                    $('html, body').animate({
+                        scrollTop: thisCoordinate - 10
+                    }, 1000);
+                })
+            }
+        })();
+    });
 });
+
+
+function initAccordion(buttonOpen, sectionOpen) {
+    $('' + buttonOpen +'').on('click', function () {
+        var thisSibling = $(this).siblings('' + sectionOpen + '');
+       if (!$(this).hasClass('active')) {
+           $(this).addClass('active');
+           thisSibling.slideDown(300);
+       } else {
+           $(this).removeClass('active');
+           thisSibling.slideUp(300);
+       }
+    });
+}
 
 function counterSlide(selectorSlider, selectorNavigationBlock, currentSlideSelect, totalSlide) {
     $('' + selectorSlider + '').on('init', function(event, slick){

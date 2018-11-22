@@ -51,15 +51,15 @@ $darkBlue: #485157
 //Light
 +font-face('neosanspro', '../fonts/neosanspro-light', $weight: 100)
 //Italic
-+font-face('neosansproitalic', '../fonts/neosanspro-italic', $weight: 400, $style: italic)
++font-face('neosanspro', '../fonts/neosanspro-italic', $weight: 400, $style: italic)
 //Light Italic
-+font-face('neosansproitalic', '../fonts/neosanspro-lightitalic', $weight: 100, $style: italic)
++font-face('neosanspro', '../fonts/neosanspro-lightitalic', $weight: 100, $style: italic)
 // Bold
 +font-face('neosanspro', '../fonts/neosanspro-bold', $weight: 700)
 // Bold italic
-+font-face('neosansproitalic', '../fonts/neosanspro-bolditalic', $weight: 700, $style: italic)
++font-face('neosanspro', '../fonts/neosanspro-bolditalic', $weight: 700, $style: italic)
 // Ultra
-+font-face('neosansproultra', '../fonts/neosanspro-ultra', $weight: 800)
++font-face('neosanspro', '../fonts/neosanspro-ultra', $weight: 800)
 
 
 body, html
@@ -557,7 +557,7 @@ body, html
 	z-index: 2
 	&--about
       overflow: hidden
-      background: linear-gradient(to bottom right, #bfd4ea, #ffffff, #cfc2b3)
+      background: linear-gradient(to bottom right, #ebf5ff, #e0d2c2)
 .two-side-wrapper-bright__wrapper
 	width: 100%
 	height: 100%
@@ -1378,13 +1378,24 @@ input:-webkit-autofill
 	display: flex
 	align-items: flex-start
 	margin-top: 1.875rem
-.custom-checkbox-text
+.custom-checkbox-text, .custom-input-file-text, .file-return
 	font-size: 12px
 	line-height: 22px
 	display: block
 	padding-left: 32px
 	position: relative
 	user-select: none
+.custom-input-file-text
+  font-weight: 400
+  transform: none
+  padding: 0
+  cursor: pointer
+  display: inline-flex
+  align-items: center
+  &:hover
+    text-decoration: underline
+  span
+    margin-right: 13px
 .custom-checkbox
 	opacity: 0
 	visibility: hidden
@@ -1397,7 +1408,7 @@ input:-webkit-autofill
 	width: 16px
 	height: 16px
 	left: 0
-	top: 0
+	top: 2px
 	border-radius: 2px
 	background: #f1f5f9
 	z-index: 1
@@ -1985,12 +1996,18 @@ input:-webkit-autofill
 
 .navigation-and-preview__aside_full-width
 	width: 100%
-.preview-block__title
+.preview-block__title, .response-text
 	font-size: 62px
 	font-weight: 800
 	color: $darkBlue
 	line-height: 1.2
 	margin-bottom: 49px
+.response-text
+  font-size: 25px
+  line-height: 1.5
+  display: none
+.response-text.show
+  display: block
 .preview-block__text
 	font-size: 18px
 	line-height: 1.6
@@ -2124,6 +2141,107 @@ input:-webkit-autofill
 	background: red
 	display: block
 
+.accordion
+  height: 100%
+  overflow: auto
+  margin-right: 30px
+  position: relative
+  overflow-x: hidden
+  padding-right: 30px
+  .mCSB_container
+    margin-right: 0
+  .mCustomScrollBox
+    position: static
+.accordion-title
+  width: 100%
+  height: 50px
+  display: flex
+  align-items: center
+  border: 2px solid $successfullIcon
+  color: #ffffff
+  font-weight: 700
+  font-size: 16px
+  border-radius: 25px
+  padding: 0 50px 0 16px
+  cursor: pointer
+  transition: .3s ease-in-out
+  position: relative
+  //margin-bottom: 65px
+  &:hover
+    background: $successfullIcon
+.accordeon-arrow
+  width: 30px
+  height: 30px
+  border-radius: 50%
+  position: absolute
+  right: 10px
+  top: 50%
+  display: flex
+  justify-content: center
+  align-items: center
+  transform: translate(0, -50%) rotate(90deg)
+  background: #ffffff
+  transition: .3s ease-in-out
+.content-vacancy
+  color: #ffffff
+  h4
+    font-size: 18px
+    font-weight: 700
+    margin-bottom: 23px
+  p
+    font-size: 14px
+    line-height: 1.7
+    padding-left: 18px
+    position: relative
+    margin-bottom: 30px
+    &::before
+      content: ''
+      width: 2px
+      height: 100%
+      left: 0
+      top: 0
+      background: $successfullIcon
+      position: absolute
+  ul
+    margin-bottom: 30px
+  li
+    font-size: 14px
+    line-height: 1.7
+    padding-left: 16px
+    position: relative
+    &::before
+      content: ''
+      width: 5px
+      height: 5px
+      border-radius: 50%
+      background: $successfullIcon
+      position: absolute
+      top: 5px
+      left: 0
+
+.accordion__content
+  padding: 65px 0 30px
+  display: none
+.accordion__item
+  margin-bottom: 25px
+.accordion-title
+  &.active
+    .accordeon-arrow
+      transform: translate(0, -50%)
+.response-wrapper
+  padding-right: 35px
+  max-width: 390px
+  margin-left: auto
+.custom-input-file
+  position: absolute
+  top: 0
+  left: 0
+  opacity: 0
+  visibility: hidden
+.main-form-item_textarea
+  margin-bottom: 28px
+#form-response.hide-information
+  display: none
 @media (max-width: 1360px)
 	.main-menu
 	  display: none
@@ -2235,8 +2353,13 @@ input:-webkit-autofill
 				height: auto
 			&.slick-center
 				transform: scale(1.1)
-
-
+	.response-wrapper
+		.main-form-item_footer-form
+			flex-direction: column
+		.button-submit-block
+			margin-left: auto
+			margin-right: auto
+			margin-top: 1.875rem
 @media (max-width: 1024px)
   .main-slider-arrow
       bottom: 53px
@@ -2489,6 +2612,21 @@ input:-webkit-autofill
     width: 50%
   .navigation-and-preview__aside_shops
     padding-bottom: 0
+  .response-wrapper
+    padding-right: 0
+    margin-right: auto
+    .main-form-item_footer-form
+      margin-top: 10px
+  .jobs-page
+		.two-side-wrapper_not-main .two-side-wrapper__bright
+      height: 1066px
+  .accordion
+    padding-right: 0
+    max-width: 500px
+    margin: 95px auto 0
+  .accordion__content
+    padding: 65px 0 10px
+
 
 @media (max-width: 960px)
 	.about-company__image
@@ -2707,6 +2845,11 @@ input:-webkit-autofill
     height: 596px !important
   .right-content
     margin-top: 35px
+  .accordion
+    margin: 55px auto 0
+  .jobs-page
+    .two-side-wrapper_not-main .two-side-wrapper__bright
+      height: 1125px
 
 @media (max-width: 470px)
   .main-header__col
@@ -2779,6 +2922,8 @@ input:-webkit-autofill
 	  font-size: 45px
   .preview-block
     margin: 58px auto
+  .response-wrapper .button-submit-block
+    margin-top: 10px
 
 @media (max-width: 360px)
 	.main-phone__number
