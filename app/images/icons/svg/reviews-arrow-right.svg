@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="26" viewBox="0 0 15 26">
+<defs>
+    <style>
+    .reviews-arrow-right {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path class="reviews-arrow-right" d="M1513.63,489.422l9.54-9.422-9.54-9.424a2.094,2.094,0,0,1,1.48-3.576h0a2.089,2.089,0,0,1,1.47.6l10.61,10.491a2.68,2.68,0,0,1,0,3.81l-10.61,10.49a2.089,2.089,0,0,1-1.47.6h0A2.1,2.1,0,0,1,1513.63,489.422Z" transform="translate(-1513 -467)"/>
+</svg>

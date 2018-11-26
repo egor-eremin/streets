@@ -42,11 +42,15 @@ $(document).ready(function () {
     })();
     
 	(function activateModalCallbackForm() {
-		$('.btn-callback, .callback__link ').magnificPopup({
+        openModalPopup('.btn-callback', '#callback-popup');
+    })();
+
+    (function activateModalReviewForm() {
+        $('.write-review').magnificPopup({
             type: 'inline',
-			mainClass: 'main-modal',
+            mainClass: 'main-modal main-modal_review',
             items: {
-                src: '#callback-popup',
+                src: '#leave-feedback',
             },
         });
     })();
@@ -56,30 +60,11 @@ $(document).ready(function () {
     })();
 	
 	(function validationCallBackForm() {
-        $('#callback-form').validate({
-            submitHandler: function(form) {
-                $.ajax({
-                    type: $(form).attr('method'),
-                    url: $(form).attr('action'),
-                    data: $(form).serialize(),
-                    dataType: 'json',
-                    success: function (data) {
-                        if(parseInt(data.success) == 1) {
-                            $('#callback-form').addClass('hide-information');
-                            $('.thank-you-text').addClass('show');
-                        } else {
-                            $('#callback-form').addClass('hide-information');
-                            $('.wrong-text').addClass('show');
-                        }
-                    },
-                    error: function() {
-                        $('#callback-form').addClass('hide-information');
-                        $('.wrong-text').addClass('show');
-                    }
-                });
-                return false;
-            },
-        });
+        validationForm('#callback-form', '.thank-you-text', '.wrong-text')
+    })();
+
+    (function validationReviewForm() {
+        validationForm('#review-form', '.thank-you-text_review', '.wrong-text_review')
     })();
 
     (function validationResponse() {
@@ -371,6 +356,83 @@ $(document).ready(function () {
             });
         }
     })();
+    
+    (function initReviewsSlider() {
+        if ($('.reviews-slider').length > 0) {
+            $('.reviews-slider').slick({
+                arrows:true,
+                slidesToSHow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                fade: true,
+                asNavFor: '.reviews-slider-navigate',
+                prevArrow: '<button type="button" class="slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="14.97" height="26" viewBox="0 0 14.97 26">\n' +
+                '<defs>\n' +
+                '    <style>\n' +
+                '      .reviews-arrow-left {\n' +
+                '        fill: #fff;\n' +
+                '        fill-rule: evenodd;\n' +
+                '      }\n' +
+                '    </style>\n' +
+                '  </defs>\n' +
+                '  <path class="reviews-arrow-left" d="M1058.36,489.422L1048.83,480l9.54-9.424a2.094,2.094,0,0,0-1.48-3.576h0a2.089,2.089,0,0,0-1.47.6L1044.81,478.1a2.68,2.68,0,0,0,0,3.81l10.61,10.49a2.089,2.089,0,0,0,1.47.6h0A2.09,2.09,0,0,0,1058.36,489.422Z" transform="translate(-1044.03 -467)"/>\n' +
+                '</svg></button>',
+                nextArrow: '<button type="button" class="slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="26" viewBox="0 0 15 26">\n' +
+                '<defs>\n' +
+                '    <style>\n' +
+                '    .reviews-arrow-right {\n' +
+                '        fill: #fff;\n' +
+                '        fill-rule: evenodd;\n' +
+                '      }\n' +
+                '    </style>\n' +
+                '  </defs>\n' +
+                '  <path class="reviews-arrow-right" d="M1513.63,489.422l9.54-9.422-9.54-9.424a2.094,2.094,0,0,1,1.48-3.576h0a2.089,2.089,0,0,1,1.47.6l10.61,10.491a2.68,2.68,0,0,1,0,3.81l-10.61,10.49a2.089,2.089,0,0,1-1.47.6h0A2.1,2.1,0,0,1,1513.63,489.422Z" transform="translate(-1513 -467)"/>\n' +
+                '</svg></button>',
+                responsive: [
+                    {
+                        breakpoint: 641,
+                        settings: {
+                            dots: true,
+                            arrows: false,
+                            autoplay: true,
+                            autoplaySpeed: 4000,
+                        }
+                    },
+                ]
+            });
+        }
+    })();
+
+    (function initPrevReviewsSlider() {
+        if ($('.reviews-slider').length > 0) {
+            $('.reviews-slider-navigate').slick({
+                slidesToSHow: 1,
+                slidesToScroll: 1,
+                fade: true,
+                arrows: false,
+                asNavFor: '.reviews-slider',
+            });
+        }
+    })();
+    
+    (function initStarsRating() {
+        if ($('.stars').length > 0) {
+            $('.radio-star').change(function () {
+                var thisWrapper = $(this).parents('.stars');
+                var thisParent = $(this).parents('.stars__item');
+
+                thisWrapper.addClass('starsActive');
+
+                if (!thisParent.hasClass('active')) {
+                    $('.stars__item').removeClass('active');
+                    thisParent.addClass('active');
+                }
+
+            });
+        }
+    })();
+
+
 
 	//Медиа-запросы в javascript (Если нужно)
 	//-------------------------------------------------------------------------------------------------------
@@ -411,6 +473,43 @@ $(document).ready(function () {
     });
 });
 
+function validationForm(formInit, textGood, textBad) {
+    $(formInit).validate({
+        submitHandler: function(form) {
+            $.ajax({
+                type: $(form).attr('method'),
+                url: $(form).attr('action'),
+                data: $(form).serialize(),
+                dataType: 'json',
+                success: function (data) {
+                    if(parseInt(data.success) == 1) {
+                        $(formInit).addClass('hide-information');
+                        $(textGood).addClass('show');
+                    } else {
+                        $(formInit).addClass('hide-information');
+                        $(textBad).addClass('show');
+                    }
+                },
+                error: function() {
+                    $(formInit).addClass('hide-information');
+                    console.log(formInit);
+                    $(textBad).addClass('show');
+                }
+            });
+            return false;
+        },
+    });
+}
+
+function openModalPopup(button, openPopup) {
+    $(button).magnificPopup({
+        type: 'inline',
+        mainClass: 'main-modal',
+        items: {
+            src: openPopup,
+        },
+    });
+}
 
 function initAccordion(buttonOpen, sectionOpen) {
     $('' + buttonOpen +'').on('click', function () {
