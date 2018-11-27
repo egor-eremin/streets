@@ -42,7 +42,7 @@ $(document).ready(function () {
     })();
     
 	(function activateModalCallbackForm() {
-        openModalPopup('.btn-callback', '#callback-popup');
+        openModalPopup('.btn-callback, .callback__link', '#callback-popup');
     })();
 
     (function activateModalReviewForm() {
@@ -430,6 +430,14 @@ $(document).ready(function () {
 
             });
         }
+    })();
+    
+    (function findCursorCoordinate() {
+        // $(document).mousemove(function(e){
+        //     var X = e.pageX;
+        //     var Y = e.pageY;
+        //     console.log("X: " + X + " Y: " + Y); // вывод результата в консоль
+        // });
     })();
 
 

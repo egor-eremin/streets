@@ -156,7 +156,6 @@ body, html
 		width: 100%
 		flex-grow: 1
 		flex-shrink: 0
-		font-family: $neoSansProItalic
 		font-style: italic
 		font-weight: 100
 		text-align: right
@@ -319,7 +318,6 @@ body, html
 	padding-top: 10px
 
 .action-banner-section-description__underline
-	font-family: $neoSansProUltra
 	font-weight: 800
 	font-size: 3.125rem
 	line-height: 1.3
@@ -629,6 +627,7 @@ body, html
 	+initial-flex
 	align-items: stretch
 	align-content: stretch
+	height: calc(100% - 206px)
 .navigation-and-preview
 	width: 50%	
 	+initial-flex
@@ -796,7 +795,7 @@ body, html
 	overflow: auto
 	padding-bottom: 40px
 	padding-top: 20px
-	height: auto
+	height: 100%
 	&--partners
 		padding: 0
 		height: auto
@@ -1556,8 +1555,8 @@ input:-webkit-autofill
 	margin-right: 30px
 	&:hover
 		border-color: rgba(141, 30, 121, 1)
-.mCSB_inside 
-	& > .mCSB_container 
+//.mCSB_inside
+//	& > .mCSB_container
     	padding-bottom: 90px
 .mCSB_scrollTools
 	.mCSB_draggerContainer
@@ -1963,7 +1962,7 @@ input:-webkit-autofill
 	display: none
 	height: 100%
 	overflow: auto
-	padding: 20px 0
+	//padding: 20px 0
 .content-text__wrapper_history
 	padding: 0
 .page-slider_history
@@ -2422,6 +2421,53 @@ input:-webkit-autofill
 			&::before
 				opacity: 1
 
+.two-side-wrapper_not-all-height
+	height: auto
+	overflow: initial
+.not-all-height
+	.scroll-down, .two-side-wrapper__dark
+		display: none
+	.two-side-wrapper__bright
+		width: 100%
+		background: linear-gradient(to bottom right, #c0d4eb 40%, #cfc2b2 60%)
+	.header-content-navigation
+		flex-wrap: wrap
+.card-list__item
+	width: 20%
+	&:nth-child(1)
+		width: 40%
+		.card-list__item-wrapper
+			padding-top: 50%
+	&:nth-child(n + 8)
+		width: 40%
+		.card-list__item-wrapper
+			padding-top: 50%
+.card-list
+	display: flex
+	align-items: flex-start
+	flex-wrap: wrap
+	width: 100%
+.card-list__item-wrapper
+	width: 100%
+	padding-top: 100%
+	position: relative
+.card-list__item-wrapper-inner
+	position: absolute
+	width: 100%
+	height: 100%
+	left: 0
+	top: 0
+.card-background
+	position: absolute
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	z-index: -1
+	object-fit: cover
+	object-position: center top
+	font-family: 'object-fit: cover; object-position: center top;';
+
 @media (max-width: 1360px)
 	.main-menu
 	  display: none
@@ -2808,7 +2854,7 @@ input:-webkit-autofill
       margin-top: 10px
   .jobs-page
     .two-side-wrapper_not-main .two-side-wrapper__bright
-      height: 950px
+      height: 897px
   .accordion
     padding-right: 0
     max-width: 500px
@@ -3063,6 +3109,8 @@ input:-webkit-autofill
   .right-content__wrapper_review, .reviews-slider
     padding-left: 0
     padding-right: 0
+  .jobs-page .two-side-wrapper_not-main .two-side-wrapper__bright
+    height: 865px
 
 
 @media (max-width: 470px)
@@ -3146,6 +3194,9 @@ input:-webkit-autofill
     height: 280px
   #review-form .main-form-item_footer-form
     margin-top: 15px
+  .jobs-page .two-side-wrapper_not-main .two-side-wrapper__bright
+    height: 919px !important
+
 
 @media (max-width: 360px)
 	.main-phone__number
@@ -3227,6 +3278,10 @@ input:-webkit-autofill
 	.mobile-submenu
 		top: 100px
 		height: calc(100% - 190px)
+	.jobs-page
+		.two-side-wrapper_not-main .two-side-wrapper__bright
+			height: 859px
+
 @media (max-height: 440px)
 	.btn-callback_mobile
 		display: none
