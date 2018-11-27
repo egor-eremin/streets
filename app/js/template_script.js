@@ -431,21 +431,31 @@ $(document).ready(function () {
             });
         }
     })();
-    
-    (function findCursorCoordinate() {
-        // $(document).mousemove(function(e){
-        //     var X = e.pageX;
-        //     var Y = e.pageY;
-        //     console.log("X: " + X + " Y: " + Y); // вывод результата в консоль
-        // });
+    // Обрезка заголовков
+    (function cutTitleLine() {
+        if ($('.card-list').length > 0) {
+            $('.card-title').each(function (e, i) {
+                var characters = $(this).text().length;
+
+                console.log(characters);
+                if (+characters > 165) {
+                    $(this).text($(this).text().substring(0,140) + ' ...');
+                }
+
+            })
+        }
     })();
+
 
 
 
 	//Медиа-запросы в javascript (Если нужно)
 	//-------------------------------------------------------------------------------------------------------
-    
-    
+
+    media('all and (min-width: 1360px)', function(){
+
+    });
+
 	media('all and (min-height: 901px)', function(){
         (function initCustomScrollbar() {
             if($('.content-text--with-scroll').length > 0) {
