@@ -15,7 +15,7 @@
         <div class="two-side-wrapper two-side-wrapper_not-main">
             <div class="two-side-wrapper__dark two-side-wrapper__dark_light-them">
             </div>
-            <div class="two-side-wrapper__bright two-side-wrapper__bright--about"></div>
+            <div class="two-side-wrapper__bright two-side-wrapper__bright_contacts two-side-wrapper__bright--about"></div>
             <header class="main-header main-header_with-map">
                 <div class="layout-position main-header__wrapper  main-header__wrapper--about">
                     <div class="main-header__col main-header__col_bright">
@@ -419,30 +419,186 @@
                 <ul class="breadcrumbs-list">
                     <li class="breadcrumbs__item"><a href="/" class="breadcrumbs-item__link"><span>Главная</span></a>
                     </li>
-                    <li class="breadcrumbs__item  breadcrumbs__item--active"><a href="#" class="breadcrumbs-item__link"><span>Где купить</span></a>
+                    <li class="breadcrumbs__item  breadcrumbs__item--active"><a href="#" class="breadcrumbs-item__link"><span>Контакты</span></a>
                     </li>
                 </ul>
             </nav>
             <div class="header-content-navigation header-content-navigation_position-static header-content-navigation_content-page layout-position">
-                <div class="navigation-and-preview navigation-and-preview_with-before">
-                    <div class="navigation-and-preview__aside navigation-and-preview__aside_shops navigation-and-preview__aside_full-width">
-                        <h1 class="aside-title">Где купить</h1>
-                        <div class="preview-block">
-                            <div class="preview-block__title">
-                                Более 1 300
-                                магазинов
+                <div class="navigation-and-preview navigation-and-preview_contacts navigation-and-preview_with-before">
+                    <div class="navigation-and-preview__aside navigation-and-preview__aside_without-padding">
+                        <h1 class="aside-title">
+                            Контакты
+                        </h1>
+                    </div>
+                    <div class="response-wrapper response-wrapper_contacts">
+                        <form action="#" class="contacts-form" id="form-contacts">
+                            <div class="main-form-item">
+                                <label class="main-label" for="contacts-user-name">Имя Фамилия</label>
+                                <div class="main-form-item__wrapper">
+                                    <input id="contacts-user-name" type="text" required class="main-input"
+                                           name="user-name">
+                                    <div class="validate-icon successfull-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="10.156"
+                                             viewBox="0 0 12.15 10.156">
+                                            <defs>
+                                                <style>
+                                                    .ok-icon {
+                                                        fill: none;
+                                                        stroke: #fff;
+                                                        stroke-linecap: round;
+                                                        stroke-width: 2px;
+                                                        fill-rule: evenodd;
+                                                    }
+                                                </style>
+                                            </defs>
+                                            <path class="ok-icon" d="M1115.92,357.776l3.7,3.821,6.46-7.642"
+                                                  transform="translate(-1114.94 -352.938)"/>
+                                        </svg>
+                                    </div>
+                                    <div class="validate-icon error-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
+                                             viewBox="0 0 10 10">
+                                            <defs>
+                                                <style>
+                                                    .error-icon {
+                                                        fill: #fff;
+                                                        fill-rule: evenodd;
+                                                    }
+                                                </style>
+                                            </defs>
+                                            <path class="error-icon"
+                                                  d="M1122.52,279l3.15-3.074a1.122,1.122,0,0,0-.82-1.926h0a1.187,1.187,0,0,0-.82.325l-3.02,2.951-3.03-2.951a1.187,1.187,0,0,0-.82-0.325h0a1.119,1.119,0,0,0-.81,1.926L1119.5,279l-3.15,3.074a1.119,1.119,0,0,0,.81,1.926,1.187,1.187,0,0,0,.82-0.325l3.03-2.951,3.02,2.951a1.187,1.187,0,0,0,.82.325,1.122,1.122,0,0,0,.82-1.926Z"
+                                                  transform="translate(-1116 -274)"/>
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="preview-block__text">
-                                Занимаются реализацией продукции
-                                нашей компании. Занимаются реализацией
-                                продукции нашей компании. Занимаются
-                                реализацией продукции нашей компании.
+                            <div class="main-form-item">
+                                <label class="main-label" for="contacts-user-phone">Телефон</label>
+                                <div class="main-form-item__wrapper">
+                                    <input id="contacts-user-phone" type="text" minlength="18" required
+                                           class="main-input phone-input" name="user-phone">
+                                    <div class="validate-icon successfull-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="10.156"
+                                             viewBox="0 0 12.15 10.156">
+                                            <defs>
+                                                <style>
+                                                    .ok-icon {
+                                                        fill: none;
+                                                        stroke: #fff;
+                                                        stroke-linecap: round;
+                                                        stroke-width: 2px;
+                                                        fill-rule: evenodd;
+                                                    }
+                                                </style>
+                                            </defs>
+                                            <path class="ok-icon" d="M1115.92,357.776l3.7,3.821,6.46-7.642"
+                                                  transform="translate(-1114.94 -352.938)"/>
+                                        </svg>
+                                    </div>
+                                    <div class="validate-icon error-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
+                                             viewBox="0 0 10 10">
+                                            <defs>
+                                                <style>
+                                                    .error-icon {
+                                                        fill: #fff;
+                                                        fill-rule: evenodd;
+                                                    }
+                                                </style>
+                                            </defs>
+                                            <path class="error-icon"
+                                                  d="M1122.52,279l3.15-3.074a1.122,1.122,0,0,0-.82-1.926h0a1.187,1.187,0,0,0-.82.325l-3.02,2.951-3.03-2.951a1.187,1.187,0,0,0-.82-0.325h0a1.119,1.119,0,0,0-.81,1.926L1119.5,279l-3.15,3.074a1.119,1.119,0,0,0,.81,1.926,1.187,1.187,0,0,0,.82-0.325l3.03-2.951,3.02,2.951a1.187,1.187,0,0,0,.82.325,1.122,1.122,0,0,0,.82-1.926Z"
+                                                  transform="translate(-1116 -274)"/>
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="main-form-item">
+                                <label class="main-label" for="contacts-user-mail">E-mail</label>
+                                <div class="main-form-item__wrapper">
+                                    <input type="email" required id="contacts-user-mail" class="main-input"
+                                           name="user-mail">
+                                    <div class="validate-icon successfull-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="10.156"
+                                             viewBox="0 0 12.15 10.156">
+                                            <defs>
+                                                <style>
+                                                    .ok-icon {
+                                                        fill: none;
+                                                        stroke: #fff;
+                                                        stroke-linecap: round;
+                                                        stroke-width: 2px;
+                                                        fill-rule: evenodd;
+                                                    }
+                                                </style>
+                                            </defs>
+                                            <path class="ok-icon" d="M1115.92,357.776l3.7,3.821,6.46-7.642"
+                                                  transform="translate(-1114.94 -352.938)"/>
+                                        </svg>
+                                    </div>
+                                    <div class="validate-icon error-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
+                                             viewBox="0 0 10 10">
+                                            <defs>
+                                                <style>
+                                                    .error-icon {
+                                                        fill: #fff;
+                                                        fill-rule: evenodd;
+                                                    }
+                                                </style>
+                                            </defs>
+                                            <path class="error-icon"
+                                                  d="M1122.52,279l3.15-3.074a1.122,1.122,0,0,0-.82-1.926h0a1.187,1.187,0,0,0-.82.325l-3.02,2.951-3.03-2.951a1.187,1.187,0,0,0-.82-0.325h0a1.119,1.119,0,0,0-.81,1.926L1119.5,279l-3.15,3.074a1.119,1.119,0,0,0,.81,1.926,1.187,1.187,0,0,0,.82-0.325l3.03-2.951,3.02,2.951a1.187,1.187,0,0,0,.82.325,1.122,1.122,0,0,0,.82-1.926Z"
+                                                  transform="translate(-1116 -274)"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-form-item">
+                                <label class="main-label" for="contacts-user-text">Текст сообщения</label>
+                                <textarea name="user-text" class="main-textarea" id="contacts-user-text"></textarea>
+                            </div>
+                            <div class="main-form-item main-form-item_footer-form">
+                                <div class="personal-date">
+                                    <label class="custom-checkbox-label">
+                                        <input type="checkbox" required checked name="personal-date-check"
+                                               class="custom-checkbox">
+                                        <span class="custom-checkbox-block"></span>
+                                        <span class="custom-checkbox-text">
+                            Согласен на обработку персональных данных
+                        </span>
+                                    </label>
+                                </div>
+                                <div class="button-submit-block">
+                                    <button class="btn btn_pulsate">
+                                        <span>Отправить</span>
+                                        <span class="btn___arrow">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14" height="14"
+                                                 viewBox="-2 0 8.1 14" style="enable-background:new -2 0 8.1 14;" xml:space="preserve">
+                                                <style type="text/css">
+                                                    .st0 {
+                                                        fill: #FFFFFF;
+                                                    }
+                                                </style>
+                                                <path class="st0" d="M0.4,12.1L5.4,7L0.3,1.9c-0.4-0.4-0.4-1.2,0-1.6C0.6,0.1,0.8,0,1.1,0l0,0c0.3,0,0.5,0.1,0.8,0.3L7.5,6
+                                                    C8,6.5,8,7.4,7.5,8l-5.6,5.7C1.7,13.9,1.4,14,1.1,14l0,0C0.5,14,0,13.5,0,12.8C0,12.5,0.1,12.3,0.4,12.1z"/>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="response-text response-thank-you">
+                            Спасибо за заявку!<br> Наши менеджеры свяжутся с Вами в ближайшее время.
+                        </div>
+                        <div class="response-text response-wrong-text">
+                            Что-то пошло не так...<br> Мы обязательно это исправим.
                         </div>
                     </div>
                 </div>
                 <div class="right-content right-content_shops-page adaptive-height">
-                    <div id="map-all-shops" class="right-map">
+                    <div id="contact-map" class="right-map">
                         <div class="control-map">
                             <button class="control-map__button plus"></button>
                             <button class="control-map__button minus"></button>

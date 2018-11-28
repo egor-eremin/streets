@@ -556,8 +556,8 @@ body, html
 	height: 100%
 	z-index: 2
 	&--about
-      overflow: hidden
-      background: linear-gradient(to bottom right, #ebf5ff, #e0d2c2)
+		overflow: hidden
+		background: linear-gradient(to bottom right, #c0d4eb 40%, #cfc2b2 60%);
 .two-side-wrapper-bright__wrapper
 	width: 100%
 	height: 100%
@@ -2538,6 +2538,15 @@ input:-webkit-autofill
 	&~.card-hover-wrapper
 		opacity: 1
 
+#form-contacts
+	&.hide-information
+		display: none
+.response-wrapper_contacts
+	min-height: 595px
+	display: flex
+	align-items: center
+.contacts-form
+	margin-bottom: auto
 @media (max-width: 1360px)
 	.main-menu
 	  display: none
@@ -2947,6 +2956,7 @@ input:-webkit-autofill
     padding: 65px 0 10px
   .response-wrapper
     padding-top: 0 !important
+    width: 100%
   //.main-form-item
   //  margin-bottom: 31px
   //.main-form-title
@@ -2977,6 +2987,24 @@ input:-webkit-autofill
       width: 50%
       .card-list__item-wrapper
         padding-top: 67%
+  .two-side-wrapper__bright_contacts
+    display: block !important
+    height: 950px !important
+  .navigation-and-preview_contacts
+    &::before
+      content: none !important
+  .navigation-and-preview__aside_without-padding
+    padding-bottom: 0
+  .response-wrapper_contacts
+    min-height: 0
+    padding-bottom: 70px
+    width: 100%
+  .contacts-form
+    width: 100%
+    .main-form-item_footer-form
+      margin-top: 28px
+  #contact-map
+    height: 500px
 
 @media (max-width: 960px)
 	.about-company__image
@@ -3230,6 +3258,10 @@ input:-webkit-autofill
         padding-top: 60%
   .card-list
     margin-bottom: 60px
+  .response-wrapper_contacts
+    padding-bottom: 50px
+  .control-map
+    right: 10px
 
 
 @media (max-width: 470px)
@@ -3314,7 +3346,7 @@ input:-webkit-autofill
   #review-form .main-form-item_footer-form
     margin-top: 15px
   .jobs-page .two-side-wrapper_not-main .two-side-wrapper__bright
-    height: 919px !important
+    height: 942px !important
   .card-list__item
     .card-list__item-wrapper
       padding-top: 0

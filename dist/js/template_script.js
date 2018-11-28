@@ -68,30 +68,35 @@ $(document).ready(function () {
     })();
 
     (function validationResponse() {
-        $('#form-response').validate({
-            submitHandler: function(form) {
-                $.ajax({
-                    type: $(form).attr('method'),
-                    url: $(form).attr('action'),
-                    data: $(form).serialize(),
-                    dataType: 'json',
-                    success: function (data) {
-                        if(parseInt(data.success) == 1) {
-                            $('#form-response').addClass('hide-information');
-                            $('.response-thank-you').addClass('show');
-                        } else {
-                            $('#form-response').addClass('hide-information');
-                            $('.response-wrong-text').addClass('show');
-                        }
-                    },
-                    error: function() {
-                        $('#form-response').addClass('hide-information');
-                        $('.response-wrong-text').addClass('show');
-                    }
-                });
-                return false;
-            },
-        });
+        // $('#form-response').validate({
+        //     submitHandler: function(form) {
+        //         $.ajax({
+        //             type: $(form).attr('method'),
+        //             url: $(form).attr('action'),
+        //             data: $(form).serialize(),
+        //             dataType: 'json',
+        //             success: function (data) {
+        //                 if(parseInt(data.success) == 1) {
+        //                     $('#form-response').addClass('hide-information');
+        //                     $('.response-thank-you').addClass('show');
+        //                 } else {
+        //                     $('#form-response').addClass('hide-information');
+        //                     $('.response-wrong-text').addClass('show');
+        //                 }
+        //             },
+        //             error: function() {
+        //                 $('#form-response').addClass('hide-information');
+        //                 $('.response-wrong-text').addClass('show');
+        //             }
+        //         });
+        //         return false;
+        //     },
+        // });
+        validationForm('#form-response', '.response-thank-you', '.response-wrong-text')
+    })();
+
+    (function validationContactsForm() {
+        validationForm('#form-contacts', '.response-thank-you', '.response-wrong-text')
     })();
 
     (function toggleMobileAsideMenu() {
@@ -445,8 +450,6 @@ $(document).ready(function () {
             })
         }
     })();
-
-
 
 
 	//Медиа-запросы в javascript (Если нужно)

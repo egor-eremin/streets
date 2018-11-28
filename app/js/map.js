@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // shops page
     if ($('div').is('#map-all-shops')) {
         ymaps.ready(init);
 
@@ -559,5 +560,81 @@ $(document).ready(function () {
             myMap.geoObjects.add(myPlacemark34);
         }
 
+    }
+    // contacts page
+    if ($('#contact-map').length > 0) {
+        ymaps.ready(init);
+
+        function init() {
+
+
+
+            var myMap = new ymaps.Map('contact-map', {
+
+                center: [52.29272207187128,104.36678149999987],
+                zoom: 14,
+                controls: [],
+
+            });
+
+            ZoomLayout = ymaps.templateLayoutFactory.createClass("<div id='control-map'></div>", {
+                build: function () {
+                    ZoomLayout.superclass.build.call(this);
+                    this.zoomInCallback = ymaps.util.bind(this.zoomIn, this);
+                    this.zoomOutCallback = ymaps.util.bind(this.zoomOut, this);
+                    $('.plus').bind('click', this.zoomInCallback);
+                    $('.minus').bind('click', this.zoomOutCallback);
+                },
+
+                clear: function () {
+                    $('.plus').unbind('click', this.zoomInCallback);
+                    $('.minus').unbind('click', this.zoomOutCallback);
+                    ZoomLayout.superclass.clear.call(this);
+                },
+
+                zoomIn: function () {
+                    var map = this.getData().control.getMap();
+                    map.setZoom(map.getZoom() + 1, {checkZoomRange: true});
+                },
+                zoomOut: function () {
+                    var map = this.getData().control.getMap();
+                    map.setZoom(map.getZoom() - 1, {checkZoomRange: true});
+                },
+            });
+
+
+
+            zoomControl = new ymaps.control.ZoomControl({options: {layout: ZoomLayout}});
+            myMap.behaviors.disable('scrollZoom');
+            myMap.controls.add(zoomControl);
+            myMap.events.add('click', function() {
+                myMap.balloon.close();
+            });
+
+            var html = '<div class="custom-baloon">';
+            html += '<span>Г. Иркутск, ' +
+                'ул. Баррикад, 213</span>';
+            html += '</div>';
+
+            var myPlacemark1 = new ymaps.Placemark([52.29272207187128,104.36678149999987],
+                {balloonContent: html},
+                {
+                    iconLayout: 'default#image',
+                    iconImageHref: 'images/object/map-icon.png',
+                    iconImageSize: [90, 100],
+                    iconImageOffset: [-45, -72],
+
+                    balloonContentSize: [180, 90],
+                    balloonLayout: "default#imageWithContent",
+                    balloonImageOffset: [-90, -86],
+                    balloonImageSize: [0, 0],
+                    balloonShadow: false,
+                    hideIconOnBalloonOpen: false
+                }
+            );
+            myMap.geoObjects.add(myPlacemark1);
+
+
+        }
     }
 });
