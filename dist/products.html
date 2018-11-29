@@ -9,11 +9,10 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Streets</title>
 </head>
-<body>
-
+<body class="not-all-height">
 <div class="layout-template-wrapper">
     <div class="layout-template-wrapper__inner layout-template-wrapper__inner_overflow-hidden">
-        <div class="two-side-wrapper two-side-wrapper_not-main">
+        <div class="two-side-wrapper two-side-wrapper_not-all-height two-side-wrapper_not-main">
             <div class="two-side-wrapper__dark  two-side-wrapper__dark--about"></div>
             <div class="two-side-wrapper__bright two-side-wrapper__bright--about"></div>
             <header class="main-header">
@@ -416,132 +415,116 @@
                 <button class="sub-menu-wrapper-close"></button>
             </header>
             <nav class="breadcrumbs-navigation  layout-position">
-                    <ul class="breadcrumbs-list">
-                        <li class="breadcrumbs__item"><a href="/" class="breadcrumbs-item__link"><span>Главная</span></a></li>
-                        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs-item__link"><span>О брэнде</span></a></li>
-                        <li class="breadcrumbs__item  breadcrumbs__item--active"><a href="#" class="breadcrumbs-item__link"><span>О компании</span></a></li>
-                    </ul>
+                <ul class="breadcrumbs-list">
+                    <li class="breadcrumbs__item"><a href="/" class="breadcrumbs-item__link"><span>Главная</span></a></li>
+                    <li class="breadcrumbs__item  breadcrumbs__item--active"><a href="#" class="breadcrumbs-item__link"><span>Продукция</span></a></li>
+                </ul>
             </nav>
             <div class="header-content-navigation header-content-navigation_content-page layout-position">
-                <div class="navigation-and-preview">
-                    <div class="navigation-and-preview__aside">
-                        <h1 class="aside-title">О компании</h1>
-                        <nav class="navigation-site-page-header">
-                            <ul class="navigation-site-page">
-                                <li class="navigation-site-page__item  navigation-site-page__item--active"><a href="#" class="navigation-site-page__link"><span>О компании</span></a>
-                                    <span class="navigation-site-page__teaser">
-                                    О компании, небольшой тизер
-                                </span>
-                                </li>
-                                <li class="navigation-site-page__item"><a href="#" class="navigation-site-page__link"><span>История</span></a>
-                                    <span class="navigation-site-page__teaser">
-                                        История, небольшой тизер
-                                </span>
-                                </li>
-                                <li class="navigation-site-page__item"><a href="#" class="navigation-site-page__link"><span>Сертификаты</span></a>
-                                    <span class="navigation-site-page__teaser">
-                                        Сертификаты, небольшой тизер
-                                </span>
-                                </li>
-                                <li class="navigation-site-page__item"><a href="#" class="navigation-site-page__link"><span>Для партнеров</span></a>
-                                    <span class="navigation-site-page__teaser">
-                                        Для партнеров, небольшой тизер
-                                </span>
-                                </li>
-                                <li class="navigation-site-page__item"><a href="#" class="navigation-site-page__link"><span>Вакансии</span></a>
-                                    <span class="navigation-site-page__teaser">
-                                        Вакансии, небольшой тизер
-                                </span>
-                                </li>
-
-                            </ul>
-                        </nav>
-                        <div class="navigation-site-page-header navigation-site-page-header_mobile">
-                            <button class="navigation-site-page-header__open-all">
-                                О компании
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7.312" viewBox="0 0 12 7.312">
-                                        <defs>
-                                            <style>
-                                              .aside-mobile-arrow {
-                                                  fill: #abc64a;
-                                                  fill-rule: evenodd;
-                                              }
-                                            </style>
-                                          </defs>
-                                          <path class="aside-mobile-arrow" d="M310.2,265.7l3.8,3.888,3.8-3.888a1.284,1.284,0,0,1,2.2.923h0a1.327,1.327,0,0,1-.372.923l-4.456,4.564a1.626,1.626,0,0,1-2.345,0l-4.455-4.564a1.327,1.327,0,0,1-.372-0.923h0A1.284,1.284,0,0,1,310.2,265.7Z" transform="translate(-308 -265.313)"/>
-                                        </svg>
-                                </span>
-                            </button>
-                            <nav class="navigation-site-page-header__all-wrapper">
-                                <ul class="aside-mobile-menu">
-                                    <li class="aside-mobile-menu__item">
-                                        <a href="#">
-                                            История
-                                        </a>
-                                    </li>
-                                    <li class="aside-mobile-menu__item">
-                                        <a href="#">
-                                            Сертификаты
-                                        </a>
-                                    </li>
-                                    <li class="aside-mobile-menu__item">
-                                        <a href="#">
-                                            Для партнеров
-                                        </a>
-                                    </li>
-                                    <li class="aside-mobile-menu__item">
-                                        <a href="#">
-                                            Вакансии
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="page-slider">
-                        <div class="page-slider-image">
-                            <div class="page-slider__item">
-                                <img src="images/userdata/about/slider/slide-1.jpg" alt="kitchen">
-                            </div>
-                            <div class="page-slider__item">
-                                    <img src="images/userdata/about/slider/slide-2.jpg" alt="kitchen">
-                            </div>
-                            <div class="page-slider__item">
-                                    <img src="images/userdata/about/slider/slide-3.jpg" alt="kitchen">
-                            </div>
-                            <div class="page-slider__item">
-                                <img src="images/userdata/about/slider/slide-3.jpg" alt="kitchen">
-                            </div>
-                            <div class="page-slider__item">
-                                <img src="images/userdata/about/slider/slide-3.jpg" alt="kitchen">
+                <h1 class="aside-title">Продукция</h1>
+                <div class="card-list products-list">
+                    <article class="card-list__item products-list__item">
+                        <div class="card-list__item-wrapper">
+                            <div class="card-list__item-wrapper-inner">
+                                <h2 class="card-title">Бургеры</h2>
+                                <a href="#" class="link-more">
+                                    <span class="link-more__text">
+                                        Подробнее
+                                    </span>
+                                    <span class="link-more__icon">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14" height="14" viewBox="-2 0 8.1 14" style="enable-background:new -2 0 8.1 14;" xml:space="preserve">
+                                        <style type="text/css">
+                                            .link-more-svg {
+                                                fill: #FFFFFF;
+                                            }
+                                        </style>
+                                        <path class="link-more-svg" d="M0.4,12.1L5.4,7L0.3,1.9c-0.4-0.4-0.4-1.2,0-1.6C0.6,0.1,0.8,0,1.1,0l0,0c0.3,0,0.5,0.1,0.8,0.3L7.5,6
+                                        C8,6.5,8,7.4,7.5,8l-5.6,5.7C1.7,13.9,1.4,14,1.1,14l0,0C0.5,14,0,13.5,0,12.8C0,12.5,0.1,12.3,0.4,12.1z"></path>
+                                    </svg>
+                                    </span>
+                                </a>
+                                <div class="card-hover-wrapper"></div>
+                                <img src="images/object/card-item-product1.jpg" alt="background" class="card-background">
                             </div>
                         </div>
-                        <div class="page-slider-navigation">
-                               <div class="page-slider__enumerator">
-                                   <span class="page-slider__current"></span> /
-                                   <span class="page-slider__total"></span>
-                               </div>
-
+                    </article>
+                    <article class="card-list__item products-list__item">
+                        <div class="card-list__item-wrapper">
+                            <div class="card-list__item-wrapper-inner">
+                                <h2 class="card-title">Роллы</h2>
+                                <a href="#" class="link-more">
+                                    <span class="link-more__text">
+                                        Подробнее
+                                    </span>
+                                    <span class="link-more__icon">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14" height="14" viewBox="-2 0 8.1 14" style="enable-background:new -2 0 8.1 14;" xml:space="preserve">
+                                        <style type="text/css">
+                                            .link-more-svg {
+                                                fill: #FFFFFF;
+                                            }
+                                        </style>
+                                        <path class="link-more-svg" d="M0.4,12.1L5.4,7L0.3,1.9c-0.4-0.4-0.4-1.2,0-1.6C0.6,0.1,0.8,0,1.1,0l0,0c0.3,0,0.5,0.1,0.8,0.3L7.5,6
+                                        C8,6.5,8,7.4,7.5,8l-5.6,5.7C1.7,13.9,1.4,14,1.1,14l0,0C0.5,14,0,13.5,0,12.8C0,12.5,0.1,12.3,0.4,12.1z"></path>
+                                    </svg>
+                                    </span>
+                                </a>
+                                <div class="card-hover-wrapper"></div>
+                                <img src="images/object/card-item-product2.jpg" alt="background" class="card-background">
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="content-text  mCustomScrollBar  content-text--auto-height content-text--with-scroll">
-                    <div class="content-text__wrapper">
-                        <p>
-                            Наша компания специализируется на производстве продуктов быстрого питания в индивидуальной упаковке готовой к употреблению под торговой маркой «StreetS». Ассортимент включает в себя гамбургеры, сэндвичи, роллы в мексиканской лепешке и шашлык в армянском лаваше. Компания родилась в Иркутске и работает с июля 2011 года. Наша команда торговых представителей доставляет свежую продукцию по городам Иркутск, Ангарск, Усолье-Сибирское, Шелехов,  пос. Хомутово и Усть-Ордынский. На сегодняшний день работаем более чем с 1300 торговыми точками, и за 7 лет нашей работы покупатели сделали выбор в пользу нас более 8 миллионов раз. 
-                        </p>
-                        <blockquote>
-                            Цель нашей компании: Удовлетворять потребности покупателей свежими и качественными продуктами быстрого питания в ближайшем магазине!
-                        </blockquote>
-                        <p>
-                            Вы можете увидеть нас в ближайшем магазине или АЗС, а если нас там нет – то мы прямо сейчас работаем над этим.
-                        </p>
-                        <p>
-                            При изготовлении гамбургеров мы используем булочку с кунжутом, куриную и говяжью котлету собственного производства, что позволяет контролировать качество продукта на всех этапах приготовления. При производстве используется охлажденная курица «Саянский бройлер», соуса и кетчуп Heinz, майонез Янта Провансаль – все это повышает вкусовые характеристики нашей продукции. Мы не используем консерванты – в этом нет необходимости, так как все ингредиенты мы производим сами и только в необходимом количестве.
-                        </p>
-
-                    </div>
+                    </article>
+                    <article class="card-list__item products-list__item">
+                        <div class="card-list__item-wrapper">
+                            <div class="card-list__item-wrapper-inner">
+                                <h2 class="card-title">Сэндвичи</h2>
+                                <a href="#" class="link-more">
+                                    <span class="link-more__text">
+                                        Подробнее
+                                    </span>
+                                    <span class="link-more__icon">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14" height="14" viewBox="-2 0 8.1 14" style="enable-background:new -2 0 8.1 14;" xml:space="preserve">
+                                        <style type="text/css">
+                                            .link-more-svg {
+                                                fill: #FFFFFF;
+                                            }
+                                        </style>
+                                        <path class="link-more-svg" d="M0.4,12.1L5.4,7L0.3,1.9c-0.4-0.4-0.4-1.2,0-1.6C0.6,0.1,0.8,0,1.1,0l0,0c0.3,0,0.5,0.1,0.8,0.3L7.5,6
+                                        C8,6.5,8,7.4,7.5,8l-5.6,5.7C1.7,13.9,1.4,14,1.1,14l0,0C0.5,14,0,13.5,0,12.8C0,12.5,0.1,12.3,0.4,12.1z"></path>
+                                    </svg>
+                                    </span>
+                                </a>
+                                <div class="card-hover-wrapper"></div>
+                                <img src="images/object/card-item-product3.jpg" alt="background" class="card-background">
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-list__item products-list__item">
+                        <div class="card-list__item-wrapper">
+                            <div class="card-list__item-wrapper-inner">
+                                <h2 class="card-title">
+                                    Шашлыки
+                                </h2>
+                                <a href="#" class="link-more">
+                                    <span class="link-more__text">
+                                        Подробнее
+                                    </span>
+                                    <span class="link-more__icon">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14" height="14" viewBox="-2 0 8.1 14" style="enable-background:new -2 0 8.1 14;" xml:space="preserve">
+                                        <style type="text/css">
+                                            .link-more-svg {
+                                                fill: #FFFFFF;
+                                            }
+                                        </style>
+                                        <path class="link-more-svg" d="M0.4,12.1L5.4,7L0.3,1.9c-0.4-0.4-0.4-1.2,0-1.6C0.6,0.1,0.8,0,1.1,0l0,0c0.3,0,0.5,0.1,0.8,0.3L7.5,6
+                                        C8,6.5,8,7.4,7.5,8l-5.6,5.7C1.7,13.9,1.4,14,1.1,14l0,0C0.5,14,0,13.5,0,12.8C0,12.5,0.1,12.3,0.4,12.1z"></path>
+                                    </svg>
+                                    </span>
+                                </a>
+                                <div class="card-hover-wrapper"></div>
+                                <img src="images/object/card-item-product4.jpg" alt="background" class="card-background">
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
             <button class="scroll-down scroll-down_content-page">
@@ -618,7 +601,7 @@
                         Продукция
                         <span>
                              <svg xmlns="http://www.w3.org/2000/svg" width="12"
-                                                                 height="7.312" viewBox="0 0 12 7.312">
+                                  height="7.312" viewBox="0 0 12 7.312">
                                 <defs>
                                     <style>
                                       .bottom-arrow {
@@ -816,48 +799,48 @@
                         <h2 class="template-section__header">Последние новости</h2>
                     </div>
                     <div class="news-and-links__area">
-                            <div class="news-and-links__table-cell">
-                                <div class="news-and-links-table-cell__content-wrapper">
-                                    <span class="news-date">18 июля 2018</span>
-                                    <a href="#" class="news-header-link__item">Изготовление булочек начинается...</a>
-                                </div>
+                        <div class="news-and-links__table-cell">
+                            <div class="news-and-links-table-cell__content-wrapper">
+                                <span class="news-date">18 июля 2018</span>
+                                <a href="#" class="news-header-link__item">Изготовление булочек начинается...</a>
+                            </div>
 
+                        </div>
+                        <div class="news-and-links__table-cell">
+                            <div class="news-and-links-table-cell__content-wrapper">
+                                <span class="news-date">18 июля 2018</span>
+                                <a href="#" class="news-header-link__item">Небольшое помещение можно назвать
+                                    "сауной" для теста...</a>
                             </div>
-                            <div class="news-and-links__table-cell">
-                                <div class="news-and-links-table-cell__content-wrapper">
-                                    <span class="news-date">18 июля 2018</span>
-                                    <a href="#" class="news-header-link__item">Небольшое помещение можно назвать
-                                        "сауной" для теста...</a>
-                                </div>
+                        </div>
+                        <div class="news-and-links__table-cell">
+                            <div class="news-and-links-table-cell__content-wrapper">
+                                <span class="news-date">18 июля 2018</span>
+                                <a href="#" class="news-header-link__item">В Street's убеждены, что качество готовой
+                                    продукции...</a>
                             </div>
-                            <div class="news-and-links__table-cell">
-                                <div class="news-and-links-table-cell__content-wrapper">
-                                    <span class="news-date">18 июля 2018</span>
-                                    <a href="#" class="news-header-link__item">В Street's убеждены, что качество готовой
-                                        продукции...</a>
-                                </div>
+                        </div>
+                        <div class="news-and-links__table-cell">
+                            <div class="news-and-links-table-cell__content-wrapper">
+                                <span class="news-date">18 июля 2018</span>
+                                <a href="#" class="news-header-link__item">Изготовление булочек начинается...</a>
                             </div>
-                            <div class="news-and-links__table-cell">
-                                <div class="news-and-links-table-cell__content-wrapper">
-                                    <span class="news-date">18 июля 2018</span>
-                                    <a href="#" class="news-header-link__item">Изготовление булочек начинается...</a>
-                                </div>
 
+                        </div>
+                        <div class="news-and-links__table-cell">
+                            <div class="news-and-links-table-cell__content-wrapper">
+                                <span class="news-date">18 июля 2018</span>
+                                <a href="#" class="news-header-link__item">Небольшое помещение можно назвать
+                                    "сауной" для теста...</a>
                             </div>
-                            <div class="news-and-links__table-cell">
-                                <div class="news-and-links-table-cell__content-wrapper">
-                                    <span class="news-date">18 июля 2018</span>
-                                    <a href="#" class="news-header-link__item">Небольшое помещение можно назвать
-                                        "сауной" для теста...</a>
-                                </div>
+                        </div>
+                        <div class="news-and-links__table-cell">
+                            <div class="news-and-links-table-cell__content-wrapper">
+                                <span class="news-date">18 июля 2018</span>
+                                <a href="#" class="news-header-link__item">В Street's убеждены, что качество готовой
+                                    продукции...</a>
                             </div>
-                            <div class="news-and-links__table-cell">
-                                <div class="news-and-links-table-cell__content-wrapper">
-                                    <span class="news-date">18 июля 2018</span>
-                                    <a href="#" class="news-header-link__item">В Street's убеждены, что качество готовой
-                                        продукции...</a>
-                                </div>
-                            </div>
+                        </div>
                     </div>
                     <div class="news-and-links__all-news-area">
                         <a href="#" class="nxt-all-news custom-link-hover">Читать все новости</a>
@@ -949,133 +932,133 @@
 
 </div>
 <div class="popup-modal mfp-hide" id="callback-popup">
-        <form class="main-form" id="callback-form" action="#">
-            <div class="main-form-title">
-                Оставьте заявку
-            </div>
-            <div class="main-form-item">
-                <label class="main-label" for="callback-user-name">Имя Фамилия</label>
-                <div class="main-form-item__wrapper">
-                    <input id="callback-user-name" type="text" required class="main-input" name="user-name">
-                    <div class="validate-icon successfull-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="10.156" viewBox="0 0 12.15 10.156">
-                            <defs>
-                                <style>
-                                    .ok-icon {
-                                        fill: none;
-                                        stroke: #fff;
-                                        stroke-linecap: round;
-                                        stroke-width: 2px;
-                                        fill-rule: evenodd;
-                                    }
-                                </style>
-                            </defs>
-                            <path class="ok-icon" d="M1115.92,357.776l3.7,3.821,6.46-7.642" transform="translate(-1114.94 -352.938)"/>
-                        </svg>
-                    </div>
-                    <div class="validate-icon error-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
-                            <defs>
-                                <style>
-                                    .error-icon {
-                                        fill: #fff;
-                                        fill-rule: evenodd;
-                                    }
-                                </style>
-                            </defs>
-                            <path class="error-icon" d="M1122.52,279l3.15-3.074a1.122,1.122,0,0,0-.82-1.926h0a1.187,1.187,0,0,0-.82.325l-3.02,2.951-3.03-2.951a1.187,1.187,0,0,0-.82-0.325h0a1.119,1.119,0,0,0-.81,1.926L1119.5,279l-3.15,3.074a1.119,1.119,0,0,0,.81,1.926,1.187,1.187,0,0,0,.82-0.325l3.03-2.951,3.02,2.951a1.187,1.187,0,0,0,.82.325,1.122,1.122,0,0,0,.82-1.926Z" transform="translate(-1116 -274)"/>
-                        </svg>
-                    </div>
+    <form class="main-form" id="callback-form" action="#">
+        <div class="main-form-title">
+            Оставьте заявку
+        </div>
+        <div class="main-form-item">
+            <label class="main-label" for="callback-user-name">Имя Фамилия</label>
+            <div class="main-form-item__wrapper">
+                <input id="callback-user-name" type="text" required class="main-input" name="user-name">
+                <div class="validate-icon successfull-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="10.156" viewBox="0 0 12.15 10.156">
+                        <defs>
+                            <style>
+                                .ok-icon {
+                                    fill: none;
+                                    stroke: #fff;
+                                    stroke-linecap: round;
+                                    stroke-width: 2px;
+                                    fill-rule: evenodd;
+                                }
+                            </style>
+                        </defs>
+                        <path class="ok-icon" d="M1115.92,357.776l3.7,3.821,6.46-7.642" transform="translate(-1114.94 -352.938)"/>
+                    </svg>
+                </div>
+                <div class="validate-icon error-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                        <defs>
+                            <style>
+                                .error-icon {
+                                    fill: #fff;
+                                    fill-rule: evenodd;
+                                }
+                            </style>
+                        </defs>
+                        <path class="error-icon" d="M1122.52,279l3.15-3.074a1.122,1.122,0,0,0-.82-1.926h0a1.187,1.187,0,0,0-.82.325l-3.02,2.951-3.03-2.951a1.187,1.187,0,0,0-.82-0.325h0a1.119,1.119,0,0,0-.81,1.926L1119.5,279l-3.15,3.074a1.119,1.119,0,0,0,.81,1.926,1.187,1.187,0,0,0,.82-0.325l3.03-2.951,3.02,2.951a1.187,1.187,0,0,0,.82.325,1.122,1.122,0,0,0,.82-1.926Z" transform="translate(-1116 -274)"/>
+                    </svg>
                 </div>
             </div>
-            <div class="main-form-item">
-                <label class="main-label" for="callback-user-phone">Телефон</label>
-                <div class="main-form-item__wrapper">
-                    <input id="callback-user-phone" type="text" minlength="18" required class="main-input phone-input" name="user-phone">
-                    <div class="validate-icon successfull-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="10.156" viewBox="0 0 12.15 10.156">
-                            <defs>
-                                <style>
-                                    .ok-icon {
-                                        fill: none;
-                                        stroke: #fff;
-                                        stroke-linecap: round;
-                                        stroke-width: 2px;
-                                        fill-rule: evenodd;
-                                    }
-                                </style>
-                            </defs>
-                            <path class="ok-icon" d="M1115.92,357.776l3.7,3.821,6.46-7.642" transform="translate(-1114.94 -352.938)"/>
-                        </svg>
-                    </div>
-                    <div class="validate-icon error-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
-                            <defs>
-                                <style>
-                                    .error-icon {
-                                        fill: #fff;
-                                        fill-rule: evenodd;
-                                    }
-                                </style>
-                            </defs>
-                            <path class="error-icon" d="M1122.52,279l3.15-3.074a1.122,1.122,0,0,0-.82-1.926h0a1.187,1.187,0,0,0-.82.325l-3.02,2.951-3.03-2.951a1.187,1.187,0,0,0-.82-0.325h0a1.119,1.119,0,0,0-.81,1.926L1119.5,279l-3.15,3.074a1.119,1.119,0,0,0,.81,1.926,1.187,1.187,0,0,0,.82-0.325l3.03-2.951,3.02,2.951a1.187,1.187,0,0,0,.82.325,1.122,1.122,0,0,0,.82-1.926Z" transform="translate(-1116 -274)"/>
-                        </svg>
-                    </div>
+        </div>
+        <div class="main-form-item">
+            <label class="main-label" for="callback-user-phone">Телефон</label>
+            <div class="main-form-item__wrapper">
+                <input id="callback-user-phone" type="text" minlength="18" required class="main-input phone-input" name="user-phone">
+                <div class="validate-icon successfull-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="10.156" viewBox="0 0 12.15 10.156">
+                        <defs>
+                            <style>
+                                .ok-icon {
+                                    fill: none;
+                                    stroke: #fff;
+                                    stroke-linecap: round;
+                                    stroke-width: 2px;
+                                    fill-rule: evenodd;
+                                }
+                            </style>
+                        </defs>
+                        <path class="ok-icon" d="M1115.92,357.776l3.7,3.821,6.46-7.642" transform="translate(-1114.94 -352.938)"/>
+                    </svg>
+                </div>
+                <div class="validate-icon error-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                        <defs>
+                            <style>
+                                .error-icon {
+                                    fill: #fff;
+                                    fill-rule: evenodd;
+                                }
+                            </style>
+                        </defs>
+                        <path class="error-icon" d="M1122.52,279l3.15-3.074a1.122,1.122,0,0,0-.82-1.926h0a1.187,1.187,0,0,0-.82.325l-3.02,2.951-3.03-2.951a1.187,1.187,0,0,0-.82-0.325h0a1.119,1.119,0,0,0-.81,1.926L1119.5,279l-3.15,3.074a1.119,1.119,0,0,0,.81,1.926,1.187,1.187,0,0,0,.82-0.325l3.03-2.951,3.02,2.951a1.187,1.187,0,0,0,.82.325,1.122,1.122,0,0,0,.82-1.926Z" transform="translate(-1116 -274)"/>
+                    </svg>
                 </div>
             </div>
-            <div class="main-form-item">
-                <label class="main-label" for="callback-user-mail">E-mail</label>
-                <div class="main-form-item__wrapper">
-                    <input type="email" required id="callback-user-mail" class="main-input" name="user-mail">
-                    <div class="validate-icon successfull-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="10.156" viewBox="0 0 12.15 10.156">
-                            <defs>
-                                <style>
-                                    .ok-icon {
-                                        fill: none;
-                                        stroke: #fff;
-                                        stroke-linecap: round;
-                                        stroke-width: 2px;
-                                        fill-rule: evenodd;
-                                    }
-                                </style>
-                            </defs>
-                            <path class="ok-icon" d="M1115.92,357.776l3.7,3.821,6.46-7.642" transform="translate(-1114.94 -352.938)"/>
-                        </svg>
-                    </div>
-                    <div class="validate-icon error-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
-                            <defs>
-                                <style>
-                                    .error-icon {
-                                        fill: #fff;
-                                        fill-rule: evenodd;
-                                    }
-                                </style>
-                            </defs>
-                            <path class="error-icon" d="M1122.52,279l3.15-3.074a1.122,1.122,0,0,0-.82-1.926h0a1.187,1.187,0,0,0-.82.325l-3.02,2.951-3.03-2.951a1.187,1.187,0,0,0-.82-0.325h0a1.119,1.119,0,0,0-.81,1.926L1119.5,279l-3.15,3.074a1.119,1.119,0,0,0,.81,1.926,1.187,1.187,0,0,0,.82-0.325l3.03-2.951,3.02,2.951a1.187,1.187,0,0,0,.82.325,1.122,1.122,0,0,0,.82-1.926Z" transform="translate(-1116 -274)"/>
-                        </svg>
-                    </div>
+        </div>
+        <div class="main-form-item">
+            <label class="main-label" for="callback-user-mail">E-mail</label>
+            <div class="main-form-item__wrapper">
+                <input type="email" required id="callback-user-mail" class="main-input" name="user-mail">
+                <div class="validate-icon successfull-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12.15" height="10.156" viewBox="0 0 12.15 10.156">
+                        <defs>
+                            <style>
+                                .ok-icon {
+                                    fill: none;
+                                    stroke: #fff;
+                                    stroke-linecap: round;
+                                    stroke-width: 2px;
+                                    fill-rule: evenodd;
+                                }
+                            </style>
+                        </defs>
+                        <path class="ok-icon" d="M1115.92,357.776l3.7,3.821,6.46-7.642" transform="translate(-1114.94 -352.938)"/>
+                    </svg>
+                </div>
+                <div class="validate-icon error-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+                        <defs>
+                            <style>
+                                .error-icon {
+                                    fill: #fff;
+                                    fill-rule: evenodd;
+                                }
+                            </style>
+                        </defs>
+                        <path class="error-icon" d="M1122.52,279l3.15-3.074a1.122,1.122,0,0,0-.82-1.926h0a1.187,1.187,0,0,0-.82.325l-3.02,2.951-3.03-2.951a1.187,1.187,0,0,0-.82-0.325h0a1.119,1.119,0,0,0-.81,1.926L1119.5,279l-3.15,3.074a1.119,1.119,0,0,0,.81,1.926,1.187,1.187,0,0,0,.82-0.325l3.03-2.951,3.02,2.951a1.187,1.187,0,0,0,.82.325,1.122,1.122,0,0,0,.82-1.926Z" transform="translate(-1116 -274)"/>
+                    </svg>
                 </div>
             </div>
-            <div class="main-form-item">
-                <label class="main-label" for="callback-user-text">Текст сообщения</label>
-                <textarea name="user-text" class="main-textarea" id="callback-user-text"></textarea>
-            </div>
-            <div class="main-form-item main-form-item_footer-form">
-                <div class="personal-date">
-                    <label class="custom-checkbox-label">
-                        <input type="checkbox" required checked name="personal-date-check" class="custom-checkbox">
-                        <span class="custom-checkbox-block"></span>
-                        <span class="custom-checkbox-text">
+        </div>
+        <div class="main-form-item">
+            <label class="main-label" for="callback-user-text">Текст сообщения</label>
+            <textarea name="user-text" class="main-textarea" id="callback-user-text"></textarea>
+        </div>
+        <div class="main-form-item main-form-item_footer-form">
+            <div class="personal-date">
+                <label class="custom-checkbox-label">
+                    <input type="checkbox" required checked name="personal-date-check" class="custom-checkbox">
+                    <span class="custom-checkbox-block"></span>
+                    <span class="custom-checkbox-text">
                             Согласен на обработку персональных данных
                         </span>
-                    </label>
-                </div>
-                <div class="button-submit-block">
-                    <button class="btn btn_pulsate">
-                        <span>Отправить</span>
-                        <span class="btn___arrow">
+                </label>
+            </div>
+            <div class="button-submit-block">
+                <button class="btn btn_pulsate">
+                    <span>Отправить</span>
+                    <span class="btn___arrow">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14" height="14"
                                                  viewBox="-2 0 8.1 14" style="enable-background:new -2 0 8.1 14;" xml:space="preserve">
                                                 <style type="text/css">
@@ -1087,16 +1070,16 @@
                                                     C8,6.5,8,7.4,7.5,8l-5.6,5.7C1.7,13.9,1.4,14,1.1,14l0,0C0.5,14,0,13.5,0,12.8C0,12.5,0.1,12.3,0.4,12.1z"/>
                                             </svg>
                                         </span>
-                    </button>
-                </div>
+                </button>
             </div>
-        </form>
-        <div class="ajax-form thank-you-text">
-            Спасибо за заявку!<br> Наши менеджеры свяжутся с Вами в ближайшее время.
         </div>
-        <div class="ajax-form wrong-text">
-            Что-то пошло не так...<br> Мы обязательно это исправим.
-        </div>
+    </form>
+    <div class="ajax-form thank-you-text">
+        Спасибо за заявку!<br> Наши менеджеры свяжутся с Вами в ближайшее время.
+    </div>
+    <div class="ajax-form wrong-text">
+        Что-то пошло не так...<br> Мы обязательно это исправим.
+    </div>
 </div>
 <div class="top-arrow-block layout-position">
     <div class="top-arrow-top">

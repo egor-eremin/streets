@@ -436,20 +436,31 @@ $(document).ready(function () {
             });
         }
     })();
-    // Обрезка заголовков
-    (function cutTitleLine() {
-        if ($('.card-list').length > 0) {
-            $('.card-title').each(function (e, i) {
-                var characters = $(this).text().length;
 
-                console.log(characters);
-                if (+characters > 165) {
-                    $(this).text($(this).text().substring(0,140) + ' ...');
-                }
-
-            })
+    (function initScrollNewsText() {
+        if ($('.news-scroll').length > 0) {
+            $('.news-scroll').mCustomScrollbar({
+                axis: 'y',
+                scrollbarPosition: 'inside',
+                theme: 'light',
+                autoHideScrollbar: false,
+            });
         }
     })();
+    // Обрезка заголовков
+    // (function cutTitleLine() {
+    //     if ($('.card-list').length > 0) {
+    //         $('.card-title').each(function (e, i) {
+    //             var characters = $(this).text().length;
+    //
+    //             console.log(characters);
+    //             if (+characters > 165) {
+    //                 $(this).text($(this).text().substring(0,140) + ' ...');
+    //             }
+    //
+    //         })
+    //     }
+    // })();
 
 
 	//Медиа-запросы в javascript (Если нужно)

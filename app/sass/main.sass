@@ -826,7 +826,7 @@ body, html
 .callback-link__area
 	width: 100%
 	position: absolute
-	bottom: 50px
+	bottom: 0
 	left: 0
 	right: 0
 	text-align: center
@@ -2547,6 +2547,57 @@ input:-webkit-autofill
 	align-items: center
 .contacts-form
 	margin-bottom: auto
+.news-detail-wrapper
+	width: 100%
+	display: flex
+.header-content-navigation_news-detail
+	flex-direction: column
+.news-detail-text-wrapper
+	padding: 0
+	max-height: 600px
+	width: 382px
+	flex-shrink: 0
+.news-detail-text
+	p
+		color: #000000
+		font-size: 14px
+		margin-bottom: 31px
+		line-height: 1.7
+	img
+		margin-bottom: 31px
+	ul
+		margin-bottom: 31px
+		li
+			font-size: 14px
+			color: #000000
+			line-height: 1.7
+			padding-left: 37px
+			position: relative
+			&::before
+				content: ''
+				width: 6px
+				height: 6px
+				border-radius: 50%
+				background-color: $successfullIcon
+				position: absolute
+				top: 9px
+				left: 0
+.news-detail-slider
+	width: calc(100% - 382px)
+.page-slider_news
+	width: 100%
+.two-side-wrapper_not-all-height
+	.scroll-down
+		display: none
+.products-list__item
+	width: 40%
+	.card-list__item-wrapper
+		padding-top: 60% !important
+	&:nth-child(2), &:nth-child(n+6), &:nth-child(3), &:nth-child(n+7)
+		width: 60%
+		box-shadow: inset 0px 138px 198px -154px rgba(249,243,235,0.5)
+		.card-list__item-wrapper
+			padding-top: 40% !important
 @media (max-width: 1360px)
 	.main-menu
 	  display: none
@@ -2586,7 +2637,7 @@ input:-webkit-autofill
 	.callback-link__area
 		bottom: 35px
 		margin-left: 0
-	.two-side-wrapper_not-all-height
+	.two-side-wrapper_not-all-height:not(.two-side-wrapper_news-detail)
 		.social-networks__item
 			path
 				fill: $darkBlue
@@ -2600,6 +2651,14 @@ input:-webkit-autofill
 				padding-top: 80%
 			.card-title
 				width: 100%
+	.products-list__item
+		width: 40% !important
+		.card-list__item-wrapper
+			padding-top: 60% !important
+		&:nth-child(2), &:nth-child(n+6), &:nth-child(3), &:nth-child(n+7)
+			width: 60% !important
+			.card-list__item-wrapper
+				padding-top: 40% !important
 
 @media (max-width: 1240px)
 	.main-slider__title
@@ -3005,6 +3064,26 @@ input:-webkit-autofill
       margin-top: 28px
   #contact-map
     height: 500px
+  .news-detail-wrapper
+    flex-direction: column
+    .page-slider__item.slick-center
+      transform: none
+    .slick-list
+      padding: 0 !important
+  .news-detail-text-wrapper
+    width: 100%
+    max-height: none
+    margin-bottom: 42px
+  .news-detail-slider
+    width: 100%
+    .page-slider__item
+      height: 420px
+  .page-slider_news
+    margin-right: auto
+    margin-left: auto
+  .page-slider_news
+    max-width: 800px
+    width: 100%
 
 @media (max-width: 960px)
 	.about-company__image
@@ -3081,6 +3160,17 @@ input:-webkit-autofill
 		&:nth-child(1), &:nth-child(n + 7)
 			.card-list__item-wrapper
 				padding-top: 80%
+	.products-list__item
+		width: 50% !important
+		.card-list__item-wrapper
+			padding-top: 60% !important
+		&:nth-child(2), &:nth-child(n+6), &:nth-child(3), &:nth-child(n+7)
+			width: 50% !important
+			.card-list__item-wrapper
+				padding-top: 60% !important
+	.products-list
+		margin-bottom: 65px
+
 @media (max-width: 760px)
 	.main-header__wrapper
 		padding-top: 40px
@@ -3262,7 +3352,14 @@ input:-webkit-autofill
     padding-bottom: 50px
   .control-map
     right: 10px
-
+  .products-list__item
+    width: 100% !important
+    .card-list__item-wrapper
+      padding-top: 40% !important
+    &:nth-child(2), &:nth-child(n+6), &:nth-child(3), &:nth-child(n+7)
+      width: 100% !important
+      .card-list__item-wrapper
+        padding-top: 40% !important
 
 @media (max-width: 470px)
   .main-header__col
@@ -3357,7 +3454,21 @@ input:-webkit-autofill
     &:nth-child(1), &:nth-child(n + 7)
       .card-list__item-wrapper
         padding-top: 0
-
+  .news-detail-text-wrapper
+    margin-bottom: 15px
+  .news-detail-slider .page-slider__item
+    height: 273px
+  .products-list__item
+    width: 100% !important
+    .card-list__item-wrapper
+      padding-top: 0% !important
+    &:nth-child(2), &:nth-child(n+6), &:nth-child(3), &:nth-child(n+7)
+      width: 100% !important
+      .card-list__item-wrapper
+        padding-top: 0% !important
+  .products-list__item
+    .card-list__item-wrapper-inner
+      min-height: 221px !important
 @media (max-width: 360px)
 	.main-phone__number
 		font-size: 15px
