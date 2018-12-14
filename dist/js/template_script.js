@@ -32,13 +32,27 @@ $(document).ready(function () {
     })();
 
     (function animateBurger() {
-        var controller = new ScrollMagic.Controller();
-        var scene = new ScrollMagic.Scene({
-            triggerElement: ".layout-news-and-links",
-            duration: "100%"
-        })
-            .setTween(new TweenMax.to('#main-burger', 0.5, { css: { transform: 'rotate(0deg)'}}))
-            .addTo(controller);
+        if ($('.latest-news-section').length > 0) {
+            var controller = new ScrollMagic.Controller();
+            var scene = new ScrollMagic.Scene({
+                triggerElement: ".layout-news-and-links",
+                duration: "100%"
+            })
+                .setTween(new TweenMax.to('#main-burger', 0.5, {css: {transform: 'rotate(0deg)'}}))
+                .addTo(controller);
+        }
+    })();
+
+    (function animateBurger404() {
+        if ($('.not-found-page__404').length > 0) {
+            var controller404 = new ScrollMagic.Controller();
+            var scene404 = new ScrollMagic.Scene({
+                triggerElement: ".not-found-page__404",
+                duration: "100%"
+            })
+                .setTween(new TweenMax.to('.burger-404-img', 0.5, {css: {transform: 'rotate(0deg)'}}))
+                .addTo(controller404);
+        }
     })();
     
 	(function activateModalCallbackForm() {
@@ -459,6 +473,78 @@ $(document).ready(function () {
         }
     }) ();
     
+    (function initStepSlider() {
+        if ($('.secret-production').length > 0) {
+
+            $('.secret-slider').on('init', function(event, slick){
+                var slideCount = slick.slideCount,
+                    currentSlide = slick.currentSlide + 1;
+                $('.secret-slider__current').html(String(currentSlide));
+                $('.secret-slider__total').html(String(slideCount));
+            });
+
+            $('.secret-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                var slideText = nextSlide + 1,
+                    slideCount = slick.slideCount;
+                var prevSlide = currentSlide + 1;
+                var thisSlide = nextSlide + 1;
+                $('.secret-slider__current').html(String(slideText));
+                $('.secret-slider__total').html(String(slideCount));
+                $('body').removeClass('secret-production__secret-step-' + prevSlide);
+                $('body').addClass('secret-production__secret-step-' + thisSlide);
+            });
+
+            $('.secret-slider').slick({
+                fade: true,
+                arrows: false,
+                dots: true,
+            });
+        }
+    })();
+
+    (function initParallax() {
+        if ($('.parallax').length > 0) {
+            var scene = document.getElementById('step-parallax');
+            var parallaxInstance = new Parallax(scene);
+        }
+    })();
+
+    (function greetingSlider() {
+        if ($('.greeting').length > 0) {
+            var frame_count  = 40,
+                offset       = 100,
+                greeting = document.querySelector('body');
+
+            var controller_greeting = new ScrollMagic.Controller({
+                globalSceneOptions: {
+                    triggerHook: 0,
+                    reverse: true,
+                    // duration: 100,
+                }
+            });
+
+            new ScrollMagic.Scene({
+                triggerElement: '.greeting',
+                duration: (frame_count * offset) + 'px',
+                // duration: 100,
+                reverse: true
+            })
+
+                .setPin('.greeting')
+                .addTo(controller_greeting);
+            for (var i = 1, l = frame_count; i <= l; i++) {
+                new ScrollMagic.Scene({
+                    triggerElement: '.greeting',
+                    offset: i * offset,
+                })
+                    // .setClassToggle('.greeting__img-' + i + '', 'active')
+                    .setClassToggle(greeting, 'st-' + i)
+                    // .addIndicators()
+                    .addTo(controller_greeting)
+
+            }
+        }
+    })();
 
 
 	//Медиа-запросы в javascript (Если нужно)

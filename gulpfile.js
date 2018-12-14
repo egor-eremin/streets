@@ -47,6 +47,7 @@ gulp.task('scripts', function() {
 		'app/lib/scroll-magic/animation.gsap.min.js',
 		'app/lib/object-fit__polifill/ofi.min.js',
 		'app/lib/scroll-magic/debug.addIndicators.min.js',
+		'app/lib/parallax/parallax.min.js',
 	])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
 		.pipe(uglify()) // Сжимаем JS файл
