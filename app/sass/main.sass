@@ -1108,6 +1108,7 @@ body, html
 	max-width: 553px
 	position: relative
 	overflow: hidden
+	padding-bottom: 40px
 .main-slider__title
 	font-weight: 700
 	font-size: 4.6875rem
@@ -1116,16 +1117,21 @@ body, html
 	color: #8d1e79
 .main-slider__title_bright
 	color: #fff
-	text-align: right
+	//text-align: right
 .main-slider__prev-text
 	font-size: .875rem
 	line-height: 1.714
 	max-width: 265px
 	margin-bottom: 2.3125rem
+.main-slider__text
+	position: absolute
+	width: 100%
 .main-slider__text_left
 	padding-right: 35px
+	right: 0
 .main-slider__text_right
 	padding-left: 35px
+	left: 0
 .btn-callback-text-wrapper
 	overflow: hidden
 	transition: .3s ease-in-out
@@ -1155,14 +1161,21 @@ body, html
 	100%
 		transform: scale(1.2)
 .main-slider-stub
-	position: absolute
-	top: 97px
+	position: relative
+	margin-top: 122px
 	right: 0
 	z-index: -1
-.main-slider-stub_right
-	transform: translateX(-141px)
+	display: flex
+	align-items: flex-start
+	width: 100%
 .main-slider__list
 	height: 100%
+.main-slider__col-left
+	.main-slider-stub
+		justify-content: flex-end
+.main-slider__col-right
+	.main-slider-stub
+		justify-content: flex-start
 .scroll-down
 	position: absolute
 	z-index: 101
@@ -1561,6 +1574,7 @@ input:-webkit-autofill
 	border: 2px solid rgba(141, 30, 121, .6)
 	cursor: pointer
 	margin-right: 30px
+	position: relative
 	&:hover
 		border-color: rgba(141, 30, 121, 1)
 //.mCSB_inside
@@ -1580,6 +1594,8 @@ input:-webkit-autofill
 .progress-round
 	flex-shrink: 0
 	position: absolute
+	left: 0
+	top: 0
 .main-slider .slick-next
 	border: none
 .main-slider .slick-next:hover .circle-progress
@@ -2100,6 +2116,7 @@ input:-webkit-autofill
 	height: 100%
 	right: 0
 	top: 0
+	z-index: 1
 .header-content-navigation_position-static
 	position: static
 .page-slider-certificates
@@ -2354,7 +2371,7 @@ input:-webkit-autofill
 	padding-top: 54px
 .reviews-slider-navigate
 	.slick-list
-		overflow: initial
+		overflow: visible
 .stars
 	display: inline-flex
 	align-items: center
@@ -2553,6 +2570,7 @@ input:-webkit-autofill
 	align-items: center
 .contacts-form
 	margin-bottom: auto
+	width: 100%
 .news-detail-wrapper
 	width: 100%
 	display: flex
@@ -3116,8 +3134,7 @@ input:-webkit-autofill
 	//padding: 0 !important
 .greeting__header
 	position: absolute
-	z-index: 5
-.greeting__header
+	z-index: 41
 	display: flex
 	justify-content: space-between
 	width: 100%
@@ -3152,10 +3169,26 @@ input:-webkit-autofill
 	opacity: 1
 	transform: translate(-50%, 0)
 
+$scaleGreetingTomato: 1
+$rotateAngleTomato: 0
+$transformXTomato: 0
+$rotateAngleMeat: 0
+$transformXMeat: 0
+$transformYMeat: 0
 @for $i from 1 through 30
+	$rotateAngleTomato: $rotateAngleTomato + 5deg
+	$scaleGreetingTomato: $scaleGreetingTomato - 0.01
+	$transformXTomato: $transformXTomato - 2px
+	$rotateAngleMeat: $rotateAngleMeat + 1.5deg
+	$transformXMeat: $transformXMeat + 6px
+	$transformYMeat: $transformYMeat + 2px
+	.st-#{$i}
+		.parallax-greeting_tomato
+			transform: translateX($transformXTomato) scale($scaleGreetingTomato) rotate($rotateAngleTomato)
+		.parallax-greeting_meat
+			transform: translate($transformXMeat, $transformYMeat) rotate($rotateAngleMeat)
 	.st-#{$i} .greeting__img-#{$i}
 		opacity: 1
-		//z-index: #{$i}
 
 .st-8
 	.greeting__text1
@@ -3185,7 +3218,7 @@ input:-webkit-autofill
 	position: absolute
 	bottom: 78px
 	left: 50%
-	z-index: 5
+	z-index: 42
 	transform: translate(-50%, 0)
 	display: flex
 	flex-direction: column
@@ -3197,6 +3230,7 @@ input:-webkit-autofill
 	width: 100%
 	top: 0
 	left: 0
+	overflow: hidden
 
 .go-main
 	margin-bottom: 71px
@@ -3209,6 +3243,101 @@ input:-webkit-autofill
 	&:hover
 		background-color: #9cb444
 
+.parallax-greeting
+	position: absolute
+	z-index: 40
+	//transition: .3s ease
+.parallax-greeting_meat
+	bottom: -169px
+	right: -144px
+.parallax-greeting_tomato
+	top: 156px
+	left: -152px
+.main-slider-stub_right
+	left: 0
+.burger-work
+	margin-top: 46px
+.burger-travel
+	margin-top: 30px
+.sandwich-study
+	margin-top: 17px
+.animation-slide-left
+	transform: translateX(100%)
+.animation-slide-right, .main-slider__title_bright
+	transform: translateX(-100%)
+.main-img-slide, .main-slider__title_bright
+	transition-duration: 1s
+	transition-timing-function: ease
+.main-slider__title_bright
+	transition-property: transform
+	transition-timing-function: linear
+.main-slider__item.slick-active
+	.animation-slide-left, .animation-slide-right, .main-slider__title_bright
+		transform: translateX(0)
+	.main-img-slide, .main-slider__title_bright
+		transition-delay: 1s
+	.slider-snake, .slider-triangle
+		transform: translateX(0)
+		transition-delay: 1s
+	.slider-triangle
+		right: 35%
+	.slider-circle
+		transform: translateX(0)
+		transition-delay: 1s
+		right: 60%
+	.slider-tomato, .slider-basil, .slider-tomato-2
+		transform: translateX(0)
+		transition-delay: 1s
+	.slider-basil
+		left: 50%
+	.slider-tomato-2
+		left: calc(100% - 323px)
+
+.slider-snake, .slider-triangle
+	position: absolute
+	z-index: -1
+	transform: translateX(100%)
+	right: 0
+	transition-duration: 1s
+	transition-timing-function: linear
+.slider-snake
+	top: 84px
+	right: 0
+.slider-triangle
+	top: 25%
+	transition-timing-function: ease-in
+.slider-circle
+	position: absolute
+	bottom: 9%
+	right: 0
+	z-index: -1
+	transform: translateX(100%)
+	transition-duration: 1s
+	transition-timing-function: linear
+.slider-tomato, .slider-basil, .slider-tomato-2
+	position: absolute
+	z-index: -1
+	transform: translateX(-100%)
+	transition-duration: 1s
+.slider-tomato
+	transition-timing-function: linear
+	top: 0
+	left: 0
+.slider-basil
+	transition-timing-function: ease-in-out
+	top: -20px
+	left: 0
+.slider-tomato-2
+	transition-timing-function: linear
+	top: -10px
+	left: 0
+
+.main-img-slide
+	object-fit: contain
+	object-position: top
+	font-family: 'object-fit: contain; object-position: top;'
+.main-slider > .layout-position
+	margin: 0
 @media (max-width: 1360px)
 	.main-menu
 	  display: none
@@ -3897,6 +4026,10 @@ input:-webkit-autofill
 		display: none
 	.not-found-page__404-mobile
 		display: block
+	.main-slider-stub
+		img:not(.main-img-slide)
+			display: none
+
 @media (max-width: 860px)
 	.main-slider__title
 		font-size: 40px
@@ -3967,6 +4100,7 @@ input:-webkit-autofill
 		height: auto
 	.main-slider-stub
 		position: static
+		margin-top: 0
 	.no-scroll
 		overflow: hidden
 	.main-logo
@@ -3987,6 +4121,14 @@ input:-webkit-autofill
 		&:nth-child(1), &:nth-child(n + 7)
 			.card-list__item-wrapper
 				padding-top: 100%
+	.main-slider__text
+		position: relative
+	.main-slider__text_left
+		text-align: right
+	.main-slider-arrow, .main-slider__mobile-more
+		bottom: 30px
+	.burger-travel, .sandwich-study, .burger-work
+		margin-top: 0
 @media (max-width: 640px)
   .about-company__popup-message--wrapped
       flex-direction: column
@@ -4290,6 +4432,10 @@ input:-webkit-autofill
 		height: auto
 	.right-content
 		padding-bottom: 0
+	.two-side-wrapper_main
+		height: auto
+		.scroll-down
+			display: none
 @media (max-height: 660px)
 	.mobile-submenu__list
 		flex-direction: column

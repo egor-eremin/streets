@@ -145,13 +145,15 @@ $(document).ready(function () {
 
     (function initMainSlider() {
 
-        var time = 2;
+        var time = 3;
         var $slick = $('.main-slider__list'),
             isPause,
             tick,
             percentTime = 0;
 
         $slick.on('init', function(e, slick) {
+            // var $firstAnimatingElements = $('.main-slider__item:first-child').find('[data-animation]');
+            // doAnimations($firstAnimatingElements);
             $('.slick-arrow').wrapAll('<div class=\'main-slider-arrow\'></div>');
             percentTime = 0;
             startProgressbar();
@@ -189,9 +191,46 @@ $(document).ready(function () {
             '</button>'
         });
         $slick.on('beforeChange', function(slick, currentSlide, nextSlide){
+            // var $animatingElements = $('.main-slider__item[data-slick-index="' + nextSlide + '"]').find('[data-animation]');
+            // doAnimations($animatingElements, 'after-animation');
             percentTime = 0;
             startProgressbar();
         });
+        // $slick.on('afterChange', function (e, slick, currentSlide) {
+            // var $animatingElements = $('.main-slider__item[data-slick-index="' + currentSlide + '"]').find('[data-animation]');
+            // doAnimations($animatingElements, 'animation');
+        // });
+
+        // function doAnimationsInit(elements) {
+        //             var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        //             elements.each(function () {
+        //                 var $this = $(this);
+        //                 var $animationType = 'animated ' + $this.data('animation');
+        //                 $this.css({
+        //                     'animation-delay': '1s',
+        //                     '-webkit-animation-delay': '1s'
+        //                 });
+        //                 $this.addClass($animationType).one(animationEndEvents, function () {
+        //                     $this.removeClass($animationType);
+        //                 });
+        //             });
+        //         }
+
+
+        // function doAnimations(elements, data_atr) {
+        //     var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        //     elements.each(function() {
+        //         var $this = $(this);
+        //         var $animationDelay = $this.data('delay');
+        //         var $animationType = 'animated ' + $this.data(data_atr);
+        //         $this.css({
+        //             'transition-delay': $animationDelay,
+        //         });
+        //         $this.addClass($animationType).one(animationEndEvents, function() {
+        //             $this.removeClass($animationType);
+        //         });
+        //     });
+        // }
 
         function startProgressbar() {
             clearTimeout(tick);
@@ -511,8 +550,8 @@ $(document).ready(function () {
 
     (function greetingSlider() {
         if ($('.greeting').length > 0) {
-            var frame_count  = 40,
-                offset       = 100,
+            var frame_count  = 62,
+                offset       = 30,
                 greeting = document.querySelector('body');
 
             var controller_greeting = new ScrollMagic.Controller({
