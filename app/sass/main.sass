@@ -25,6 +25,9 @@ $cardTitle: #221d1e
 $lightBlue: #e3eaf2
 $colorWeight: #605a64
 $violetSocialIcons: #523d71
+$breadcrumbsText: #677077
+$breadcrumbsActiveText: #aab5c0
+$navigationTeaser: #939ca5
 
 =initial-flex
 	display: flex
@@ -608,6 +611,7 @@ body, html
       a
           background-color: transparent
           cursor: auto
+          color: $breadcrumbsActiveText !important
 
 .breadcrumbs__item--active
   &::after
@@ -618,7 +622,7 @@ body, html
 	border-radius: 70px
 	padding: 4px 13px 6px 13px
 	font-weight: 700
-	color: $labelColor
+	color: $breadcrumbsText
 	font-size: 12px
 	letter-spacing: 0.3px
 	transition-property: background-color
@@ -654,18 +658,19 @@ body, html
 	z-index: 5
 	color: $headerTextDefaultColor
 	font-size: 18px
-	background-color: $limeHover
-	&::before
-		content: ''
-		background-color: $limeHover
-		width: 100%
-		height: 100%
-		filter: blur(20px)
-		position: absolute
-		left: 20px
-		top: 20px
-		z-index: -1
-		border-radius: 200px
+	background-color: #abc64a
+	box-shadow: 10px 10px 86px 3px rgba(171,198,74,1);
+	//&::before
+	//	content: ''
+	//	background-color: #abc64a
+	//	width: 100%
+	//	height: 100%
+	//	filter: blur(20px)
+	//	position: absolute
+	//	left: 20px
+	//	top: 20px
+	//	z-index: -1
+	//	border-radius: 200px
 .call-message__text
 	text-align: center
 	display: block
@@ -678,7 +683,7 @@ body, html
 
 
 .contact__telephones
-	font-weight: 800
+	font-weight: 700
 	font-size: 30px
 	line-height: 1.2
 	display: block
@@ -763,6 +768,7 @@ body, html
 	//height: 90%
 	padding-top: 0
 	overflow: hidden
+	//width: 100%
 
 .page-slider__item
 	img
@@ -791,7 +797,7 @@ body, html
       fill: $colorForFormTitle
 .navigation-site-page__teaser
 	font-size: 12px
-	color: $labelColor
+	color: $navigationTeaser
 	padding: 6px 68px 0 10px
 	display: none
 	overflow: hidden
@@ -813,13 +819,13 @@ body, html
 	right: 0
 	img
 		position: absolute
-		right: 170px
-		bottom: 80px
+		right: 169px
+		bottom: 88px
 	
 	&::before
 		content: ''
-		width: 512px
-		height: 512px
+		width: 517px
+		height: 517px
 		background-color: #fff
 		border-radius: 250px
 		position: absolute
@@ -903,7 +909,7 @@ body, html
 		margin: 0
 		display: block
 		padding: 25px 60px
-		font-weight: 300
+		font-weight: 400
 		font-style: italic
 		font-size: 20px
 		letter-spacing: 0.69px
@@ -1225,6 +1231,9 @@ svg
 	transition: .3s ease-in-out
 .main-sub-menu__item a:hover
 	background-color: rgba(160,63,142,.6)
+	path
+		opacity: 1
+
 .figure-sub-menu
 	display: flex
 	flex-direction: column
@@ -1237,6 +1246,9 @@ svg
 	justify-content: center
 	align-items: center
 	margin-bottom: 27px
+	path
+		opacity: .5
+		transition: .3s ease
 .about-us-item
   display: flex
   align-items: center
@@ -1267,7 +1279,7 @@ svg
 	text-decoration: underline
 	transition: .3s ease-in-out
 	&:hover
-		border-color: transparent
+		text-decoration: none
 .layout-latest-news-section-image__burger
 	position: absolute
 	width: 516px
@@ -1331,8 +1343,8 @@ svg
 	padding: 32px 50px
 
 .main-modal .mfp-close
-	width: 47px
-	height: 47px
+	width: 48px
+	height: 48px
 	border-radius: 50%
 	background: #abc64a
 	font-size: 0
@@ -2360,6 +2372,7 @@ input:-webkit-autofill
  font-size: 14px
  color: $darkBlue
  line-height: 1.7
+ font-style: italic
 .reviews-slider-navigate__stars
  display: flex
  align-items: center
@@ -2918,6 +2931,7 @@ input:-webkit-autofill
 	font-size: 367px
 	color: #fff
 	font-weight: 700
+	opacity: .5
 .secret-slider__animation-img
 	display: inline-block
 	position: relative
@@ -3338,6 +3352,31 @@ $transformYMeat: 0
 	font-family: 'object-fit: contain; object-position: top;'
 .main-slider > .layout-position
 	margin: 0
+.certificates-zoom
+	width: 100%
+.products-detail .right-content
+	position: relative
+.products-detail .right-content::before
+	content: ''
+	width: 100%
+	height: 40px
+	display: block
+	position: absolute
+	top: 20px
+	left: 0
+	z-index: 100
+	background: linear-gradient(to bottom, rgba(121,35,118,1), rgba(121,35,118,0))
+.products-detail .right-content::after
+	content: ''
+	width: 100%
+	height: 40px
+	display: block
+	position: absolute
+	bottom: 40px
+	left: 0
+	z-index: 100
+	background: linear-gradient(to top, rgba(121,35,118,1), rgba(121,35,118,0))
+
 @media (max-width: 1360px)
 	.main-menu
 	  display: none
@@ -3370,9 +3409,9 @@ $transformYMeat: 0
 			right: 92px
 			bottom:	106px
 		&::before
-			width: 406px
-			height: 406px
-			bottom: 118px
+			width: 411px
+			height: 413px
+			bottom: 112px
 			right: 93px
 	.callback-link__area
 		bottom: 35px
@@ -4153,6 +4192,7 @@ $transformYMeat: 0
       height: 415px
   .news-and-links__all-news-area
       margin-top: 75px
+      text-align: right
   .layout-latest-news-section-image__place
       bottom: -156px
   .footer-content__wrapper
@@ -4436,6 +4476,9 @@ $transformYMeat: 0
 		height: auto
 		.scroll-down
 			display: none
+	.products-detail .right-content::before,
+	.products-detail .right-content::after
+		content: none
 @media (max-height: 660px)
 	.mobile-submenu__list
 		flex-direction: column
@@ -4482,7 +4525,7 @@ $transformYMeat: 0
 		height: calc(100% - 190px)
 	.jobs-page
 		.two-side-wrapper_not-main .two-side-wrapper__bright
-			height: 859px
+			//height: 859px
 
 @media (max-height: 440px)
 	.btn-callback_mobile

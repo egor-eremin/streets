@@ -629,7 +629,8 @@ body, html {
 
 .breadcrumbs__item--active a {
   background-color: transparent;
-  cursor: auto; }
+  cursor: auto;
+  color: #aab5c0 !important; }
 
 .breadcrumbs__item--active::after {
   content: none; }
@@ -639,7 +640,7 @@ body, html {
   border-radius: 70px;
   padding: 4px 13px 6px 13px;
   font-weight: 700;
-  color: #485157;
+  color: #677077;
   font-size: 12px;
   letter-spacing: 0.3px;
   transition-property: background-color;
@@ -686,19 +687,8 @@ body, html {
   z-index: 5;
   color: #fff;
   font-size: 18px;
-  background-color: #a1b94c; }
-
-.call-message::before {
-  content: '';
-  background-color: #a1b94c;
-  width: 100%;
-  height: 100%;
-  filter: blur(20px);
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  z-index: -1;
-  border-radius: 200px; }
+  background-color: #abc64a;
+  box-shadow: 10px 10px 86px 3px #abc64a; }
 
 .call-message__text {
   text-align: center;
@@ -711,7 +701,7 @@ body, html {
   flex-wrap: wrap; }
 
 .contact__telephones {
-  font-weight: 800;
+  font-weight: 700;
   font-size: 30px;
   line-height: 1.2;
   display: block;
@@ -827,7 +817,7 @@ body, html {
 
 .navigation-site-page__teaser {
   font-size: 12px;
-  color: #485157;
+  color: #939ca5;
   padding: 6px 68px 0 10px;
   display: none;
   overflow: hidden; }
@@ -852,13 +842,13 @@ body, html {
 
 .image-dude img {
   position: absolute;
-  right: 170px;
-  bottom: 80px; }
+  right: 169px;
+  bottom: 88px; }
 
 .image-dude::before {
   content: '';
-  width: 512px;
-  height: 512px;
+  width: 517px;
+  height: 517px;
   background-color: #fff;
   border-radius: 250px;
   position: absolute;
@@ -952,7 +942,7 @@ body, html {
   margin: 0;
   display: block;
   padding: 25px 60px;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   font-size: 20px;
   letter-spacing: 0.69px;
@@ -1350,6 +1340,9 @@ svg {
 .main-sub-menu__item a:hover {
   background-color: rgba(160, 63, 142, 0.6); }
 
+.main-sub-menu__item a:hover path {
+  opacity: 1; }
+
 .figure-sub-menu {
   display: flex;
   flex-direction: column;
@@ -1363,6 +1356,10 @@ svg {
   justify-content: center;
   align-items: center;
   margin-bottom: 27px; }
+
+.sub-menu-img path {
+  opacity: .5;
+  transition: .3s ease; }
 
 .about-us-item {
   display: flex;
@@ -1401,7 +1398,7 @@ svg {
 
 .footer-links-list__item a:not(.social-icon):hover,
 .copyright-section a:not(.social-icon):hover {
-  border-color: transparent; }
+  text-decoration: none; }
 
 .layout-latest-news-section-image__burger {
   position: absolute;
@@ -1471,8 +1468,8 @@ svg {
   padding: 32px 50px; }
 
 .main-modal .mfp-close {
-  width: 47px;
-  height: 47px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: #abc64a;
   font-size: 0;
@@ -2660,7 +2657,8 @@ input:-webkit-autofill {
   margin-bottom: 28px;
   font-size: 14px;
   color: #485157;
-  line-height: 1.7; }
+  line-height: 1.7;
+  font-style: italic; }
 
 .reviews-slider-navigate__stars {
   display: flex;
@@ -3303,7 +3301,8 @@ input:-webkit-autofill {
   justify-content: flex-end;
   font-size: 367px;
   color: #fff;
-  font-weight: 700; }
+  font-weight: 700;
+  opacity: .5; }
 
 .secret-slider__animation-img {
   display: inline-block;
@@ -4039,6 +4038,34 @@ input:-webkit-autofill {
 .main-slider > .layout-position {
   margin: 0; }
 
+.certificates-zoom {
+  width: 100%; }
+
+.products-detail .right-content {
+  position: relative; }
+
+.products-detail .right-content::before {
+  content: '';
+  width: 100%;
+  height: 40px;
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 100;
+  background: linear-gradient(to bottom, #792376, rgba(121, 35, 118, 0)); }
+
+.products-detail .right-content::after {
+  content: '';
+  width: 100%;
+  height: 40px;
+  display: block;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+  background: linear-gradient(to top, #792376, rgba(121, 35, 118, 0)); }
+
 @media (max-width: 1360px) {
   .main-menu {
     display: none; }
@@ -4071,9 +4098,9 @@ input:-webkit-autofill {
     right: 92px;
     bottom: 106px; }
   .image-dude::before {
-    width: 406px;
-    height: 406px;
-    bottom: 118px;
+    width: 411px;
+    height: 413px;
+    bottom: 112px;
     right: 93px; }
   .callback-link__area {
     bottom: 35px;
@@ -4806,7 +4833,8 @@ input:-webkit-autofill {
   .layout-latest-news-section-image__burger {
     height: 415px; }
   .news-and-links__all-news-area {
-    margin-top: 75px; }
+    margin-top: 75px;
+    text-align: right; }
   .layout-latest-news-section-image__place {
     bottom: -156px; }
   .footer-content__wrapper {
@@ -5077,7 +5105,10 @@ input:-webkit-autofill {
   .two-side-wrapper_main {
     height: auto; }
   .two-side-wrapper_main .scroll-down {
-    display: none; } }
+    display: none; }
+  .products-detail .right-content::before,
+  .products-detail .right-content::after {
+    content: none; } }
 
 @media (max-height: 660px) {
   .mobile-submenu__list {
@@ -5118,9 +5149,7 @@ input:-webkit-autofill {
     padding-top: 25px; }
   .mobile-submenu {
     top: 100px;
-    height: calc(100% - 190px); }
-  .jobs-page .two-side-wrapper_not-main .two-side-wrapper__bright {
-    height: 859px; } }
+    height: calc(100% - 190px); } }
 
 @media (max-height: 440px) {
   .btn-callback_mobile {
