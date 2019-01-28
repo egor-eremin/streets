@@ -641,7 +641,7 @@ body, html {
 .breadcrumbs-item__link {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 70px;
-  padding: 4px 13px 6px 13px;
+  padding: 6px 13px 6px 13px;
   font-weight: 700;
   color: #677077;
   font-size: 12px;
@@ -2519,7 +2519,8 @@ input:-webkit-autofill {
   position: absolute; }
 
 .content-vacancy ul {
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  padding-left: 15px; }
 
 .content-vacancy li {
   font-size: 14px;
