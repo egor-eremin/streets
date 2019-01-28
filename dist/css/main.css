@@ -615,7 +615,10 @@ body, html {
 
 .breadcrumbs__item {
   margin-right: 17px;
-  position: relative; }
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .breadcrumbs__item:not(.breadcrumbs__item--active):hover a {
   background-color: #fff;
