@@ -167,52 +167,13 @@ $(document).ready(function () {
             '</button>'
         });
         $slick.on('beforeChange', function(slick, currentSlide, nextSlide){
-            // var $animatingElements = $('.main-slider__item[data-slick-index="' + nextSlide + '"]').find('[data-animation]');
-            // doAnimations($animatingElements, 'after-animation');
             percentTime = 0;
             startProgressbar();
         });
-        // $slick.on('afterChange', function (e, slick, currentSlide) {
-            // var $animatingElements = $('.main-slider__item[data-slick-index="' + currentSlide + '"]').find('[data-animation]');
-            // doAnimations($animatingElements, 'animation');
-        // });
-
-        // function doAnimationsInit(elements) {
-        //             var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        //             elements.each(function () {
-        //                 var $this = $(this);
-        //                 var $animationType = 'animated ' + $this.data('animation');
-        //                 $this.css({
-        //                     'animation-delay': '1s',
-        //                     '-webkit-animation-delay': '1s'
-        //                 });
-        //                 $this.addClass($animationType).one(animationEndEvents, function () {
-        //                     $this.removeClass($animationType);
-        //                 });
-        //             });
-        //         }
-
-
-        // function doAnimations(elements, data_atr) {
-        //     var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        //     elements.each(function() {
-        //         var $this = $(this);
-        //         var $animationDelay = $this.data('delay');
-        //         var $animationType = 'animated ' + $this.data(data_atr);
-        //         $this.css({
-        //             'transition-delay': $animationDelay,
-        //         });
-        //         $this.addClass($animationType).one(animationEndEvents, function() {
-        //             $this.removeClass($animationType);
-        //         });
-        //     });
-        // }
 
         function startProgressbar() {
             clearTimeout(tick);
-            // isPause = false;
             tick = setInterval(interval, 20);
-            // $rbar.fadeIn('slow');
         }
         var $rbar = $('.circle-progress');
         var rlen = 2 * Math.PI * $rbar.attr('r');
@@ -602,6 +563,12 @@ $(document).ready(function () {
         }
     })();
 
+    (function hiddenScroll() {
+        if ($('.greeting').length > 0) {
+            $('body').addClass('no-scroll-body');
+        }
+    })()
+
 
 	//Медиа-запросы в javascript (Если нужно)
 	//-------------------------------------------------------------------------------------------------------
@@ -696,6 +663,13 @@ $(document).ready(function () {
 
 
 });
+
+window.onload = function() {
+    $('.greeting-preloader').addClass('hidden-preloader');
+    setTimeout(function () {
+        $('body').removeClass('no-scroll-body');
+    }, 300);
+};
 
 function validationForm(formInit, textGood, textBad) {
     $(formInit).validate({

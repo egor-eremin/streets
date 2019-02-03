@@ -3888,10 +3888,6 @@ input:-webkit-autofill {
   opacity: 1;
   transform: translate(-50%, 0); }
 
-.st-28 .go-main {
-  opacity: 1;
-  transform: translateY(0); }
-
 .greeting__footer {
   position: absolute;
   bottom: 78px;
@@ -3915,9 +3911,7 @@ input:-webkit-autofill {
   padding-left: 30px;
   padding-right: 30px;
   background-color: #abc64a;
-  transition: .3s ease;
-  opacity: 0;
-  transform: translateY(10px); }
+  transition: .3s ease; }
 
 .go-main:hover {
   background-color: #9cb444; }
@@ -4110,16 +4104,27 @@ input:-webkit-autofill {
   height: 100vh;
   background: url("../images/userdata/greeting-page/greeting-background.jpg") no-repeat center;
   background-size: cover;
-  visibility: hidden;
-  opacity: 0;
   transition: .3s ease;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  z-index: 10; }
 
-.greeting-preloader .active {
-  visibility: visible;
-  opacity: 1; }
+.greeting-preloader.hidden-preloader {
+  visibility: hidden;
+  opacity: 0; }
+
+.no-scroll-body {
+  overflow: hidden; }
+
+.preloader-burger {
+  animation: animation-burger 5s linear infinite; }
+
+@keyframes animation-burger {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
 
 @media (max-width: 1360px) {
   .main-menu {

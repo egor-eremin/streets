@@ -3229,9 +3229,9 @@ $transformYMeat: 0
 	.greeting__text4
 		opacity: 1
 		transform: translate(-50%, 0)
-	.go-main
-		opacity: 1
-		transform: translateY(0)
+	//.go-main
+	//	opacity: 1
+	//	transform: translateY(0)
 .greeting__footer
 	position: absolute
 	bottom: 78px
@@ -3256,8 +3256,8 @@ $transformYMeat: 0
 	padding-right: 30px
 	background-color: $successfullIcon
 	transition: .3s ease
-	opacity: 0
-	transform: translateY(10px)
+	//opacity: 0
+	//transform: translateY(10px)
 	&:hover
 		background-color: #9cb444
 
@@ -3416,15 +3416,25 @@ $transformYMeat: 0
 	height: 100vh
 	background: url("../images/userdata/greeting-page/greeting-background.jpg") no-repeat center
 	background-size: cover
-	visibility: hidden
-	opacity: 0
+	//visibility: hidden
+	//opacity: 0
 	transition: .3s ease
 	display: flex
 	justify-content: center
 	align-items: center
-	.active
-		visibility: visible
-		opacity: 1
+	z-index: 10
+	&.hidden-preloader
+		visibility: hidden
+		opacity: 0
+.no-scroll-body
+	overflow: hidden
+.preloader-burger
+	animation: animation-burger 5s linear infinite
+@keyframes animation-burger
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
 @media (max-width: 1360px)
 	.main-menu
 	  display: none
