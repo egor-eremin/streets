@@ -4102,8 +4102,6 @@ input:-webkit-autofill {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: url("../images/userdata/greeting-page/greeting-background.jpg") no-repeat center;
-  background-size: cover;
   transition: .3s ease;
   display: flex;
   justify-content: center;
@@ -4113,6 +4111,13 @@ input:-webkit-autofill {
 .greeting-preloader.hidden-preloader {
   visibility: hidden;
   opacity: 0; }
+
+.greeting-preloader-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; }
 
 .no-scroll-body {
   overflow: hidden; }
