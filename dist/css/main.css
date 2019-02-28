@@ -3100,7 +3100,7 @@ input:-webkit-autofill {
 
 .product-menu__img-wrapper {
   position: relative;
-  padding-top: calc(100% - 50px);
+  padding-top: calc(100% - 40px);
   width: 100%; }
 
 .product-menu__img-wrapper-inner {
