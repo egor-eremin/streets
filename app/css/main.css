@@ -2256,7 +2256,19 @@ input:-webkit-autofill {
   height: 100%; }
 
 .right-content {
-  overflow: hidden; }
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: light; }
+
+.right-content::-webkit-scrollbar {
+  width: 4px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 4px; }
+
+.right-content::-webkit-scrollbar-thumb {
+  width: 6px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 4px; }
 
 .tab-section {
   height: 100%;

@@ -2027,7 +2027,17 @@ input:-webkit-autofill
 .right-content__wrapper_history
 	height: 100%
 .right-content
-	overflow: hidden
+	overflow-y: auto
+	scrollbar-width: thin
+	scrollbar-color: light
+.right-content::-webkit-scrollbar
+	width: 4px
+	background: rgba(0,0,0,.4)
+	border-radius: 4px
+.right-content::-webkit-scrollbar-thumb
+	width: 6px
+	background: hsla(0,0%,100%,.85)
+	border-radius: 4px
 .tab-section
 	height: 100%
 	display: flex

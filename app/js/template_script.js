@@ -586,14 +586,14 @@ $(document).ready(function () {
 
 	media('all and (min-height: 901px)', function(){
         (function initCustomScrollbar() {
-            if($('.content-text--with-scroll').length > 0) {
-                $('.content-text--with-scroll').mCustomScrollbar({
-                    axis: 'y',
-                    scrollbarPosition: 'inside',
-                    theme: 'light',
-                    autoHideScrollbar: false,
-                });
-            }
+            // if($('.content-text--with-scroll').length > 0) {
+            //     $('.content-text--with-scroll').mCustomScrollbar({
+            //         axis: 'y',
+            //         scrollbarPosition: 'inside',
+            //         theme: 'light',
+            //         autoHideScrollbar: false,
+            //     });
+            // }
         })();
 	});
 
