@@ -2253,19 +2253,25 @@ input:-webkit-autofill {
   order: 3; }
 
 .right-content__wrapper_history {
-  height: 100%; }
+  height: 100%;
+  padding: 0; }
+
+.right-content__wrapper_history section, .right-content__wrapper_history .tab-section__switched {
+  padding: 0 35px; }
 
 .right-content {
-  overflow-y: auto;
+  overflow-y: auto; }
+
+.content-text--with-scroll {
   scrollbar-width: thin;
   scrollbar-color: light; }
 
-.right-content::-webkit-scrollbar {
+.content-text--with-scroll::-webkit-scrollbar {
   width: 4px;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 4px; }
 
-.right-content::-webkit-scrollbar-thumb {
+.content-text--with-scroll::-webkit-scrollbar-thumb {
   width: 6px;
   background: rgba(255, 255, 255, 0.85);
   border-radius: 4px; }
@@ -2732,7 +2738,9 @@ input:-webkit-autofill {
   padding-top: 0; }
 
 .right-content_jobs {
-  padding-top: 92px; }
+  padding-top: 92px;
+  padding-right: 35px;
+  padding-left: 35px; }
 
 .main-modal_review {
   overflow: hidden auto !important;
@@ -3499,7 +3507,8 @@ input:-webkit-autofill {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  font-family: 'object-position: center; object-fit: cover;'; }
+  font-family: 'object-position: center; object-fit: cover;';
+  will-change: opacity; }
 
 .greeting__img:first-child {
   opacity: 1; }
@@ -4566,7 +4575,9 @@ input:-webkit-autofill {
   .custom-input {
     margin-bottom: 10px; }
   .right-content_jobs {
-    padding-top: 0 !important; }
+    padding-top: 0 !important;
+    padding-left: 0;
+    padding-right: 0; }
   .reviews-slider .slick-prev {
     left: 50px; }
   .reviews-slider .slick-next {
@@ -4720,7 +4731,10 @@ input:-webkit-autofill {
     width: 100%;
     justify-content: center; }
   .secret-production .two-side-wrapper::before {
-    top: 929px; } }
+    top: 929px; }
+  .right-content__wrapper_history .tab-section__switched, .right-content__wrapper_history section {
+    padding-left: 15px;
+    padding-right: 15px; } }
 
 @media (max-width: 960px) {
   .about-company__image {
@@ -5027,7 +5041,10 @@ input:-webkit-autofill {
     font-size: 200px;
     margin-bottom: 13px; }
   .not-found-page__title {
-    font-size: 26px; } }
+    font-size: 26px; }
+  .right-content__wrapper_history .tab-section__switched, .right-content__wrapper_history section {
+    padding-left: 0px;
+    padding-right: 0px; } }
 
 @media (max-width: 470px) {
   .main-header__col {

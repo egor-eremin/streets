@@ -324,6 +324,7 @@ $(document).ready(function () {
             $('.accordion-title').on('click', function () {
                 var thisCoordinate = $(this).position().top;
 
+                console.log(thisCoordinate);
                 setTimeout(function () {
                     $('.content-text--with-scroll').mCustomScrollbar("scrollTo",thisCoordinate);
                 }, 300);

@@ -2026,15 +2026,27 @@ input:-webkit-autofill
 		order: 3
 .right-content__wrapper_history
 	height: 100%
+	padding: 0
+	section, .tab-section__switched
+		padding: 0 35px
 .right-content
 	overflow-y: auto
+//.right-content::-webkit-scrollbar
+//	width: 4px
+//	background: rgba(0,0,0,.4)
+//	border-radius: 4px
+//.right-content::-webkit-scrollbar-thumb
+//	width: 6px
+//	background: hsla(0,0%,100%,.85)
+//	border-radius: 4px
+.content-text--with-scroll
 	scrollbar-width: thin
 	scrollbar-color: light
-.right-content::-webkit-scrollbar
+.content-text--with-scroll::-webkit-scrollbar
 	width: 4px
 	background: rgba(0,0,0,.4)
 	border-radius: 4px
-.right-content::-webkit-scrollbar-thumb
+.content-text--with-scroll::-webkit-scrollbar-thumb
 	width: 6px
 	background: hsla(0,0%,100%,.85)
 	border-radius: 4px
@@ -2433,6 +2445,8 @@ input:-webkit-autofill
 	padding-top: 0
 .right-content_jobs
 	padding-top: 92px
+	padding-right: 35px
+	padding-left: 35px
 .main-modal_review
 	overflow: hidden auto !important
 	height: 100% !important
@@ -3099,6 +3113,7 @@ input:-webkit-autofill
 	height: 100%
 	object-fit: cover
 	font-family: 'object-position: center; object-fit: cover;'
+	will-change: opacity
 
 
 .greeting__img:first-child
@@ -3620,6 +3635,7 @@ $transformYMeat: 0
 		.slick-dots
 			top: -6px
 
+
 @media (max-width: 1024px)
   .main-slider-arrow
       bottom: 53px
@@ -3897,6 +3913,8 @@ $transformYMeat: 0
     margin-bottom: 10px
   .right-content_jobs
     padding-top: 0 !important
+    padding-left: 0
+    padding-right: 0
   .reviews-slider .slick-prev
     left: 50px
   .reviews-slider .slick-next
@@ -4070,6 +4088,11 @@ $transformYMeat: 0
   .secret-production
     .two-side-wrapper::before
       top: 929px
+  .right-content__wrapper_history
+    .tab-section__switched, section
+      padding-left: 15px
+      padding-right: 15px
+
 
 @media (max-width: 960px)
 	.about-company__image
@@ -4384,6 +4407,10 @@ $transformYMeat: 0
     margin-bottom: 13px
   .not-found-page__title
     font-size: 26px
+  .right-content__wrapper_history
+    .tab-section__switched, section
+      padding-left: 0px
+      padding-right: 0px
 
 @media (max-width: 470px)
   .main-header__col
