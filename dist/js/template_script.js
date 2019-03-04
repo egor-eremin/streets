@@ -666,10 +666,37 @@ $(document).ready(function () {
 });
 
 window.onload = function() {
-    $('.greeting-preloader').addClass('hidden-preloader');
-    setTimeout(function () {
-        $('body').removeClass('no-scroll-body');
-    }, 300);
+
+    if ($('.greeting__wrapper').length > 0) {
+        $('.greeting-preloader').addClass('hidden-preloader');
+
+        setTimeout(function () {
+            $('body').removeClass('no-scroll-body');
+        }, 300);
+    }
+
+
+    // if ($('.greeting__wrapper').length > 0) {
+    //     var heightEl = $('body').height();
+    //     console.log(heightEl);
+    //     $('body, html').animate({
+    //         scrollTop: heightEl
+    //     }, 300);
+    //     setTimeout(function () {
+    //         $('body, html').animate({
+    //             scrollTop: 0
+    //         }, 300);
+    //     }, 300);
+    //
+    //     setTimeout(function () {
+    //         $('.greeting-preloader').addClass('hidden-preloader');
+    //     }, 600);
+    //
+    //
+    //     setTimeout(function () {
+    //         $('body').removeClass('no-scroll-body');
+    //     }, 601);
+    // }
 };
 
 function validationForm(formInit, textGood, textBad) {
