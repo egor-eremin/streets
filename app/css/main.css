@@ -4124,6 +4124,9 @@ input:-webkit-autofill {
 .preloader-burger {
   animation: animation-burger 5s linear infinite; }
 
+.two-side-wrapper_news-detail .aside-title {
+  width: 50%; }
+
 @keyframes animation-burger {
   0% {
     transform: rotate(0deg); }
@@ -4712,7 +4715,9 @@ input:-webkit-autofill {
     top: 929px; }
   .right-content__wrapper_history .tab-section__switched, .right-content__wrapper_history section {
     padding-left: 15px;
-    padding-right: 15px; } }
+    padding-right: 15px; }
+  .header-content-navigation_news-detail .aside-title {
+    width: 100%; } }
 
 @media (max-width: 960px) {
   .about-company__image {

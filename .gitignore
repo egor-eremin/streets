@@ -2,6 +2,7 @@
 /.vscode
 /psd
 /node_modules
+/dist
 .jshintrc
 .eslintrc.js
 eslintrc.yml
